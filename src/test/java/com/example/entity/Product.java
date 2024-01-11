@@ -29,5 +29,8 @@ public class Product {
 	@Column(name="prod_unitPrice", nullable = false, updatable = true)
 	private double unitPrice;
 	
+	@Column(name="prod_desc", nullable = false, updatable = true)
+	private String description;
+	
 	public Product() {}
 }
