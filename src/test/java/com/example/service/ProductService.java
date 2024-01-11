@@ -6,4 +6,7 @@ import com.example.entity.Product;
 
 public interface ProductService {
 	List<Product> getAllProducts();
+
+	
+	
 }
