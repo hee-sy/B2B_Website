@@ -6,13 +6,24 @@
 	</head>
 	
 	<body>
-		<form th:action="@{/product}" th:object="${product}" method="POST">
+		<form th:action="@{/product}" th:object="${product}" method="POST" enctype="multipart/form-data">
+			<div>
+				<label>Product Image</label>
+				<input 
+					type="file"
+					name="prodImage"
+					th:field="*{prodImage}"
+				/>			
+			</div>
+			
+			<br>
+			
 			<div>
 				<label>Product Name</label>
 				<input 
 					type="text"
 					name="productName"
-					th:field="*{product_name}"
+					th:field="*{prodName}"
 				/>			
 			</div>
 			
@@ -23,7 +34,7 @@
 				<input 
 					type="text"
 					name="productCategory"
-					th:field="*{product_category}"
+					th:field="*{prodCategory}"
 				/>
 			</div>
 			
@@ -34,7 +45,7 @@
 				<input 
 					type="number"
 					name="productQuantity"
-					th:field="*{product_quantity}"
+					th:field="*{prodQuantity}"
 				/>
 			</div>
 			
@@ -45,7 +56,7 @@
 				<input 
 					type="number"
 					name="productUnitPrice"
-					th:field="*{product_unitPrice}"
+					th:field="*{prodUnitPrice}"
 				/>
 			</div>
 			
@@ -56,7 +67,7 @@
 				<input 
 					type="text"
 					name="productDesc"
-					th:field="*{product_desc}"
+					th:field="*{prodDesc}"
 				/>
 			</div>
 			
