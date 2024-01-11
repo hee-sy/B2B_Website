@@ -2,18 +2,27 @@
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html class="scroll-smooth">
-	<head>
-		<meta charset="ISO-8859-1">
-		<link rel="stylesheet" href="font-import.css" />
-		<script src="https://cdn.tailwindcss.com"></script>
-		<script src="tailwind-config.js"></script>
-		<title>Home</title>
-	</head>
-	<body>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="font-import.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="tailwind-config.js"></script>
+<title>Home</title>
+</head>
+<body>
 	<!-- CustHeader.html -->
+	<jsp:include page="CustHeader.html" /> 
 	
+	<!-- HomeAdvertisement.html -->
+	<jsp:include page="HomeAdvertisement.html" /> 
 	
-	
+	<!-- HomeCategory.html -->
+	<jsp:include page="HomeCategory.html" /> 
+
+	<!-- HomeFeaturedSnacks.html -->
+	<jsp:include page="HomeFeaturedSnacks.html" /> 
+
 	<!-- CustFooter.html -->
-	</body>
+	<jsp:include page="CustFooter.html" /> 
+</body>
 </html>
