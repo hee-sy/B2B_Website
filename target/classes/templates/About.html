@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="font-import.css" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="tailwind-config.js"></script>
+	<title>About Company</title>
+	<style>
+		.link-underline {
+			border-bottom-width: 0;
+			background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+			background-size: 0 3px;
+			background-position: 0 100%;
+			background-repeat: no-repeat;
+			transition: background-size .5s ease-in-out;
+		}
+
+		.link-underline-black {
+			background-image: linear-gradient(transparent, transparent), linear-gradient(#F2C, #F2C)
+		}
+
+		.link-underline:hover {
+			background-size: 100% 3px;
+			background-position: 0 100%
+		}
+	</style>
+</head>
+
+<body>
+
+	<span class="bg-neutral-100 flex flex-col">
+		<div id="breadcrumb"
+			class="text-neutral-400 text-2xl font-medium leading-9 whitespace-nowrap ml-16 mt-10 self-start max-md:ml-2.5">
+			<a href="#">Home</a>
+			&gt;
+			<a href="#">About</a>
+		</div>
+		<div id="page-image"
+			class="bg-black self-stretch flex w-full flex-col justify-center items-stretch mt-10 max-md:max-w-full">
+			<div
+				class="flex-col overflow-hidden relative flex min-h-[513px] w-full justify-center items-center px-16 py-12 max-md:max-w-full max-md:px-5">
+				<img loading="lazy" src="Images/NestleHistory BG.png" alt="top page background picture"
+					class="absolute h-full w-full object-cover object-center inset-0" />
+				<span class="relative flex flex-col items-center mt-72 max-md:max-w-full max-md:mt-10">
+					<div
+						class="text-white text-7xl font-semibold leading-[108.14399999999999px] uppercase whitespace-nowrap max-md:text-4xl">
+						About Us
+					</div>
+					<div
+						class="text-white text-3xl font-semibold leading-[48.06399999999999px] self-stretch mt-6 max-md:max-w-full">
+						All the good food starts here
+					</div>
+				</span>
+			</div>
+		</div>
+		<span
+			class="bg-white bg-opacity-80 self-center flex w-full max-w-[1330px] flex-col items-stretch mt-12 pt-8 pb-12 px-16 rounded-[30px] max-md:max-w-full max-md:mt-10 max-md:px-5">
+			<div class="text-black text-3xl font-semibold leading-8 max-md:max-w-full">
+				<br />
+				We are Nestlé. The Good food, Good life company. We believe in the power
+				of food to enhance lives.
+				<br />
+			</div>
+			<div class="text-black text-2xl leading-9 mt-16 mb-2.5 max-md:max-w-full max-md:mt-10">
+				<br />
+				Good food nourishes and delights the senses. It helps pets to thrive,
+				children to grow healthily and parents to age gracefully. It helps all of
+				us to live life to the fullest. Good food also respects our planet and
+				protects resources for future generations.
+				<br />
+				<br />
+				But times are changing fast. And we know that what’s good today won’t be
+				good enough tomorrow. Consider the challenge of satisfying the needs of 10
+				billion people by 2050 in a responsible and sustainable way. This will
+				demand innovation and change.
+				<br />
+				<br />
+				At Nestlé, we’re constantly pushing the boundaries of what’s possible with
+				food, drink and nutritional health solutions. That way we can enhance
+				quality of life and contribute to a healthier future for all.
+				<br />
+				<br />
+				Today, our business has around 275,000 employees, more than 2,000 brands
+				and a presence in 188 countries
+				<br />
+			</div>
+		</span>
+
+		<span
+			class="bg-white bg-opacity-80 self-center flex w-full max-w-[1330px] flex-col items-center mt-12 pl-8 pr-2.5 pt-11 pb-1 rounded-[30px] max-md:max-w-full max-md:mt-10 max-md:pl-5">
+			<div class="text-black text-4xl font-semibold leading-[60.08px] uppercase whitespace-nowrap">
+				Our Brands
+			</div>
+			<div class="self-stretch flex items-start justify-between gap-5 mt-1.5 max-md:max-w-full max-md:flex-wrap">
+				<img loading="lazy" src="Images/KitKat.png" alt="Kit Kat Logo"
+					class="aspect-[0.94] object-contain object-center w-[169px] overflow-hidden self-center shrink-0 max-w-full my-auto" />
+				<img loading="lazy" src="Images/HoneyStars.png" alt="Honey Stars Logo"
+					class="aspect-[1.07] object-contain object-center w-[193px] overflow-hidden self-center shrink-0 max-w-full my-auto" />
+				<img loading="lazy" src="Images/KokoKrunch.png" alt="KokoKrunch Logo"
+					class="aspect-square object-contain object-center w-[200px] overflow-hidden self-stretch shrink-0 max-w-full" />
+				<img loading="lazy" src="Images/Munch.png" alt="Munch Logo"
+					class="aspect-[1.67] object-contain object-center w-[200px] overflow-hidden self-center shrink-0 max-w-full my-auto" />
+				<img loading="lazy" src="Images/Nestle Smarties.png" alt="Smarties Logo"
+					class="aspect-[1.75] object-contain object-center w-[200px] overflow-hidden self-center shrink-0 max-w-full my-auto" />
+				<img loading="lazy" src="Images/CornFlakes.png" alt="CornFlakes Logo"
+					class="aspect-square object-contain object-center w-[200px] overflow-hidden self-stretch shrink-0 max-w-full" />
+			</div>
+		</span>
+
+		<div class="self-center w-full max-w-[1330px] h-[550px] mt-12 max-md:max-w-full max-md:mt-10">
+			<div class="gap-5 flex max-md:items-stretch max-md:gap-0">
+				<div
+					class="flex flex-col items-stretch bg-white bg-opacity-80 w-6/12 max-md:w-full max-md:ml-0 rounded-[30px]">
+					<img loading="lazy" src="Images/HistoryBG.png" alt="History Background Image"
+						class="aspect-[2.69] object-contain object-center w-full overflow-hidden max-md:max-w-full" />
+					<span
+						class="justify-center bg-white flex w-full flex-col mt-4 pl-7 pr-4 pt-4 pb-2 items-end max-md:max-w-full max-md:pl-5">
+						<div class="text-black text-2xl font-medium self-stretch max-md:max-w-full">
+							Our History
+						</div>
+						<div class="text-black text-base self-stretch w-full mt-5 max-md:max-w-full max-md:mr-2.5">
+							Over 150 years ago, Henri Nestlé and the Page brothers laid the
+							foundations of Nestlé. Today, that company has around 275,000 employees
+							and is present in 188 countries.
+							<br />
+							<br />
+							Join us on a journey from there to here. And explore the highlights along
+							the way.
+							<br />
+
+						</div>
+						<span
+							class="link link-underline link-underline-black flex items-stretch gap-2 mt-14 max-md:mt-10">
+							<a href="https://www.nestle.com/about/history/nestle-company-history" target="_blank"
+								rel="noopener noreferrer" class="text-black text-right text-sm w-full">Discover
+								our story</a>
+							<img loading="lazy" src="Images/ToRightArrow.png" alt="Arrow pointing to right"
+								class="aspect-[2] object-contain object-center w-4 stroke-[1px] stroke-black overflow-hidden self-center shrink-0 max-w-full my-auto" />
+						</span>
+					</span>
+				</div>
+
+				<div
+					class="flex flex-col items-stretch bg-white bg-opacity-80 w-6/12 max-md:w-full max-md:ml-0 rounded-[30px]">
+
+					<img loading="lazy" src="Images/ResearchCentre.png" alt="R&D Background Image"
+						class="aspect-[2.69] object-contain object-center w-full overflow-hidden max-md:max-w-full" />
+					<span
+						class="justify-center bg-white flex w-full flex-col mt-4 pl-7 pr-4 pt-4 pb-2 items-end max-md:max-w-full max-md:pl-5">
+						<div class="text-black text-2xl font-medium self-stretch max-md:max-w-full">
+							Research and Development
+						</div>
+						<div class="text-black text-base self-stretch w-full  mt-5 max-md:max-w-full max-md:mr-2.5">
+							In this fast-paced world, evolution is essential. See how we’re developing innovative
+							products and harnessing the
+							latest technologies to create positive change.
+							<br />
+							<br />
+							<br />
+
+						</div>
+						<span
+							class="link link-underline link-underline-black flex items-stretch gap-2 mt-14 max-md:mt-10">
+							<a href="https://www.nestle.com/about/research-development/organization" target="_blank"
+								rel="noopener noreferrer" class=" text-black text-right text-sm w-full">Learn
+								more</a>
+							<img loading="lazy" src="Images/ToRightArrow.png" alt="Arrow pointing to right"
+								class="aspect-[2] object-contain object-center w-4 stroke-[1px] stroke-black overflow-hidden self-center shrink-0 max-w-full my-auto" />
+						</span>
+					</span>
+				</div>
+			</div>
+		</div>
+
+		<div
+			class="bg-white bg-opacity-80 self-stretch flex w-full flex-col items-center mt-12 pt-9 pb-5 px-16 max-md:max-w-full max-md:mt-10 max-md:px-5">
+			<span class="flex w-full max-w-[1204px] flex-col items-center max-md:max-w-full">
+				<div class="text-black text-4xl font-semibold leading-[60.08px] uppercase max-md:max-w-full">
+					Company Management
+				</div>
+				<div class="text-black text-2xl self-stretch mt-5 max-md:max-w-full">
+					Most of Nestlé’s food and beverage business is managed in five zones –
+					North America, Latin America, Europe, Asia, Oceania and Africa (AOA),
+					plus Greater China. The exceptions are our globally managed businesses,
+					which include Nespresso and Nestlé Health Science, as well as joint
+					ventures such as Cereal Partners Worldwide and Froneri.
+					<br />
+					<br />
+					Take a look at our leadership team and find out more about their roles
+					and responsibilities within the Nestlé Group.
+					<a href="https://www.nestle.com/about/management" class="text-blue-600 underline" target="_blank"
+						rel="noopener noreferrer">(HERE)</a>
+				</div>
+			</span>
+		</div>
+
+		<div
+			class="bg-white bg-opacity-80 self-center flex max-w-[1330px] flex-col items-center mt-20 mb-12 pl-8 pr-2.5 pt-12 pb-7 px-16 rounded-[30px] max-md:max-w-full max-md:px-10 max-md:pl-5">
+			<span class="flex w-full max-w-[1070px] flex-col items-center max-md:max-w-full">
+				<div class="text-black text-4xl font-semibold leading-[60.08px] uppercase whitespace-nowrap">
+					Downloads
+				</div>
+				<div class="self-stretch mt-4 max-md:max-w-full">
+					<div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+						<div class="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0">
+							<span
+								class="justify-center items-center shadow-sm bg-white flex flex-col w-full pt-2.5 pb-6 px-14 rounded-[30px] max-md:mt-10 max-md:px-5">
+								<img loading="lazy" src="Images/AnnualReviewImg.png" alt="Annual Report Cover"
+									class="aspect-[0.81] object-contain object-center w-[137px] overflow-hidden max-w-full" />
+								<div class="text-black text-center text-2xl font-medium self-stretch mt-2.5">
+									Annual Report
+								</div>
+								<div class="text-black text-center text-xs mt-1.5">(2022)</div>
+								<a href="./PDF/AnnualReview-2022.pdf" download
+									class="text-black text-center text-sm underline self-stretch mt-6">
+									Download Here (PDF)
+								</a>
+							</span>
+						</div>
+						<div class="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0">
+							<span
+								class="justify-center items-stretch shadow-sm bg-white flex flex-col w-full px-2.5 py-6 rounded-[30px] max-md:mt-10">
+								<img loading="lazy" src="Images/SustainabilityReportImg.png"
+									alt="Sustainable Report Cover"
+									class="aspect-[1.82] object-contain object-center w-full overflow-hidden" />
+								<div class="text-black text-center text-2xl font-medium whitespace-nowrap mt-6">
+									Sustainability Report
+								</div>
+								<div class="text-black text-center text-xs self-center mt-1.5">
+									(2022)
+								</div>
+								<a href="./PDF/SustainabilityReport-2022.pdf" download
+									class="text-black text-center text-sm underline self-center w-[312px] mt-6">
+									Download Here (PDF)
+								</a>
+							</span>
+						</div>
+						<div class="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0">
+							<span
+								class="justify-center items-center shadow-sm bg-white flex flex-col w-full px-2.5 py-7 rounded-[30px] max-md:mt-10">
+								<img loading="lazy" src="Images/HistoryTimelineImg.png" alt="History Timeline Cover"
+									class="aspect-[2.06] object-contain object-center w-full overflow-hidden self-stretch" />
+								<div class="text-black text-center text-2xl font-medium self-center w-[290px] mt-7">
+									History Timeline
+								</div>
+								<div class="text-black text-center text-xs self-center w-[290px] mt-1.5">
+									(Last update: 2022)
+								</div>
+								<a href="./PDF/Nestle History Timeline.pdf" download
+									class="text-black text-center text-sm underline self-center w-[312px] mt-6">
+									Download Here (PDF)
+								</a>
+							</span>
+						</div>
+					</div>
+				</div>
+			</span>
+		</div>
+
+	</span>
+</body>
+
+</html>
