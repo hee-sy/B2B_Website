@@ -17,19 +17,19 @@ public class Product {
 
 	// image
 
-	@Column(name = "prod_name", nullable = false, updatable = true)
+	@Column(name = "prod_name", nullable = false, updatable = true, columnDefinition = "VARCHAR(255)")
 	private String name;
 
-	@Column(name = "prod_category", nullable = false, updatable = true)
+	@Column(name = "prod_category", nullable = false, updatable = true, columnDefinition = "VARCHAR(255)")
 	private String category;
 
-	@Column(name = "prod_quantity", nullable = false, updatable = true)
+	@Column(name = "prod_quantity", nullable = false, updatable = true, columnDefinition = "int(10)")
 	private int quantity;
 
-	@Column(name = "prod_unitPrice", nullable = false, updatable = true)
+	@Column(name = "prod_unitPrice", nullable = false, updatable = true, columnDefinition = "DECIMAL(20,2)")
 	private double unitPrice;
 
-	@Column(name = "prod_desc", nullable = false, updatable = true)
+	@Column(name = "prod_desc", nullable = false, updatable = true, columnDefinition = "TEXT")
 	private String description;
 
 	public Product() {

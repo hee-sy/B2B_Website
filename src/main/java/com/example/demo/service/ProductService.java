@@ -7,4 +7,7 @@ import com.example.demo.entity.Product;
 public interface ProductService {
 	List<Product> getAllProducts();
 
+	Product saveProduct(Product product);
+	
+
 }
