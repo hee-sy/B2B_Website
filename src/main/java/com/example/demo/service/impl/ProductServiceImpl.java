@@ -29,15 +29,14 @@ public class ProductServiceImpl implements ProductService {
 	}
 	
 	@Override 
-	public Product saveProduct(Product product) {
-//		Product p = new Product();
-//		String fileName = StringUtils.cleanPath(prodImage.getOriginalFilename());
+	public Product saveProduct(Product product, MultipartFile prodImage) {
+		String fileName = StringUtils.cleanPath(prodImage.getOriginalFilename());
 //		if(fileName.contains(".."))
 //		{
 //			System.out.println("Not a valid file");
 //		}
 //		try {
-//			p.setImage(Base64.getEncoder().encodeToString(prodImage.getBytes()));
+//			product.setImage(Base64.getEncoder().encodeToString(prodImage.getBytes()));
 //		} catch (IOException e) {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();

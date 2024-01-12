@@ -37,8 +37,8 @@ public class ProductController {
 	}
 	
 	@PostMapping("/product")
-	public String saveProduct(@ModelAttribute("product") Product product) {
-		productService.saveProduct(product);
+	public String saveProduct(@ModelAttribute("product") Product product, @RequestParam("prodImage") MultipartFile prodImage) {
+		productService.saveProduct(product, prodImage);
 		return "redirect:/product";
 	}
 	
@@ -64,7 +64,7 @@ public class ProductController {
 		return "redirect:/product";
 	}
 	
-	@GetMapping("/product/{id}")
+	@GetMapping("/product/delete/{id}")
 	public String deleteProduct(@PathVariable Long id) {
 		productService.deleteProductById(id);
 		return "redirect:/product";

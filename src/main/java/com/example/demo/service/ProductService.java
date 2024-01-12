@@ -9,7 +9,7 @@ import com.example.demo.entity.Product;
 public interface ProductService {
 	List<Product> getAllProducts();
 
-	Product saveProduct(Product product);
+	Product saveProduct(Product product, MultipartFile prodImage);
 	
 	Product getProductById(Long id);
 	
