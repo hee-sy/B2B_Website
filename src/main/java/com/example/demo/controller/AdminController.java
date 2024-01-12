@@ -35,8 +35,8 @@ public class AdminController {
 	}
 	
 	@PostMapping("/admin/addproduct")
-	public String adminAddProduct(@ModelAttribute("product") Product product, MultipartFile prodImage) {
-		//ProductService.saveProduct(product,  prodImage);
+	public String adminAddProduct(@ModelAttribute("product") Product product) {
+		productService.saveProduct(product);
 		return "redirect:/admin/manageproduct";
 	}
 	
