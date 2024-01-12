@@ -63,7 +63,9 @@
 						</div>
 					</span>
 				</div>
-				<div class="flex flex-col items-stretch w-[78%] ml-5 max-md:w-full max-md:ml-0">
+				
+				
+				<form th:action="@{/admin/manageproduct}" th:object="${Product}" method="GET" class="flex flex-col items-stretch w-[78%] ml-5 max-md:w-full max-md:ml-0">
 					<span class="flex flex-col items-stretch px-5 max-md:max-w-full max-md:mt-7">
 						<div
 							class="bg-white bg-opacity-80 pl-7 pr-9 pt-7 pb-5 rounded-[30px] max-md:max-w-full max-md:px-5">
@@ -75,16 +77,21 @@
 											Product Details
 										</div>
 										<div class="text-black text-xl leading-8 mt-10 max-md:max-w-full">
-											<span class="text-red-600">*</span>
+											<span class="text-red-600">*</span><span class="text-black"> Product Name</span>
 										</div>
-										<span
-											class="text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full">
-											Example: KitKat Green Tea Matcha
-										</span>
+										<input 
+											type="text"
+											name="prodName"
+											
+											class="form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
+											placeholder="Example: KitKat Green Tea Matcha"
+										/>
+										
+										
 										<div class="text-black text-xl leading-8 mt-8 max-md:max-w-full">
-											<span class="text-red-600">*</span>
+											<span class="text-red-600">*</span><span class="text-black"> Category</span>
 										</div>
-										<span
+										<!--<span
 											class="justify-between border flex gap-5 mt-3.5 pl-1.5 pr-7 py-1 rounded-md border-solid border-black items-start max-md:max-w-full max-md:flex-wrap max-md:pr-5">
 											<div class="text-neutral-400 text-xl leading-8 mt-1">
 												Select Category
@@ -92,15 +99,31 @@
 											<img loading="lazy"
 												srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&"
 												class="aspect-square object-contain object-center w-[25px] justify-center items-center overflow-hidden self-stretch shrink-0 max-w-full" />
-										</span>
+										</span>-->
+										<select 
+											type="text"
+											name="prodCategory"
+											
+											class="form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
+											placeholder="Select Category"
+										>
+											<option></option>
+											<option value="Ice Cream">Ice Cream</option>
+											<option value="Cereals">Cereals</option>
+											<option value="Drinks">Drinks</option>
+											<option value="Chocolate and Confectionery">Chocolate and Confectionery</option>
+											<option value="Dairy">Dairy</option>
+										</select>
+										
+										
 										<div class="text-black text-xl leading-8 mt-8 max-md:max-w-full">
-											<span class="text-red-600">*</span>
+											<span class="text-red-600">*</span><span class="text-black"> Stock Quantity</span>
 										</div>
 										<div
 											class="border flex shrink-0 h-8 flex-col mt-3.5 rounded-md border-solid border-black max-md:max-w-full">
 										</div>
 										<div class="text-black text-xl leading-8 mt-8 max-md:max-w-full">
-											<span class="text-red-600">*</span>
+											<span class="text-red-600">*</span><span class="text-black"> Product Unit</span>
 										</div>
 										<div
 											class="justify-center border flex flex-col mt-5 pl-16 py-1 rounded-md border-solid border-black items-end max-md:max-w-full max-md:pl-5">
@@ -109,7 +132,7 @@
 												class="aspect-square object-contain object-center w-[25px] justify-center items-center overflow-hidden max-w-full" />
 										</div>
 										<div class="text-black text-xl leading-8 mt-9 max-md:max-w-full">
-											<span class="text-red-600">*</span>
+											<span class="text-red-600">*</span><span class="text-black"> Price Per Unit (RM)</span>
 										</div>
 										<span
 											class="text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-3.5 py-2 rounded-md border-solid border-black max-md:max-w-full">
@@ -138,10 +161,10 @@
 											<br />
 											<br />
 										</div>
-										<span
+										<button type="submit"
 											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-green-400 mt-[522px] px-3.5 py-3.5 rounded-xl self-end max-md:mt-10">
 											Submit
-										</span>
+										</button>
 									</span>
 								</div>
 							</div>
@@ -152,7 +175,7 @@
 							<span class="text-black">- All rights reserved</span>
 						</div>
 					</span>
-				</div>
+				</form>
 			</div>
 		</div>
 	</span>
