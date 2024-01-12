@@ -37,8 +37,36 @@ public class ProductController {
 	}
 	
 	@PostMapping("/product")
-	public String saveProduct(@ModelAttribute("product") Product product, @RequestParam("prodImage") MultipartFile prodImage) {
-		productService.saveProduct(product, prodImage);
-		return "redirect:/productTest";
+	public String saveProduct(@ModelAttribute("product") Product product) {
+		productService.saveProduct(product);
+		return "redirect:/product";
+	}
+	
+	@GetMapping("/product/edit/{id}")
+	public String editProductForm(@PathVariable Long id, Model model) {
+		model.addAttribute("product", productService.getProductById(id));
+		return "edit_product";
+	}
+	
+	@PostMapping("/product/{id}")
+	public String updateBook(@PathVariable Long id,
+			@ModelAttribute("product") Product product,
+			Model model) {
+		Product existingProduct = productService.getProductById(id);
+		existingProduct.setId(id);
+		existingProduct.setProdName(product.getProdName());
+		existingProduct.setProdCategory(product.getProdCategory());
+		existingProduct.setProdQuantity(product.getProdQuantity());
+		existingProduct.setProdUnitPrice(product.getProdUnitPrice());
+		existingProduct.setProdDesc(product.getProdDesc());
+		
+		productService.updateProduct(existingProduct);
+		return "redirect:/product";
+	}
+	
+	@GetMapping("/product/{id}")
+	public String deleteProduct(@PathVariable Long id) {
+		productService.deleteProductById(id);
+		return "redirect:/product";
 	}
 }
