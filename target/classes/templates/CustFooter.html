@@ -1,32 +1,36 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html>
 
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
+	<link rel="stylesheet" href="font-import.css" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="tailwind-config.js"></script>
+	<title>Footer</title>
 </head>
 
 <body>
 	<header
 		class="bg-neutral-950 self-stretch flex w-full flex-col justify-center items-center mt-56 px-16 py-11 max-md:max-w-full max-md:mt-10 max-md:px-5">
-		<div class="w-full max-w-[1029px] mb-24 max-md:max-w-full max-md:mb-10">
+		<div class="w-full max-w-[1200px] mb-20 max-md:max-w-full max-md:mb-10">
 			<div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
 				<div class="flex flex-col items-stretch w-[79%] max-md:w-full max-md:ml-0">
 					<div class="flex grow flex-col items-stretch max-md:max-w-full max-md:mt-10">
 						<div class="max-md:max-w-full max-md:pr-5">
-							<div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
-								<div class="flex flex-col items-stretch w-[24%] max-md:w-full max-md:ml-0">
+							<div class="gap-8 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+								<div class="flex flex-col items-stretch w-[24%] ml-0 mr-28 max-md:w-full max-md:ml-0">
 									<header class="flex flex-col items-stretch max-md:mt-10">
 										<h2 class="text-neutral-100 text-2xl font-medium tracking-wider">HOME</h2>
-										<div class="text-neutral-100 text-base mt-9">Category</div>
+										<div class="text-neutral-100 text-base mt-8">Category</div>
 										<div class="text-neutral-100 text-base whitespace-nowrap mt-4">Featured Snacks
 										</div>
 									</header>
 								</div>
-								<div class="flex flex-col items-stretch w-[38%] ml-5 max-md:w-full max-md:ml-0">
+								<div class="flex flex-col items-stretch w-[38%] ml-5 mx-20 max-md:w-full max-md:ml-0">
 									<header class="flex grow flex-col items-stretch max-md:mt-10">
 										<h2 class="text-neutral-100 text-2xl font-medium tracking-wider">PRODUCT</h2>
-										<div class="text-neutral-100 text-base mt-9">All Snacks</div>
+										<div class="text-neutral-100 text-base mt-8">All Snacks</div>
 										<div class="text-neutral-100 text-base mt-5">Ice Cream</div>
 										<div class="text-neutral-100 text-base mt-5">Cereals</div>
 										<div class="text-neutral-100 text-base mt-5">Drinks</div>
@@ -35,10 +39,10 @@
 										<div class="text-neutral-100 text-base mt-4">Dairy</div>
 									</header>
 								</div>
-								<div class="flex flex-col items-stretch w-[38%] ml-5 max-md:w-full max-md:ml-0">
+								<div class="flex flex-col items-stretch w-[38%] ml-5 mx-20 max-md:w-full max-md:ml-0">
 									<header class="flex grow flex-col items-stretch max-md:mt-10">
 										<h2 class="text-neutral-100 text-2xl font-medium tracking-wider">ABOUT</h2>
-										<div class="text-neutral-100 text-base mt-9">Company Background</div>
+										<div class="text-neutral-100 text-base mt-8">Company Background</div>
 										<div class="text-neutral-100 text-base mt-4">Our Brands</div>
 										<div class="text-neutral-100 text-base mt-5">Our History</div>
 										<div class="text-neutral-100 text-base whitespace-nowrap mt-4">Research and
@@ -51,7 +55,7 @@
 							</div>
 						</div>
 						<form
-							class="flex w-[522px] max-w-full flex-col items-stretch mt-32 px-px self-end max-md:mt-10">
+							class="flex w-[590px] max-w-full flex-col items-stretch mt-32 ml-0 px-px self-end max-md:mt-10">
 							<div
 								class="text-neutral-100 text-center text-2xl font-medium tracking-wider self-center whitespace-nowrap">
 								FOLLOW US</div>
@@ -75,7 +79,7 @@
 										alt="Follow us" />
 								</a>
 							</div>
-							<div class="text-neutral-100 text-2xl font-medium mt-16 max-md:max-w-full max-md:mt-10">
+							<div class="text-neutral-100 text-2xl font-medium mt-16 ml-10 max-md:max-w-full max-md:mt-10">
 								<span class="text-neutral-100">Copyright@2024</span>
 								<span class="font-semibold text-neutral-100">Nestlé</span>
 								<span class="text-neutral-100">- All rights reserved</span>
@@ -83,15 +87,15 @@
 						</form>
 					</div>
 				</div>
-				<div class="flex flex-col items-stretch w-[21%] ml-5 max-md:w-full max-md:ml-0">
+				<div class="flex flex-col items-stretch w-[21%] ml-16 max-md:w-full ml-20 mr-0 max-md:ml-0">
 					<header class="flex flex-col items-stretch max-md:mt-10">
 						<h2 class="text-neutral-100 text-2xl font-medium tracking-wider whitespace-nowrap">FOR CUSTOMER
 						</h2>
-						<div class="text-neutral-100 text-base mt-9">Ordered Items</div>
+						<div class="text-neutral-100 text-base mt-8">Ordered Items</div>
 					</header>
-					<header class="flex flex-col items-stretch max-md:mt-10">
-						<h2 class="text-neutral-100 text-2xl font-medium tracking-wider">CONTACT US</h2>
-						<div class="text-neutral-100 text-base mt-9">General Inquiries</div>
+					<header class="flex flex-col items-stretch max-md:mt-8">
+						<h2 class="text-neutral-100 text-2xl font-medium tracking-wider mt-16">CONTACT US</h2>
+						<div class="text-neutral-100 text-base mt-8">General Inquiries</div>
 						<div class="text-neutral-100 text-base mt-4">Send Us A Message!</div>
 					</header>
 				</div>

@@ -15,4 +15,16 @@ public class PageNavController {
 	public String aboutPage(Model model) {
 		return "About";
 	}
+	
+	
+	// Check for header & footer component cause idk how to open jsp
+	@GetMapping("/header")
+	public String headerBar(Model model) {
+		return "CustHeader";
+	}
+	
+	@GetMapping("/footer")
+	public String footerBar(Model model) {
+		return "CustFooter";
+	}
 }
