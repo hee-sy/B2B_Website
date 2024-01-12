@@ -67,4 +67,9 @@ public class PageNavController {
 	public String orderReq3(Model model) {
 		return "OrderRequest3";
 	}
+	
+	@GetMapping("/login")
+	public String login() {
+		return "LoginPage";
+	}
 }
