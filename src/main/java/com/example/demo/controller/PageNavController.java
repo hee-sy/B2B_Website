@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class PageNavController {
+	
 	@GetMapping("/home")
 	public String homePage(Model model) {
 		return "Home";
@@ -26,28 +27,5 @@ public class PageNavController {
 	@GetMapping("/custFooter")
 	public String footerBar(Model model) {
 		return "CustFooter";
-	}
-	
-	@GetMapping("/admin/manageproduct")
-	public String adminProductManagement() {
-		return "Admin-ManageProducts";
-	}
-	
-	@GetMapping("/admin/addproduct")
-	public String adminAddProduct() {
-		return "Admin-AddProduct";
-	}
-	@GetMapping("/admin/editproduct")
-	public String adminEditProduct() {
-		return "Admin-EditProduct";
-	}
-	@GetMapping("/admin/ordermanage")
-	public String adminOrderManagement() {
-		return "Admin-OrderManagement";
-	}
-	
-	@GetMapping("/admin/sidebar")
-	public String adminSideBar() {
-		return "Admin-SideBar";
 	}
 }
