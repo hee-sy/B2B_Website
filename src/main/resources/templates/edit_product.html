@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+
+	<head>
+		<title>B2B Website</title>
+	</head>
+	
+	<body>
+		<form th:action="@{/product/{id} (id=${product.id})}" th:object="${product}" method="POST" enctype="multipart/form-data">
+<!--			<div>-->
+<!--				<label>Product Image</label>-->
+<!--				<input -->
+<!--					type="file"-->
+<!--					name="prodImage"-->
+<!--					th:field="*{prodImage}"-->
+<!--				/>			-->
+<!--			</div>-->
+			
+			<br>
+			
+			<div>
+				<label>Product Name</label>
+				<input 
+					type="text"
+					name="productName"
+					th:field="*{prodName}"
+				/>			
+			</div>
+			
+			<br>
+			
+			<div>
+				<label>Product Category</label>
+				<input 
+					type="text"
+					name="productCategory"
+					th:field="*{prodCategory}"
+				/>
+			</div>
+			
+			<br>
+			
+			<div>
+				<label>Product Quantity</label>
+				<input 
+					type="number"
+					name="productQuantity"
+					th:field="*{prodQuantity}"
+				/>
+			</div>
+			
+			<br>
+			
+			<div>
+				<label>Unit Price</label>
+				<input 
+					type="number"
+					name="productUnitPrice"
+					th:field="*{prodUnitPrice}"
+				/>
+			</div>
+			
+			<br>
+			
+			<div>
+				<label>Product Desc</label>
+				<input 
+					type="text"
+					name="productDesc"
+					th:field="*{prodDesc}"
+				/>
+			</div>
+			
+			<br>
+			
+			<button type="submit">Submit</button>
+		
+		</form>
+		
+		
+	</body>
+</html>
