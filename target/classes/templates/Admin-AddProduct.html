@@ -64,7 +64,7 @@
 				</div>-->
 				<div w3-include-html="CustHeader.html"></div>
 				
-				<form th:action="@{/admin/addproduct}" th:object="${product}" method="POST" class="flex flex-col items-stretch w-[78%] ml-5 max-md:w-full max-md:ml-0">
+				<form th:action="@{/admin/addproduct}" th:object="${product}" method="POST" enctype="multipart/form-data" class="flex flex-col items-stretch w-[78%] ml-5 max-md:w-full max-md:ml-0">
 					<span class="flex flex-col items-stretch px-5 max-md:max-w-full max-md:mt-7">
 						<div
 							class="bg-white bg-opacity-80 pl-7 pr-9 pt-7 pb-5 rounded-[30px] max-md:max-w-full max-md:px-5">
@@ -81,8 +81,8 @@
 										<input 
 											type="text"
 											name="prodName"
-											
-											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
+											field="*{prodName}"
+											th:class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
 											placeholder="Example: KitKat Green Tea Matcha"
 										/>
 										
@@ -102,7 +102,7 @@
 										<select 
 											type="text"
 											name="prodCategory"
-											
+											th:field="*{prodCategory}"
 											class="cursor-pointer form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
 										>
 											<option value="" class="hidden">Select Category</option>
@@ -124,7 +124,7 @@
 											type="number"
 											min="0"
 											name="prodQuantity"
-											
+											th:field="*{prodQuantity}"
 											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
 										/>
 										
@@ -142,7 +142,7 @@
 											type="number"
 											min="0"
 											name="ProductUnit"
-											
+											th:field="*{prodUnit}"
 											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
 										/>
 										
@@ -159,7 +159,7 @@
 											min="0"
 											step=".01"
 											name="prodUnitPrice"
-											
+											th:field="*{prodUnitPrice}"
 											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
 										/>
 										
@@ -173,7 +173,7 @@
 										<textarea 
 											type="text"
 											name="prodDesc"
-											
+											th:field="*{prodDesc}"
 											class="resize-none px-1 border flex shrink-0 h-[280px] flex-col mt-3.5 rounded-md border-solid border-black max-md:max-w-full"
 										></textarea>
 									</span>
@@ -188,7 +188,7 @@
 												src="/Images/UploadPlaceholder.png"
 												class="aspect-square object-contain object-center w-full overflow-hidden" />
 										</label>
-										<input name="Photo" type="file" accept="image/png, image/jpeg" id="input-file" class="hidden"/>
+										<input name="Photo" type="file" field="*{prodImage}" accept="image/png, image/jpeg" id="input-file" class="hidden"/>
 										
 										<script>
 											let pic = document.getElementById("defaultPic");
