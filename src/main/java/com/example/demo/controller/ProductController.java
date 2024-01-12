@@ -57,6 +57,7 @@ public class ProductController {
 		existingProduct.setProdName(product.getProdName());
 		existingProduct.setProdCategory(product.getProdCategory());
 		existingProduct.setProdQuantity(product.getProdQuantity());
+		existingProduct.setProdUnit(product.getProdUnit());
 		existingProduct.setProdUnitPrice(product.getProdUnitPrice());
 		existingProduct.setProdDesc(product.getProdDesc());
 		
