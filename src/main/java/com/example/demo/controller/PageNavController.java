@@ -27,4 +27,9 @@ public class PageNavController {
 	public String footerBar(Model model) {
 		return "CustFooter";
 	}
+	
+	@GetMapping("/productDetails")
+	public String productDetails(Model model) {
+		return "productDetailsPage";
+	}
 }
