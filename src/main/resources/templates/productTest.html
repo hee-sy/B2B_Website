@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+	<head>
+		<title></title>
+	</head>
+	
+	<body>
+		<div>
+			<h1>product list</h1>
+		</div>
+		
+		<table>
+			<thead>
+				<tr>
+					<th>prod image</th>
+					<th>prod name</th>
+					<th>prod category</th>
+					<th>prod quantity</th>
+					<th>prod unitprice</th>
+					<th>prod description</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				<tr th:each="product: ${products}">
+					<td>
+<!--						<img alt="" th:src="@{'data:image/jpeg;base64,' + ${product.prodImage}}" />-->
+woo
+					</td>
+					<td th:text="${product.prodName}"></td>
+					<td th:text="${product.prodCategory}"></td>
+					<td th:text="${product.prodQuantity}"></td>
+					<td th:text="${product.prodUnitPrice}"></td>
+					<td th:text="${product.prodDesc}"></td>
+				</tr>
+			</tbody>
+		</table>
+		<div>
+			<a th:href="@{/product/new}"> Add Product</a>
+		</div>
+		
+		
+	</body>
+</html>

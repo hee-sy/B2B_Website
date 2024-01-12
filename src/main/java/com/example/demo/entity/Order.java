@@ -10,8 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+
 
 @Entity
 @Table(name = "order")
@@ -49,7 +48,6 @@ public class Order {
 	private String note;
 
 	@CreationTimestamp
-	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "order_time", nullable = false)
 	private Date createdAt;
 
