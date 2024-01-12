@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html class="scroll-smooth" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="ISO-8859-1">
@@ -10,6 +10,9 @@
 </head>
 
 <body>
+	<!-- CustHeader.html -->
+	<div w3-include-html="CustHeader.html"></div>
+
 	<div class="bg-neutral-100 h-[2000px] flex flex-col max-md:ml-2.5">
 		<header class="text-neutral-400 text-lg font-medium leading-9 mt-10 ml-48 max-md:max-w-full">
 			Home &gt; Product &gt; Chocolate &amp; Confectionery &gt; <span class=""> Feastables MrBeast Bar Original
@@ -17,14 +20,14 @@
 		</header>
 		<div>
 			<img loading="lazy" src="Images/OrderRequestProc3.png" alt="Product Picture"
-							class="w-[800px] h[300px] object-cover object-center inset-0 my-5 mx-[430px]" />
+				class="w-[800px] h[300px] object-cover object-center inset-0 my-5 mx-[430px]" />
 		</div>
 		<div class="bg-white h-[400px] flex flex-col mt-0 max-md:ml-2.5 rounded shadow-md mx-40">
 			<div class="w-full flex mt-5">
 				<!--left container for picture-->
 				<div class="w-1/4 h-[300px] justify-center items-center max-md:ml-0  float-left border">
 					<div class="w-[1000px] ml-[50px] text-2xl font-bold">
-						<span class="text-green-600">Payment Successfully!!!  </span>
+						<span class="text-green-600">Payment Successfully!!! </span>
 						<span class="text-black">Below are the details of your order!</span>
 					</div>
 					<div class="h-[400px] justify-center items-center">
@@ -128,7 +131,41 @@
 				</div>
 			</div>
 		</div>
-	</div>
+
+		<!-- CustFooter.html -->
+		<div w3-include-html="CustFooter.html"></div>
+
+		<!-- To include other HTML files -->
+		<script>
+			function includeHTML() {
+				var z, i, elmnt, file, xhttp;
+				/* Loop through a collection of all HTML elements: */
+				z = document.getElementsByTagName("*");
+				for (i = 0; i < z.length; i++) {
+					elmnt = z[i];
+					/*search for elements with a certain atrribute:*/
+					file = elmnt.getAttribute("w3-include-html");
+					if (file) {
+						/* Make an HTTP request using the attribute value as the file name: */
+						xhttp = new XMLHttpRequest();
+						xhttp.onreadystatechange = function () {
+							if (this.readyState == 4) {
+								if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+								if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+								/* Remove the attribute, and call this function once more: */
+								elmnt.removeAttribute("w3-include-html");
+								includeHTML();
+							}
+						}
+						xhttp.open("GET", file, true);
+						xhttp.send();
+						/* Exit the function: */
+						return;
+					}
+				}
+			}
+			includeHTML();
+		</script>
 </body>
 
 </html>

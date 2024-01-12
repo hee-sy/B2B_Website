@@ -7,7 +7,6 @@
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script src="tailwind-config.js"></script>
 	<title>Admin Dashboard</title>
-
 </head>
 
 <body>
@@ -94,337 +93,43 @@
 									</div>
 								</span>
 							</div>
-							<div
-								class="flex items-center justify-between gap-5 mt-2.5 mx-6 max-md:max-w-full max-md:flex-wrap max-md:mr-2.5">
+							
+							
+							
+							<div th:each="product: ${products}"
+								class="flex items-center gap-5 mt-2.5 ml-6 max-md:max-w-full max-md:flex-wrap max-md:mr-2.5">
 								<span class="flex justify-between gap-5 my-auto items-start">
-									<div class="text-black text-2xl leading-9 whitespace-nowrap">
-										NS001
+									<div class="text-black text-2xl leading-9 whitespace-nowrap w-16 text-center">
+										<div th:text="${product.id}"/>
 									</div>
-									<div class="text-black text-2xl leading-9 self-stretch grow whitespace-nowrap">
-										Kit Kat value pack
-									</div>
-								</span>
-								<span
-									class="self-stretch flex items-start justify-between gap-5 max-md:max-w-full max-md:flex-wrap">
-									<div class="text-black text-2xl leading-9 my-auto">
-										Chocolate
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										1000
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										5.00
-									</div>
-									<div class="self-stretch flex grow basis-[0%] flex-col items-stretch">
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-blue-500 px-7 py-2 rounded-xl max-md:px-5">
-											Edit
-										</span>
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-red-600 mt-2 px-3.5 py-2 rounded-xl">
-											Delete
-										</span>
-									</div>
-								</span>
-							</div>
-							<div
-								class="justify-between items-center bg-gray-200 flex w-full gap-5 mt-2 px-6 py-2.5 max-md:max-w-full max-md:flex-wrap max-md:pl-5">
-								<span class="flex justify-between gap-5 my-auto items-start">
-									<div class="text-black text-2xl leading-9 whitespace-nowrap">
-										NS002
-									</div>
-									<div class="text-black text-2xl leading-9 self-stretch grow whitespace-nowrap">
-										Kit Kat value pack
+									<div class="text-black text-2xl leading-9 self-stretch grow whitespace-nowrap w-[29rem]">
+										<div th:text="${product.prodName}"/>
 									</div>
 								</span>
 								<span
-									class="self-stretch flex items-start justify-between gap-5 max-md:max-w-full max-md:flex-wrap">
-									<div class="text-black text-2xl leading-9 my-auto">
-										Chocolate
+									class="flex justify-between gap-5 my-auto items-start">
+									<div class="text-black text-center  text-2xl leading-9 my-auto w-[6rem]">
+										<div th:text="${product.prodCategory}"/>
 									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										1000
+									<div class="text-black text-center  text-2xl leading-9 self-center my-auto w-[7rem] mr-2">
+										<div th:text="${product.prodQuantity}"/>
 									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										5.00
-									</div>
-									<div class="self-stretch flex grow basis-[0%] flex-col items-stretch">
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-blue-500 px-7 py-2 rounded-xl max-md:px-5">
-											Edit
-										</span>
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-red-600 mt-2 px-3.5 py-2 rounded-xl">
-											Delete
-										</span>
+									<div class="text-black text-center  text-2xl leading-9 self-center my-auto w-[9rem]">
+										<div th:text="${product.prodUnitPrice}"/>
 									</div>
 								</span>
+								<div class="self-stretch flex grow basis-[0%] flex-col items-stretch pr-4">
+									<button th:href = "@{/product/edit/{id}(id=${product.id})}"
+										class="text-white text-center text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-blue-500 px-7 rounded-xl max-md:px-5">
+										Edit
+									</button>
+									<button th:href = "@{/product/{id}(id=${product.id})}"
+										class="text-white text-center text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-red-600 mt-2 px-3.5  rounded-xl">
+										Delete
+									</button>
+								</div>
 							</div>
-							<div
-								class="flex items-center justify-between gap-5 mt-2.5 mx-6 max-md:max-w-full max-md:flex-wrap max-md:mr-2.5">
-								<span class="flex justify-between gap-5 my-auto items-start">
-									<div class="text-black text-2xl leading-9 whitespace-nowrap">
-										NS003
-									</div>
-									<div class="text-black text-2xl leading-9 self-stretch grow whitespace-nowrap">
-										Kit Kat value pack
-									</div>
-								</span>
-								<span
-									class="self-stretch flex items-start justify-between gap-5 max-md:max-w-full max-md:flex-wrap">
-									<div class="text-black text-2xl leading-9 my-auto">
-										Chocolate
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										1000
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										5.00
-									</div>
-									<div class="self-stretch flex grow basis-[0%] flex-col items-stretch">
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-blue-500 px-7 py-2 rounded-xl max-md:px-5">
-											Edit
-										</span>
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-red-600 mt-2 px-3.5 py-2 rounded-xl">
-											Delete
-										</span>
-									</div>
-								</span>
-							</div>
-							<div
-								class="justify-between items-center bg-gray-200 flex w-full gap-5 mt-2 px-6 py-2.5 max-md:max-w-full max-md:flex-wrap max-md:pl-5">
-								<span class="flex gap-5 my-auto items-start">
-									<div class="text-black text-2xl leading-9 whitespace-nowrap">
-										NS004
-									</div>
-									<div class="text-black text-2xl leading-9 self-stretch grow whitespace-nowrap">
-										Kit Kat value pack
-									</div>
-								</span>
-								<span
-									class="self-stretch flex items-start justify-between gap-5 max-md:max-w-full max-md:flex-wrap">
-									<div class="text-black text-2xl leading-9 my-auto">
-										Chocolate
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										1000
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										5.00
-									</div>
-									<div class="self-stretch flex grow basis-[0%] flex-col items-stretch">
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-blue-500 px-7 py-2 rounded-xl max-md:px-5">
-											Edit
-										</span>
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-red-600 mt-2 px-3.5 py-2 rounded-xl">
-											Delete
-										</span>
-									</div>
-								</span>
-							</div>
-							<div
-								class="flex items-center justify-between gap-5 mt-2.5 mx-6 max-md:max-w-full max-md:flex-wrap max-md:mr-2.5">
-								<span class="flex justify-between gap-5 my-auto items-start">
-									<div class="text-black text-2xl leading-9 whitespace-nowrap">
-										NS005
-									</div>
-									<div class="text-black text-2xl leading-9 self-stretch grow whitespace-nowrap">
-										Kit Kat value pack
-									</div>
-								</span>
-								<span
-									class="self-stretch flex items-start justify-between gap-5 max-md:max-w-full max-md:flex-wrap">
-									<div class="text-black text-2xl leading-9 my-auto">
-										Chocolate
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										1000
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										5.00
-									</div>
-									<div class="self-stretch flex grow basis-[0%] flex-col items-stretch">
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-blue-500 px-7 py-2 rounded-xl max-md:px-5">
-											Edit
-										</span>
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-red-600 mt-2 px-3.5 py-2 rounded-xl">
-											Delete
-										</span>
-									</div>
-								</span>
-							</div>
-							<div
-								class="justify-between items-center bg-gray-200 flex w-full gap-5 mt-2 px-6 py-2.5 max-md:max-w-full max-md:flex-wrap max-md:pl-5">
-								<span class="flex gap-5 my-auto items-start">
-									<div class="text-black text-2xl leading-9 whitespace-nowrap">
-										NS006
-									</div>
-									<div class="text-black text-2xl leading-9 self-stretch grow whitespace-nowrap">
-										Kit Kat value pack
-									</div>
-								</span>
-								<span
-									class="self-stretch flex items-start justify-between gap-5 max-md:max-w-full max-md:flex-wrap">
-									<div class="text-black text-2xl leading-9 my-auto">
-										Chocolate
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										1000
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										5.00
-									</div>
-									<div class="self-stretch flex grow basis-[0%] flex-col items-stretch">
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-blue-500 px-7 py-2 rounded-xl max-md:px-5">
-											Edit
-										</span>
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-red-600 mt-2 px-3.5 py-2 rounded-xl">
-											Delete
-										</span>
-									</div>
-								</span>
-							</div>
-							<div
-								class="flex items-center justify-between gap-5 mt-2.5 mx-6 max-md:max-w-full max-md:flex-wrap max-md:mr-2.5">
-								<span class="flex justify-between gap-5 my-auto items-start">
-									<div class="text-black text-2xl leading-9 whitespace-nowrap">
-										NS007
-									</div>
-									<div class="text-black text-2xl leading-9 self-stretch grow whitespace-nowrap">
-										Kit Kat value pack
-									</div>
-								</span>
-								<span
-									class="self-stretch flex items-start justify-between gap-5 max-md:max-w-full max-md:flex-wrap">
-									<div class="text-black text-2xl leading-9 my-auto">
-										Chocolate
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										1000
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										5.00
-									</div>
-									<div class="self-stretch flex grow basis-[0%] flex-col items-stretch">
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-blue-500 px-7 py-2 rounded-xl max-md:px-5">
-											Edit
-										</span>
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-red-600 mt-2 px-3.5 py-2 rounded-xl">
-											Delete
-										</span>
-									</div>
-								</span>
-							</div>
-							<div
-								class="justify-between items-center bg-gray-200 flex w-full gap-5 mt-2 px-6 py-2.5 max-md:max-w-full max-md:flex-wrap max-md:pl-5">
-								<span class="flex gap-5 my-auto items-start">
-									<div class="text-black text-2xl leading-9 whitespace-nowrap">
-										NS008
-									</div>
-									<div class="text-black text-2xl leading-9 self-stretch grow whitespace-nowrap">
-										Kit Kat value pack
-									</div>
-								</span>
-								<span
-									class="self-stretch flex items-start justify-between gap-5 max-md:max-w-full max-md:flex-wrap">
-									<div class="text-black text-2xl leading-9 my-auto">
-										Chocolate
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										1000
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										5.00
-									</div>
-									<div class="self-stretch flex grow basis-[0%] flex-col items-stretch">
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-blue-500 px-7 py-2 rounded-xl max-md:px-5">
-											Edit
-										</span>
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-red-600 mt-2 px-3.5 py-2 rounded-xl">
-											Delete
-										</span>
-									</div>
-								</span>
-							</div>
-							<div
-								class="flex items-center justify-between gap-5 mt-2.5 mx-6 max-md:max-w-full max-md:flex-wrap max-md:mr-2.5">
-								<span class="flex gap-5 my-auto items-start">
-									<div class="text-black text-2xl leading-9 whitespace-nowrap">
-										NS009
-									</div>
-									<div class="text-black text-2xl leading-9 self-stretch grow whitespace-nowrap">
-										Kit Kat value pack
-									</div>
-								</span>
-								<span
-									class="self-stretch flex items-start justify-between gap-5 max-md:max-w-full max-md:flex-wrap">
-									<div class="text-black text-2xl leading-9 my-auto">
-										Chocolate
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										1000
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										5.00
-									</div>
-									<div class="self-stretch flex grow basis-[0%] flex-col items-stretch">
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-blue-500 px-7 py-2 rounded-xl max-md:px-5">
-											Edit
-										</span>
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-red-600 mt-2 px-3.5 py-2 rounded-xl">
-											Delete
-										</span>
-									</div>
-								</span>
-							</div>
-							<div
-								class="justify-between items-center bg-gray-200 flex w-full gap-5 mt-2 px-6 py-2.5 max-md:max-w-full max-md:flex-wrap max-md:pl-5">
-								<span class="flex justify-between gap-5 my-auto items-start">
-									<div class="text-black text-2xl leading-9 whitespace-nowrap">
-										NS010
-									</div>
-									<div class="text-black text-2xl leading-9 self-stretch grow whitespace-nowrap">
-										Kit Kat value pack
-									</div>
-								</span>
-								<span
-									class="self-stretch flex items-start justify-between gap-5 max-md:max-w-full max-md:flex-wrap">
-									<div class="text-black text-2xl leading-9 my-auto">
-										Chocolate
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										1000
-									</div>
-									<div class="text-black text-2xl leading-9 self-center my-auto">
-										5.00
-									</div>
-									<div class="self-stretch flex grow basis-[0%] flex-col items-stretch">
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-blue-500 px-7 py-2 rounded-xl max-md:px-5">
-											Edit
-										</span>
-										<span
-											class="text-white text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-red-600 mt-2 px-3.5 py-2 rounded-xl">
-											Delete
-										</span>
-									</div>
-								</span>
-							</div>
-						</div>
+							
 						<div class="text-black text-2xl font-medium self-center mt-32 max-md:max-w-full max-md:mt-10">
 							<span class="text-black">Copyright@2024</span>
 							<span class="font-semibold text-black">Nestlé</span>

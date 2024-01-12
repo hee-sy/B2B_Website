@@ -35,9 +35,9 @@ public class AdminController {
 	}
 	
 	@PostMapping("/admin/addproduct")
-	public String adminAddProduct(@ModelAttribute("product") Product product, MultipartFile prodImage) {
-		//ProductService.saveProduct(product,  prodImage);
-		return "Redirect:/admin/addproduct";
+	public String adminAddProduct(@ModelAttribute("product") Product product) {
+		productService.saveProduct(product);
+		return "redirect:/admin/manageproduct";
 	}
 	
 	@GetMapping("/admin/editproduct/{id}")
@@ -72,7 +72,7 @@ public class AdminController {
 	
 	@GetMapping("/admin/ordermanage")
 	public String adminOrderManagement(Model model) {
-		model.addAttribute("orders", orderService.getAllOrders());
+		//model.addAttribute("orders", orderService.getAllOrders());
 		return "Admin-OrderManagement";
 	}
 	
