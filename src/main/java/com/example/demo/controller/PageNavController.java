@@ -12,7 +12,7 @@ public class PageNavController {
 		return "Home";
 	}
 
-	@GetMapping("/product")
+	@GetMapping("/home/product")
 	public String productPage(Model model) {
 		return "Product";
 	}
@@ -30,6 +30,11 @@ public class PageNavController {
 	@GetMapping("/contactUs")
 	public String contactUsPage(Model model) {
 		return "ContactUs";
+	}
+
+	@GetMapping("/contactUsResponse")
+	public String contactUsResponsePage(Model model) {
+		return "ContactUsResponse";
 	}
 
 	// Check for header & footer component cause idk how to open jsp
