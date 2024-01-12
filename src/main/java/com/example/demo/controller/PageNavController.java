@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class PageNavController {
-	
 	@GetMapping("/home")
 	public String homePage(Model model) {
 		return "Home";
@@ -27,5 +26,10 @@ public class PageNavController {
 	@GetMapping("/custFooter")
 	public String footerBar(Model model) {
 		return "CustFooter";
+	}
+	
+	@GetMapping("/productDetails")
+	public String productDetails(Model model) {
+		return "productDetailsPage";
 	}
 }
