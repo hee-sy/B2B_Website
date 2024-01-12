@@ -53,17 +53,17 @@ public class PageNavController {
 		return "ProductDetails";
 	}
 
-	@GetMapping("/orderreq1")
+	@GetMapping("/orderReq1")
 	public String orderReq1(Model model) {
 		return "OrderRequest1";
 	}
 
-	@GetMapping("/orderreq2")
+	@GetMapping("/orderReq2")
 	public String orderReq2(Model model) {
 		return "OrderRequest2";
 	}
 
-	@GetMapping("/orderreq3")
+	@GetMapping("/orderReq3")
 	public String orderReq3(Model model) {
 		return "OrderRequest3";
 	}
