@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class PageNavController {
+
 	@GetMapping("/home")
 	public String homePage(Model model) {
 		return "Home";
