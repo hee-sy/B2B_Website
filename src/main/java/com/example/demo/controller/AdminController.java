@@ -17,13 +17,9 @@ public class AdminController {
 	private ProductService productService;
 	private OrderService orderService;
 	
-	public AdminController (ProductService productService) {
+	public AdminController (ProductService productService, OrderService orderService) {
 		super();
 		this.productService = productService;
-	}
-	
-	public AdminController (OrderService orderService) {
-		super();
 		this.orderService = orderService;
 	}
 	
