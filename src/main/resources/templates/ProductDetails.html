@@ -3,36 +3,29 @@
 
 <head>
 	<meta charset="ISO-8859-1">
-	<link rel="stylesheet" href="font-import.css" />
+	<style>
+		@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+	</style>
 	<script src="https://cdn.tailwindcss.com"></script>
-	<script src="tailwind-config.js"></script>
-	<script>
-		function add() {
-			var num = document.getElementById("num");
-			num = ++num.value;
-		}
-		function minus() {
-			var num = document.getElementById("num");
-			if (num.value > 100) {
-				num = --num.value;
-			}
-		}	
-	</script>
+	<script src="../../tailwind-config.js"></script>
 	<title>Product Detail Page</title>
 </head>
 
 <body>
 	<!-- CustHeader.html -->
-	<div w3-include-html="CustHeader.html"></div>
+	<div w3-include-html="../../CustHeader.html"></div>
 	<form th:action="@{/home/product/{id} (id=${product.id})}" th:object="${product}" method="POST">
 		<div class="bg-neutral-100 h-[2200px] flex flex-col max-md:ml-2.5">
-			<div class="my-5 mx-48 flex flex-col h-[40px] text-neutral-400 text-lg text-left  max-md:ml-2.5">
-				<p> Home > Product > <span th:text="${product.prodCategory}"></span> > <span th:text="${product.prodName}"></span></p>
+			<div
+				class="font-montserrat my-5 mx-48 flex flex-col h-[40px] text-neutral-400 text-lg text-left  max-md:ml-2.5">
+				<p> Home > Product > <span th:text="${product.prodCategory}"></span> > <span
+						th:text="${product.prodName}"></span></p>
 			</div>
 			<br />
 			<!--Specific Product Box-->
-			<div class="mt-2 mx-40 flex flex-col h-full text-neutral-400 text-base text-left  max-md:ml-2.5">
-				<div class="mb-2 text-black text-2xl font-extrabold ">
+			<div
+				class="font-montserrat mb-[200px] mt-2 mx-40 flex flex-col h-full text-neutral-400 text-base text-left  max-md:ml-2.5">
+				<div class="mb-2 text-black text-2xl font-semibold ">
 					<span th:text="${product.prodName}"></span>
 				</div>
 				<br />
@@ -51,7 +44,8 @@
 								<p>RM <span th:text="${product.prodUnitPrice}"></span></p>
 							</div>
 							<div class="text-base text-black mt-3 mb-10 ">
-								<p>stock: <span th:text="${product.prodQuantity}"></span> boxes (<span th:text="${product.prodUnit}"></span> pieces per box)</p>
+								<p>stock: <span th:text="${product.prodQuantity}"></span> boxes (<span
+										th:text="${product.prodUnit}"></span> pieces per box)</p>
 							</div>
 							<br />
 							<hr style="width: 100%; margin: auto; border: 2px solid #BBB;" />
@@ -60,45 +54,52 @@
 								<span>min.order: </span>
 								<span class="font-bold">100 boxes </span>
 							</div>
-							<div class="text-xl text-black font-bold mt-3 mb-3 text-left w-full">
-								<input type="button" value="-" onclick="minus()"
-									class="w-[30px] h-[30px] border border-black float-left bg-black text-white text-xl" />
-								<input id="num" name="num" value="100" onfocus="this.blur()"
-									class="w-[50px] h-[30px] text-center text-lg border border-black float-left" />
-								<input type="button" value="+" onclick="add()"
-									class="w-[30px] h-[30px] border border-black float-left bg-black text-white text-xl" />
-							</div>
-							<div
-								class="w-[280px] h-[60px] rounded-md shadow-md  border-2 border-black text-center self-center mt-16 mb-8">
-								<div class="my-3 text-lg text-black font-bold"><a href="#">REQUEST ORDER</a></div>
-							</div>
-							<div
-								class="w-[280px] h-[60px] rounded-md shadow-md  border-2 border-black text-center self-center my-8">
-								<div class="my-3 text-lg text-black font-bold"><a href="#">EMAIL SUPPLIER</a></div>
-							</div>
-							<div class="my-5 text-black">
-								<div class="text-base font-bold">Shipping: </div>
-								<div class="text-base underline inline"><a href="#">Contact supplier</a></div>
-								<div class="text-base inline">for shopping details.</div>
-							</div>
-							<div class="my-5 text-black">
-								<label for="paymentOptions" class="text-base font-bold">Payment Options: </label>
-								<select name="" id="languages">
-									<option value="Credit Card" class="text-base">Credit Card</option>
-									<option value="Credit Card" class="text-base">Debit Card</option>
-									<option value="TNG" class="text-base">TNG</option>
-								</select>
-							</div>
+
+							<form method="GET" th:action="@{/orderreq1/{id} (id=${book.id})}">
+
+								<div class="text-xl text-black font-bold mt-3 mb-3 text-left w-full">
+									<input type="button" value="-" onclick="minus()"
+										class="w-[30px] h-[30px] border border-black float-left bg-black text-white text-xl" />
+									<input id="num" name="num" value="100" onfocus="this.blur()"
+										class="w-[50px] h-[30px] text-center text-lg border border-black float-left" />
+									<input type="button" value="+" onclick="add()"
+										class="w-[30px] h-[30px] border border-black float-left bg-black text-white text-xl" />
+								</div>
+
+
+								<div
+									class="w-[280px] h-[60px] rounded-md shadow-md  border-2 border-black text-center self-center mt-16 mb-8">
+									<div class="my-3 text-lg text-black font-bold">
+										<button type="submit">REQUEST ORDER</button>
+									</div>
+							</form>
+						</div>
+						<div
+							class="w-[280px] h-[60px] rounded-md shadow-md  border-2 border-black text-center self-center my-8">
+							<div class="my-3 text-lg text-black font-bold"><a href="#">EMAIL SUPPLIER</a></div>
+						</div>
+						<div class="my-5 text-black">
+							<div class="text-base font-bold">Shipping: </div>
+							<div class="text-base underline inline"><a href="#">Contact supplier</a></div>
+							<div class="text-base inline">for shopping details.</div>
+						</div>
+						<div class="my-5 text-black">
+							<label class="text-base font-bold">Payment Options: </label>
+								<p>Credit Card</p>
+								<p>Debit Card</p>
+								<p>TNG</p>
+							</select>
 						</div>
 					</div>
-					<br>
-					<div class="mx-40 my-10 flex flex-col h-[900px] ">
-						<div class="w-full h-[50px] text-lg text-black font-bold text-center">
-							Product Description:
-						</div>
-						<div class="text-lg text-black text-center">
-							<span th:text="${product.prodDesc}"></span>
-						</div>
+				</div>
+				<br>
+				<div class="mx-40 my-10 flex flex-col h-[900px] ">
+					<div class="w-full h-[50px] text-lg text-black font-bold text-center">
+						Product Description:
+					</div>
+					<div class="text-lg text-black text-center">
+						<span th:text="${product.prodDesc}"></span>
+					</div>
 	</form>
 	<div class="w-full h-[50px] mt-10 mb-2 text-lg text-black font-bold text-center">
 		Nutrition Facts
@@ -178,9 +179,32 @@
 
 
 	<!-- CustFooter.html -->
-	<div w3-include-html="CustFooter.html"></div>
+	<div w3-include-html="../../CustFooter.html"></div>
 
 	<!-- To include other HTML files -->
+	<script>
+		var num = document.getElementById("num");
+		quantity = toString(num.value);
+
+		const object = {quant: quantity};
+		alert(quantity);
+
+		const objectString = JSON.stringify(object);
+
+		localStorage.setItem('quantityObject', objectString); 
+	</script>
+	<script>
+		function add() {
+			var num = document.getElementById("num");
+			num = ++num.value;
+		}
+		function minus() {
+			var num = document.getElementById("num");
+			if (num.value > 100) {
+				num = --num.value;
+			}
+		}
+	</script>
 	<script>
 		function includeHTML() {
 			var z, i, elmnt, file, xhttp;

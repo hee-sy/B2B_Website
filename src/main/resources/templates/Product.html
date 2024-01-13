@@ -17,7 +17,7 @@
 		<a href="/home">Home</a> &gt; Product
 	</header>
 
-	<header class="self-stretch w-full flex-col flex mt-20 px-10 max-md:max-w-full max-md:mt-10 max-md:px-5">
+	<header class="mb-[300px] self-stretch w-full flex-col flex mt-20 px-10 max-md:max-w-full max-md:mt-10 max-md:px-5">
 		<div class="flex flex-col relative shrink-0 box-border mt-5">
 			<div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
 				<div class="flex flex-col items-stretch w-[25%] max-md:w-full max-md:ml-0">
@@ -47,7 +47,7 @@
 								<div class="text-wrap text-1xl py-2 text-neutral-400" th:text="${product.prodCategory}"></div>
 								<div class="text-2xl" th:text="'RM' + ${product.prodUnitPrice}"></div>
 								<div class="text-wrap text-1xl pt-2" th:text="'stock: ' + ${product.prodQuantity}"></div>
-								<div class="text-wrap text-1xl pb-5" th:text="${product.prodDesc}"></div>							
+								<!--<div class="text-wrap text-1xl pb-5" th:text="${product.prodDesc}"></div>-->							
 							</div>
 						</a>
 						

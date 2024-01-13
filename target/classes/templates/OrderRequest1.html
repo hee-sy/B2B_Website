@@ -6,6 +6,15 @@
 	<link rel="stylesheet" href="font-import.css" />
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script src="tailwind-config.js"></script>
+	
+	<script>
+		const objectString2 = localStorage.getItem('quantityObject');
+		const object2 = JSON.parse(objectString2);
+		alert(object2);
+		
+		quantity = object2.getItem('quant');
+		var quantityInt = parseInt(quantity);
+	</script>
 	<title>Order Request 1</title>
 </head>
 
