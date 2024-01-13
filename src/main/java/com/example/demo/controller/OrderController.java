@@ -34,6 +34,6 @@ public class OrderController {
 	@PostMapping("/order/saveOrder")
 	public String saveOrder(@ModelAttribute("order1") Order order) {
 		orderService.saveOrder(order);
-		return "redirect:/orderreq3";
+		return "OrderRequest3";
 	}
 }
