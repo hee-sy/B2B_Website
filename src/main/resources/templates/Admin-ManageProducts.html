@@ -10,21 +10,22 @@
 </head>
 
 <body>
-	<div w3-include-html="../AdminHeader.html"></div>
-	
-	<span class="bg-neutral-100 h-full flex flex-col items-start  min-h-screen">
 
-		<div
-			class="text-black text-center text-3xl font-bold leading-[48.06399999999999px] whitespace-nowrap ml-80 mt-9 max-md:ml-2.5">
-			Manage Products
-		</div>
+	<div w3-include-html="../AdminHeader.html"></div>
+	<span class="bg-neutral-100 h-full flex flex-col items-start min-h-screen">
+
+		<div w3-include-html="../Admin-SideBar.html"></div>
 		<div class="self-stretch w-full mt-7 max-md:max-w-full">
+
 			<div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
 				<div class="flex flex-col items-stretch w-[22%] max-md:w-full max-md:ml-0">
-					<div w3-include-html="../Admin-SideBar.html"></div>
 				</div>
 				<div class="flex flex-col items-stretch w-[78%] ml-5 max-md:w-full max-md:ml-0">
 					<span class="flex flex-col items-stretch px-5 max-md:max-w-full max-md:mt-7">
+						<div
+							class="text-black text-left text-3xl font-bold whitespace-nowrap ml-5 mt-20 mb-5 max-md:ml-2.5">
+							Manage Products
+						</div>
 						<div
 							class="items-stretch bg-white bg-opacity-80 flex flex-col pb-8 rounded-[30px] max-md:max-w-full">
 							<div
@@ -95,7 +96,7 @@
 							</div>
 
 							<div
-								class="text-black text-2xl font-medium self-center mt-32 max-md:max-w-full max-md:mt-10">
+								class="text-black text-2xl font-medium self-center mt-32 mb-10 max-md:max-w-full max-md:mt-10">
 								<span class="text-black">Copyright@2024</span>
 								<span class="font-semibold text-black">Nestlé</span>
 								<span class="text-black">- All rights reserved</span>
@@ -121,8 +122,8 @@
 					xhttp = new XMLHttpRequest();
 					xhttp.onreadystatechange = function () {
 						if (this.readyState == 4) {
-							if (this.status == 200) { elmnt.innerHTML = this.responseText; }
-							if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+							if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+							if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
 							/* Remove the attribute, and call this function once more: */
 							elmnt.removeAttribute("w3-include-html");
 							includeHTML();

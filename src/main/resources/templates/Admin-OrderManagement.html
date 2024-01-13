@@ -11,20 +11,19 @@
 </head>
 
 <body>
-	<div w3-include-html="CustHeader.html"></div>
+	<div w3-include-html="../AdminHeader.html"></div>
 	<span class="bg-neutral-100 flex flex-col items-start min-h-screen">
-		<div
-			class="text-black text-center text-3xl font-bold leading-[48.06399999999999px] whitespace-nowrap ml-80 mt-9 max-md:ml-2.5">
-			Order Management
-		</div>
 
 		<div class="self-stretch w-full mt-7 max-md:max-w-full">
 			<div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
-				<div class="flex flex-col items-stretch w-[22%] max-md:w-full max-md:ml-0">
-					<div w3-include-html="Admin-SideBar.html"></div>
+				<div class="flex flex-col items-stretch w-[20%] max-md:w-full max-md:ml-0">
+					<div w3-include-html="../Admin-SideBar.html"></div>
 				</div>
-
-				<div class="flex flex-col items-stretch w-[78%] ml-5 max-md:w-full max-md:ml-0">
+				<div class="flex flex-col items-stretch w-full ml-2 max-md:w-full max-md:ml-0">
+					<div
+						class="text-black text-left text-3xl font-bold whitespace-nowrap ml-5 mt-20 mb-5 max-md:ml-2.5">
+						Order Management
+					</div>
 					<div class="flex flex-col items-stretch px-5 max-md:max-w-full max-md:mt-7">
 						<div
 							class="bg-neutral-300 rounded-3xl text-center font-bold text-2xl rounded text-2xl text-center flex items-center  mt-2.5 max-md:max-w-full max-md:flex-wrap max-md:mr-2.5">
@@ -36,19 +35,25 @@
 							<div class="w-full md:w-[200px] my-8">Action</div>
 						</div>
 
-						<div
-							th:each="order: ${order}"
+						<div th:each="order: ${order}"
 							class="bg-white rounded-[30px] text-2xl text-center flex items-center gap-5 mt-2.5 ml-2 mr-1 max-md:max-w-full max-md:flex-wrap max-md:mr-2.5">
 
 							<table border="0" cellspacing="0" cellpadding="0">
 								<tr>
-									<td width="250" height="100"><th:text=${order.id}></td>
+									<td width="250" height="100">
+										<th:text=${order.id}>
+									</td>
 									<td width="200" height="100">CID0001</td>
-									<td width="150" height="100"><th:text=${order.quantity}></td>
-									<td width="250" height="100"><th:text=${order.cost}></td>
+									<td width="150" height="100">
+										<th:text=${order.quantity}>
+									</td>
+									<td width="250" height="100">
+										<th:text=${order.cost}>
+									</td>
 									<td width="150" height="100">Pending</td>
 									<td width="200" height="100">
-										<button class="w-[130px] h-[40px] text-white bg-green-500 rounded-xl">Complete</button>
+										<button
+											class="w-[130px] h-[40px] text-white bg-green-500 rounded-xl">Complete</button>
 									</td>
 								</tr>
 
@@ -57,13 +62,13 @@
 						</div>
 
 					</div>
-				</div>
-			</div>
-		</div>
-		<div class="text-black text-2xl font-medium self-center mt-32 max-md:max-w-full max-md:mt-10 items-end">
+		<div class="text-black text-2xl font-medium self-center mt-32 mb-10 max-md:max-w-full max-md:mt-10 items-end">
 			<span class="text-black">Copyright@2024</span>
 			<span class="font-semibold text-black">Nestlé</span>
 			<span class="text-black">- All rights reserved</span>
+		</div>
+				</div>
+			</div>
 		</div>
 	</span>
 

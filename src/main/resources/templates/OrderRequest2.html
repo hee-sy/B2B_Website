@@ -28,7 +28,7 @@
 				<form th:action="@{/order/saveOrder}" th:object="${order1}" method="POST" class="w-3/6 justify-center items-center max-md:ml-0  float-left mx-16">
 					<div class="mt-10">
 						<label for="Select Payment Method" class="text-lg font-bold">Payment Method:*</label> <br />
-						<select placeholder="Select Payment Method" name="state" id="state" required th:field="*{paymentMethod}"
+						<select placeholder="Select Payment Method" name="state" id="state" required th:field="${order1.orderPaymentMethod}"
 							class="border-2 border-black h-[45px] w-[650px] rounded-md mt-2 text-black text-center my-2">
 							<option value="none" class="text-base">Select Payment Method</option>
 							<option value="Credit" class="text-base">Credit Card</option>
@@ -48,29 +48,29 @@
 						</div>
 						<div class="text-lg text-black my-5 ml-12 mr-24">
 							<span class="float-left font-bold">Name: </span>
-							<span class="float-right" th:text="${order1.name}"></span>
+							<span class="float-right" th:text="${order1.custName}"></span>
 						</div>
 						<br />
 						<div class="text-lg text-black my-5 ml-12 mr-24">
 							<span class="float-left font-bold">Contact No: </span>
-							<span class="float-right" th:text="${order1.contactNo}"></span>
+							<span class="float-right" th:text="${order1.custContactNo}"></span>
 						</div>
 						<br />
 						<div class="text-lg text-black my-5 ml-12 mr-24">
 							<span class="float-left font-bold">Email: </span>
-							<span class="float-right" th:text="${order1.email}"></span>
+							<span class="float-right" th:text="${order1.custEmail}"></span>
 						</div>
 						<br />
 						<div class="text-lg text-black my-5 ml-12 mr-24">
 							<div class="float-left font-bold">Destination: </div> <br />
-							<div class="float-left ml-4"><span th:text="${order1.building}"></span></div> <br />
-							<div class="float-left ml-4"><span th:text="${order1.street}"></span></div> <br />
-							<div class="float-left ml-4"><span th:text="${order1.postalCode}"></span><span>, </span><span th:text="${order1.city}"></span></div> <br />
-							<div class="float-left ml-4"><span th:text="${order1.state}"></span></div> <br />
+							<div class="float-left ml-4"><span th:text="${order1.custBuilding}"></span></div> <br />
+							<div class="float-left ml-4"><span th:text="${order1.custStreet}"></span></div> <br />
+							<div class="float-left ml-4"><span th:text="${order1.custPostalCode}"></span><span>, </span><span th:text="${order1.custCity}"></span></div> <br />
+							<div class="float-left ml-4"><span th:text="${order1.custState}"></span></div> <br />
 						</div>
 						<div class="text-lg text-black my-5 ml-12 mr-24">
 							<div class="float-left font-bold">Additional Notes: </div> <br />
-							<div class="float-left ml-4"><p th:text="${order1.note}"></p></div> <br />
+							<div class="float-left ml-4"><p th:text="${order1.custNote}"></p></div> <br />
 						</div>
 					</div>
 					<div class="h-[200px] w-2/5 justify-center items-center mb-20">
