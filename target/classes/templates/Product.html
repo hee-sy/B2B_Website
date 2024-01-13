@@ -13,9 +13,12 @@
 <body class="font-montserrat bg-neutral-100">
 	<div w3-include-html="../CustHeader.html"></div>
 	
-	<header class="text-neutral-400 text-2xl font-medium leading-9 self-center whitespace-nowrap mt-10"> 
-		<a href="/home">Home</a> &gt; Product
-	</header>
+	<div id="breadcrumb"
+			class="text-neutral-400 text-2xl font-medium leading-9 whitespace-nowrap ml-16 mt-10 self-start max-md:ml-2.5">
+			<a href="/home">Home</a>
+			&gt;
+			<a href="/home/product">Product</a>
+		</div>
 
 	<header class="mb-[300px] self-stretch w-full flex-col flex mt-20 px-10 max-md:max-w-full max-md:mt-10 max-md:px-5">
 		<div class="flex flex-col relative shrink-0 box-border mt-5">
