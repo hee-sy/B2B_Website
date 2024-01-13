@@ -1,0 +1,143 @@
+<!--<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="font-import.css" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="tailwind-config.js"></script>
+	<title>Order Request 2</title>
+</head>
+
+<body class="font-montserrat">
+	 CustHeader.html 
+	<div w3-include-html="CustHeader.html"></div>
+	
+	<div class="bg-neutral-100 h-[1800px] flex flex-col max-md:ml-2.5">
+		<header class="text-neutral-400 text-lg font-medium leading-9 mt-10 pl-[60px] max-md:max-w-full">
+			Home &gt; Product &gt; Chocolate &amp; Confectionery &gt; <span class=""> Feastables MrBeast Bar Original
+				Chocolate 60g &gt; Order Request </span>
+		</header>
+		<div>
+			<img loading="lazy" src="Images/OrderRequestProc2.png" alt="Product Picture"
+				class="w-[800px] h[300px] object-cover object-center inset-0 my-5 mx-[430px]" />
+		</div>
+		<div class="bg-white h-[1300px] flex flex-col mt-0 max-md:ml-2.5 rounded shadow-md mx-40">
+			<div class="w-full flex h-[1000px] mt-5">
+				left container for picture
+				<form th:action="@{/order/saveOrder}" th:object="${order1}" method="POST" class="w-3/6 justify-center items-center max-md:ml-0  float-left mx-16">
+					
+					<div
+						class="w-[280px] h-[60px] rounded-md shadow-md  border-2 border-black text-center self-center mt-[1000px] mb-16 mx-48">
+						<div class="my-4 text-lg text-black font-bold"><button type="submit">PAY</button></div>
+					</div>
+				</form>
+				<div class="w-2/5 justify-center items-center max-md:ml-0  float-left mx-8">
+					<div class="h-[550px] mt-2 flex-auto">
+						<div class="text-2xl self-center stext-black font-bold mt-0 mb-3 mx-12">
+							Shipping Details
+						</div>
+						<div class="text-lg text-black my-5 ml-12 mr-24">
+							<span class="float-left font-bold">Name: </span>
+							<span class="float-right" th:text="${order1.custName}"></span>
+						</div>
+						<br />
+						<div class="text-lg text-black my-5 ml-12 mr-24">
+							<span class="float-left font-bold">Contact No: </span>
+							<span class="float-right" th:text="${order1.custContactNo}"></span>
+						</div>
+						<br />
+						<div class="text-lg text-black my-5 ml-12 mr-24">
+							<span class="float-left font-bold">Email: </span>
+							<span class="float-right" th:text="${order1.custEmail}"></span>
+						</div>
+						<br />
+						<div class="text-lg text-black my-5 ml-12 mr-24">
+							<div class="float-left font-bold">Destination: </div> <br />
+							<div class="float-left ml-4"><span th:text="${order1.custBuilding}"></span></div> <br />
+							<div class="float-left ml-4"><span th:text="${order1.custStreet}"></span></div> <br />
+							<div class="float-left ml-4"><span th:text="${order1.custPostalCode}"></span><span>, </span><span th:text="${order1.custCity}"></span></div> <br />
+							<div class="float-left ml-4"><span th:text="${order1.custState}"></span></div> <br />
+						</div>
+						<div class="text-lg text-black my-5 ml-12 mr-24">
+							<div class="float-left font-bold">Additional Notes: </div> <br />
+							<div class="float-left ml-4"><p th:text="${order1.custNote}"></p></div> <br />
+						</div>
+					</div>
+					<div class="h-[200px] w-2/5 justify-center items-center mb-20">
+						<img loading="lazy" src="Images/FeastablesMrBeastBar.png" alt="Product Picture"
+							class="object-cover object-center inset-0 mb-0 mx-28" />
+					</div>
+					<div class="h-[800px] mt-2">
+						<div class="text-xl self-center stext-black font-bold mt-0 mb-3 mx-12">
+							Feastables MrBeast Bar Original Chocolate 60g
+						</div>
+						<div class="text-lg text-neutral-400 mt-2 mb-3 mx-12">
+							Candies & Sweets
+						</div>
+						<div class="text-lg text-black mt-3 mb-10 mx-12">
+							stock: 100,000 boxes (40 pieces per box) <br />
+						</div>
+						<div class="text-lg text-black mt-3 mb-5 ml-12 mr-24">
+							<span class="float-left">Quantity: </span>
+							<span class="float-right">x 100 </span>
+						</div>
+						<br />
+						<div class="text-lg text-black mt-3 mb-5 ml-12 mr-24">
+							<span class="float-left">Units Per Quantity: </span>
+							<span class="float-right">x 40 </span>
+						</div>
+						<br />
+						<div class="text-lg text-black mt-3 mb-5 ml-12 mr-24">
+							<span class="float-left">Unit Price: </span>
+							<span class="float-right">RM 8.00 </span>
+						</div>
+						<br />
+						<hr style="width: 90%; margin: auto; border: 2px solid #BBB;" />
+						<div class="text-lg text-black mt-3 mb-5 ml-12 mr-24">
+							<span class="float-left">Total: </span>
+							<span class="float-right">RM 800.00 </span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	 CustFooter.html 
+	<div w3-include-html="CustFooter.html"></div>
+
+	 To include other HTML files 
+	<script>
+		function includeHTML() {
+			var z, i, elmnt, file, xhttp;
+			/* Loop through a collection of all HTML elements: */
+			z = document.getElementsByTagName("*");
+			for (i = 0; i < z.length; i++) {
+				elmnt = z[i];
+				/*search for elements with a certain atrribute:*/
+				file = elmnt.getAttribute("w3-include-html");
+				if (file) {
+					/* Make an HTTP request using the attribute value as the file name: */
+					xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function () {
+						if (this.readyState == 4) {
+							if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+							if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+							/* Remove the attribute, and call this function once more: */
+							elmnt.removeAttribute("w3-include-html");
+							includeHTML();
+						}
+					}
+					xhttp.open("GET", file, true);
+					xhttp.send();
+					/* Exit the function: */
+					return;
+				}
+			}
+		}
+		includeHTML();
+	</script>
+</body>
+
+</html>-->

@@ -13,13 +13,13 @@ public class PageNavController {
 
 	private ProductService productService;
 	private OrderService orderService;
-	
-	public PageNavController (ProductService productService, OrderService orderService) {
+
+	public PageNavController(ProductService productService, OrderService orderService) {
 		super();
 		this.productService = productService;
 		this.orderService = orderService;
 	}
-	
+
 	@GetMapping("/home")
 	public String homePage(Model model) {
 		return "Home";
@@ -77,11 +77,6 @@ public class PageNavController {
 	@GetMapping("/orderreq2")
 	public String orderReq2(Model model) {
 		return "OrderRequest2";
-	}
-
-	@GetMapping("/orderreq3")
-	public String orderReq3(Model model) {
-		return "OrderRequest3";
 	}
 
 	@GetMapping("/login")
