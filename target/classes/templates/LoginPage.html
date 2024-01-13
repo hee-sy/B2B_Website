@@ -10,17 +10,54 @@
 </head>
 
 <body>
-	<div class="items-center bg-neutral-100 flex flex-col justify-center px-16 py-12 max-md:px-5">
+	<div class="items-center bg-neutral-100 flex flex-col justify-center px-16 py-12 max-md:px-5 h-screen">
 		<div class="flex w-[432px] max-w-full flex-col items-stretch mt-20 mb-60 max-md:my-10">
-			<img loading="lazy"
-				srcset="/Images/NestleLogo.png"
+			<img loading="lazy" srcset="/Images/NestleLogo.png"
 				class="aspect-[2.9] object-contain object-center w-full overflow-hidden max-md:max-w-full" />
-			<span
-				class="text-gray-400 text-xs font-semibold leading-4 tracking-wider uppercase whitespace-nowrap rounded border border-[color:var(--Stroke-light,#DEE2E6)] bg-white self-center w-[125px] max-w-full mt-16 pl-4 pr-16 pt-4 pb-2 border-solid items-start max-md:mt-10 max-md:pr-5">
-				Login
-			</span>
+			<div class="relative inline-block  h-[200px]">
+				<div class="flex items-center justify-center w-full overflow-hidden max-md:max-w-full">
+					<button type="button" id="login-button" aria-expanded="false" aria-haspopup="true"
+						class="flex items-center justify-center text-gray-400 text-xs font-semibold leading-4 tracking-wider uppercase whitespace-nowrap rounded border border-[color:var(--Stroke-light,#DEE2E6)] bg-white self-center w-[125px] max-w-full mt-16 pl-4 pr-16 pt-4 pb-2 border-solid items-start max-md:mt-10 max-md:pr-5 inline-flex shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-100"
+						onclick="toggleDropdown()">
+						Login
+					</button>
+				</div>
+				<div id="dropdown-menu"
+					class="hidden flex items-center justify-center w-full max-md:max-w-full">
+					<div class="rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+						role="menu" aria-orientation="vertical" aria-labelledby="login-button" tabindex="-1">
+						<form method="GET"  th:action="@{/home}" role="none">
+							<button type="submit"
+								class="text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-gray-100"
+								role="menuitem" tabindex="-1" id="menu-item-3">as Customer</button>
+						</form>
+						<form method="GET" th:action="@{/admin/manageproduct}" role="none">
+							<button type="submit"
+								class="text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-gray-100"
+								role="menuitem" tabindex="-1" id="menu-item-3">as Admin</button>
+						</form>
+					</div>
+				</div>
+
+			</div>
 		</div>
-	</div>
+
+		<script>
+			function toggleDropdown() {
+				const dropdownMenu = document.getElementById('dropdown-menu');
+				const loginButton = document.getElementById('login-button');
+				const isExpanded = loginButton.getAttribute('aria-expanded') === 'true';
+
+				if (isExpanded) {
+					loginButton.setAttribute('aria-expanded', 'false');
+					dropdownMenu.classList.add('hidden');
+				} else {
+					loginButton.setAttribute('aria-expanded', 'true');
+					dropdownMenu.classList.remove('hidden');
+				}
+			}
+		</script>
+
 
 
 </body>
