@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html class="scroll-smooth" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8">
@@ -11,153 +11,93 @@
 </head>
 
 <body>
-	<span class="bg-neutral-100 flex flex-col items-start">
-		<span
-			class="justify-between items-stretch shadow-sm bg-neutral-100 self-stretch flex w-full gap-5 pl-16 pr-14 py-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-			<img loading="lazy" src="/B2BWebsite/src/main/resources/static/Images/NestleLogo.png"
-				class="aspect-[2.9] object-contain object-center w-[183px] overflow-hidden shrink-0 max-w-full h-[50px] w-[200px]" />
-			<div class="text-black text-xl font-light self-center my-auto">Logout</div>
-		</span>
+	<div w3-include-html="CustHeader.html"></div>
+	<span class="bg-neutral-100 flex flex-col items-start min-h-screen">
 		<div
 			class="text-black text-center text-3xl font-bold leading-[48.06399999999999px] whitespace-nowrap ml-80 mt-9 max-md:ml-2.5">
 			Order Management
 		</div>
-		
+
 		<div class="self-stretch w-full mt-7 max-md:max-w-full">
 			<div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
 				<div class="flex flex-col items-stretch w-[22%] max-md:w-full max-md:ml-0">
-					<span
-						class="items-center bg-white flex w-full grow flex-col mt-1 mx-auto pt-4 pb-12 px-5 max-md:mt-8">
-						<span
-							class="items-stretch bg-sky-100 self-stretch flex justify-between gap-4 px-10 py-5 rounded-[45px] max-md:px-5">
-							<img loading="lazy"
-								srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&"
-								class="aspect-[1.06] object-contain object-center w-[35px] overflow-hidden shrink-0 max-w-full" />
-							<div
-								class="text-black text-center text-2xl font-semibold leading-9 self-center grow whitespace-nowrap my-auto">
-								Products
-							</div>
-						</span>
-						<div
-							class="text-black text-center text-2xl font-semibold leading-9 whitespace-nowrap mt-14 max-md:mt-10">
-							Manage Products
-						</div>
-						<div
-							class="text-black text-center text-2xl font-semibold leading-9 whitespace-nowrap mt-20 max-md:mt-10">
-							Add Products
-						</div>
-						<span
-							class="items-stretch bg-sky-100 self-stretch flex justify-between gap-1.5 mt-12 px-9 py-3.5 rounded-[45px] max-md:mt-10 max-md:px-5">
-							<img loading="lazy"
-								srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&"
-								class="aspect-square object-contain object-center w-[50px] overflow-hidden shrink-0 max-w-full" />
-							<div
-								class="text-black text-center text-2xl font-semibold leading-9 self-center grow whitespace-nowrap my-auto">
-								Orders
-							</div>
-						</span>
-						<span
-							class="text-black text-center text-2xl font-semibold leading-9 whitespace-nowrap justify-center items-center bg-stone-300 bg-opacity-50 self-stretch mt-6 mb-[592px] px-16 py-7 max-md:mb-10 max-md:px-5">
-							Orders
-						</span>
-					</span>
+					<div w3-include-html="Admin-SideBar.html"></div>
 				</div>
-				
-				<div class="w-[1200px] h-[1200px] ml-8 text-center">
-					<div class="bg-neutral-300 h-[100px] rounded-3xl text-center font-bold text-2xl">
-						<div class="w-[250px] float-left my-8">Product</div>
-						<div class="w-[200px] float-left my-8">Customer ID</div>
-						<div class="w-[150px] float-left my-8">Amount</div>
-						<div class="w-[250px] float-left my-8">Total Price(RM)</div>
-						<div class="w-[150px] float-left my-8">Status</div>
-						<div class="w-[200px] float-left my-8">Action</div>
-					</div>
-					<div class="bg-white h-[900px] rounded text-2xl text-center">
-						<table border="0" cellspacing="0" cellpadding="0" >
-							<tr>
-								<td width="250" height="100">Kit Kai value pack</td>
-								<td width="200" height="100">CID001</td>
-								<td width="150" height="100">300</td>
-								<td width="250" height="100">1500.00</td>
-								<td width="150" height="100">Pending</td>
-								<td width="200" height="100"><button class="w-[130px] h-[40px] text-white bg-green-500 rounded-xl">Complete</button></td>
-							</tr>
-							<tr class="bg-neutral-200">
-								<td width="250" height="100">Kit Kai value pack</td>
-								<td width="200" height="100">CID002</td>
-								<td width="150" height="100">300</td>
-								<td width="250" height="100">1500.00</td>
-								<td width="150" height="100">Pending</td>
-								<td width="200" height="100"><button class="w-[130px] h-[40px] text-white bg-green-500 rounded-xl">Complete</button></td>
-							</tr>
-							<tr>
-								<td width="250" height="100">Kit Kai value pack</td>
-								<td width="200" height="100">CID003</td>
-								<td width="150" height="100">300</td>
-								<td width="250" height="100">1500.00</td>
-								<td width="150" height="100">Pending</td>
-								<td width="200" height="100"><button class="w-[130px] h-[40px] text-white bg-green-500 rounded-xl">Complete</button></td>
-							</tr>
-							<tr class="bg-neutral-200">
-								<td width="250" height="100">Kit Kai value pack</td>
-								<td width="200" height="100">CID004</td>
-								<td width="150" height="100">300</td>
-								<td width="250" height="100">1500.00</td>
-								<td width="150" height="100">Pending</td>
-								<td width="200" height="100"><button class="w-[130px] h-[40px] text-white bg-green-500 rounded-xl">Complete</button></td>
-							</tr>
-							<tr>
-								<td width="250" height="100">Kit Kai value pack</td>
-								<td width="200" height="100">CID005</td>
-								<td width="150" height="100">300</td>
-								<td width="250" height="100">1500.00</td>
-								<td width="150" height="100">Pending</td>
-								<td width="200" height="100"><button class="w-[130px] h-[40px] text-white bg-green-500 rounded-xl">Complete</button></td>
-							</tr>
-							<tr class="bg-neutral-200">
-								<td width="250" height="100">Kit Kai value pack</td>
-								<td width="200" height="100">CID006</td>
-								<td width="150" height="100">300</td>
-								<td width="250" height="100">1500.00</td>
-								<td width="150" height="100">Pending</td>
-								<td width="200" height="100"><button class="w-[130px] h-[40px] text-white bg-green-500 rounded-xl">Complete</button></td>
-							</tr>
-							<tr>
-								<td width="250" height="100">Kit Kai value pack</td>
-								<td width="200" height="100">CID007</td>
-								<td width="150" height="100">300</td>
-								<td width="250" height="100">1500.00</td>
-								<td width="150" height="100">Pending</td>
-								<td width="200" height="100"><button class="w-[130px] h-[40px] text-white bg-green-500 rounded-xl">Complete</button></td>
-							</tr>
-							<tr class="bg-neutral-200">
-								<td width="250" height="100">Kit Kai value pack</td>
-								<td width="200" height="100">CID008</td>
-								<td width="150" height="100">300</td>
-								<td width="250" height="100">1500.00</td>
-								<td width="150" height="100">Pending</td>
-								<td width="200" height="100"><button class="w-[130px] h-[40px] text-white bg-green-500 rounded-xl">Complete</button></td>
-							</tr>
-							<tr >
-								<td width="250" height="100">Kit Kai value pack</td>
-								<td width="200" height="100">CID009</td>
-								<td width="150" height="100">300</td>
-								<td width="250" height="100">1500.00</td>
-								<td width="150" height="100">Pending</td>
-								<td width="200" height="100"><button class="w-[130px] h-[40px] text-white bg-green-500 rounded-xl">Complete</button></td>
-							</tr>
-						</table>
-					</div>
-					<div class="text-black text-2xl font-medium self-center mt-32 max-md:max-w-full max-md:mt-10">
-						<span class="text-black">Copyright@2024</span>
-						<span class="font-semibold text-black">Nestlé</span>
-						<span class="text-black">- All rights reserved</span>
+
+				<div class="flex flex-col items-stretch w-[78%] ml-5 max-md:w-full max-md:ml-0">
+					<div class="flex flex-col items-stretch px-5 max-md:max-w-full max-md:mt-7">
+						<div
+							class="bg-neutral-300 rounded-3xl text-center font-bold text-2xl rounded text-2xl text-center flex items-center  mt-2.5 max-md:max-w-full max-md:flex-wrap max-md:mr-2.5">
+							<div class="w-full md:w-[250px] my-8">Product</div>
+							<div class="w-full md:w-[200px] my-8">Customer ID</div>
+							<div class="w-full md:w-[150px] my-8">Amount</div>
+							<div class="w-full md:w-[250px] my-8">Total Price(RM)</div>
+							<div class="w-full md:w-[150px] my-8">Status</div>
+							<div class="w-full md:w-[200px] my-8">Action</div>
+						</div>
+
+						<div
+							th:each="order: ${order}"
+							class="bg-white rounded-[30px] text-2xl text-center flex items-center gap-5 mt-2.5 ml-2 mr-1 max-md:max-w-full max-md:flex-wrap max-md:mr-2.5">
+
+							<table border="0" cellspacing="0" cellpadding="0">
+								<tr>
+									<td width="250" height="100"><th:text=${order.id}></td>
+									<td width="200" height="100">CID0001</td>
+									<td width="150" height="100"><th:text=${order.quantity}></td>
+									<td width="250" height="100"><th:text=${order.cost}></td>
+									<td width="150" height="100">Pending</td>
+									<td width="200" height="100">
+										<button class="w-[130px] h-[40px] text-white bg-green-500 rounded-xl">Complete</button>
+									</td>
+								</tr>
+
+
+							</table>
+						</div>
+
 					</div>
 				</div>
 			</div>
 		</div>
+		<div class="text-black text-2xl font-medium self-center mt-32 max-md:max-w-full max-md:mt-10 items-end">
+			<span class="text-black">Copyright@2024</span>
+			<span class="font-semibold text-black">Nestlé</span>
+			<span class="text-black">- All rights reserved</span>
+		</div>
 	</span>
 
+
+	<script>
+		function includeHTML() {
+			var z, i, elmnt, file, xhttp;
+			/* Loop through a collection of all HTML elements: */
+			z = document.getElementsByTagName("*");
+			for (i = 0; i < z.length; i++) {
+				elmnt = z[i];
+				/*search for elements with a certain atrribute:*/
+				file = elmnt.getAttribute("w3-include-html");
+				if (file) {
+					/* Make an HTTP request using the attribute value as the file name: */
+					xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function () {
+						if (this.readyState == 4) {
+							if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+							if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+							/* Remove the attribute, and call this function once more: */
+							elmnt.removeAttribute("w3-include-html");
+							includeHTML();
+						}
+					}
+					xhttp.open("GET", file, true);
+					xhttp.send();
+					/* Exit the function: */
+					return;
+				}
+			}
+		}
+		includeHTML();
+	</script>
 </body>
 
 </html>
