@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" xmlns:th="http://www.thymeleaf.org">
-	
+
 <html>
 
 <head>
@@ -11,12 +11,15 @@
 	<title>Thank You!</title>
 </head>
 
-<body>
+<body class="font-montserrat">
 
-	<form th:action="@{/home}" class="text-neutral-400 text-2xl font-medium leading-9 pt-5 self-stretch max-md:max-w-full">
+	<div w3-include-html="CustHeader.html"></div>
+
+	<form th:action="@{/home}"
+		class="text-neutral-400 text-2xl font-medium leading-9 pt-5 pl-[60px] self-stretch max-md:max-w-full">
 		<button type="submit">Home</button> > Contact Us
 	</form>
-	<span class="flex w-full flex-col items-center mt-5 max-md:max-w-full">
+	<span style="margin-bottom: 300px;" class="flex w-full flex-col items-center mt-5 max-md:max-w-full">
 		<div class="self-center w-full max-w-[1045px] mt-28 max-md:max-w-full max-md:mt-10">
 			<div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
 				<div class="flex flex-col items-stretch w-[27%] max-md:w-full max-md:ml-0">
@@ -34,9 +37,9 @@
 							<p><br /></p>
 						</header>
 						<form th:action="@{/home}">
-						<button type="submit" 
-							class="text-black text-base font-semibold leading-6 uppercase whitespace-nowrap justify-center items-stretch border shadow-sm bg-white px-6 py-1.5 rounded-md border-solid border-black self-start max-md:mt-10 max-md:px-5">
-							Return to Home </button>							
+							<button type="submit"
+								class="text-black text-base font-semibold leading-6 uppercase whitespace-nowrap justify-center items-stretch border shadow-sm bg-white px-6 py-1.5 rounded-md border-solid border-black self-start max-md:mt-10 max-md:px-5">
+								Return to Home </button>
 						</form>
 					</span>
 				</div>
@@ -44,7 +47,9 @@
 		</div>
 	</span>
 
-<!-- CustFooter.html -->
+
+
+	<!-- CustFooter.html -->
 	<div w3-include-html="CustFooter.html"></div>
 
 	<!-- To include other HTML files -->

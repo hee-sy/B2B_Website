@@ -88,7 +88,7 @@ public class PageNavController {
 		return "OrderRequest2";
 	}
 
-	@GetMapping("/login")
+	@GetMapping("/")
 	public String login() {
 		return "LoginPage";
 	}
