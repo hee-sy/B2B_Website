@@ -49,14 +49,14 @@
 					</div>
 					<div class="mt-8">
 						<label for="address" class="text-lg font-bold">Destination Address:*</label> <br />
-						<select name="state" id="address" th:field="*{state}" placeholder="Select State"
+						<select name="state" id="address" required th:field="*{state}" placeholder="Select State"
 							class="border-2 border-black h-[45px] w-[650px] rounded-md mt-2 text-black text-center my-2">
-					<!--		<option value="none" class="text-base">Select State</option>-->
+							<option value="none" class="text-base">Select State</option>
 							<option value="Selangor" class="text-base">Selangor</option>
 						</select>
-						<select name="city" id="address" th:field="*{city}" placeholder="Select City"
+						<select name="city" id="address" required th:field="*{city}" placeholder="Select City"
 							class="border-2 border-black h-[45px] w-[650px] rounded-md mt-2 text-black text-center my-2">
-							<!--<option value="none" class="text-base">Select City</option>-->
+							<option value="none" class="text-base">Select City</option>
 							<option value="Kuala Lumpur" class="text-base">Kuala Lumpur</option>
 							<option value="Sepang" class="text-base">Sepang</option>
 							<option value="Cheras" class="text-base">Cheras</option>

@@ -9,7 +9,7 @@
 	<title>Order Request 3</title>
 </head>
 
-<body>
+<body class="font-montserrat">
 	<!-- CustHeader.html -->
 	<div w3-include-html="CustHeader.html"></div>
 
@@ -44,24 +44,24 @@
 							Candies & Sweets
 						</div>
 						<div class="text-lg text-black mx-12">
-							stock: 100,000 boxes (40 pieces per box) <br/>
+							stock: 100,000 boxes (40 pieces per box) <br />
 						</div>
 						<div class="text-lg text-black mt-3 mb-2 ml-12 mr-24">
 							<span class="float-left">Quantity: </span>
 							<span class="float-right">x 100 </span>
 						</div>
-						<br/>
+						<br />
 						<div class="text-lg text-black mt-2 mb-5 ml-12 mr-24">
 							<span class="float-left">Units Per Quantity: </span>
 							<span class="float-right">x 40</span>
 						</div>
-						<br/>
+						<br />
 						<div class="text-lg text-black mt-2 mb-5 ml-12 mr-24">
 							<span class="float-left">Unit Price: </span>
 							<span class="float-right">RM 8.00 </span>
 						</div>
-						<br/>
-						<hr style="width: 90%; margin: auto; border: 2px solid #BBB;"/>
+						<br />
+						<hr style="width: 90%; margin: auto; border: 2px solid #BBB;" />
 						<div class="text-lg text-black mt-3 mb-5 ml-12 mr-24">
 							<span class="float-left">Total: </span>
 							<span class="float-right">RM 800.00 </span>
@@ -75,43 +75,46 @@
 						</div>
 						<div class="text-sm text-black my-2 ml-12 mr-24">
 							<span class="float-left font-bold">Name: </span>
-							<span class="float-right">customer_name </span>
+							<span class="float-right" th:text="${savedOrder.name}"></span>
 						</div>
-						<br/>
+						<br />
 						<div class="text-sm text-black my-2 ml-12 mr-24">
 							<span class="float-left font-bold">Contact No: </span>
-							<span class="float-right">contact_no </span>
+							<span class="float-right" th:text="${savedOrder.contactNo}"></span>
 						</div>
-						<br/>
+						<br />
 						<div class="text-sm text-black my-2 ml-12 mr-24">
 							<span class="float-left font-bold">Email: </span>
-							<span class="float-right">customer_email </span>
+							<span class="float-right" th:text="${savedOrder.email}"></span>
 						</div>
-						<br/>
+						<br />
 						<div class="text-sm text-black my-2 ml-12 mr-24">
-							<div class="float-left font-bold">Destination: </div> <br/>
-							<div class="float-left ml-4">State </div> <br/>
-							<div class="float-left ml-4">City </div> <br/>
-							<div class="float-left ml-4">Building </div> <br/>
-							<div class="float-left ml-4">Postal Code </div> <br/>
+							<div class="float-left font-bold">Destination: </div> <br />
+							<div class="float-left ml-4">State </div> <br />
+							<div class="float-left ml-4">City </div> <br />
+							<div class="float-left ml-4">Building </div> <br />
+							<div class="float-left ml-4">Postal Code </div> <br />
 						</div>
 						<div class="text-sm text-black my-2 ml-12 mr-24">
-							<div class="float-left font-bold">Additional Notes: </div> <br/>
-							<div class="float-left ml-4">xxxxxxxxxxxxxx </div> <br/>
-							<div class="float-left ml-4">xxxxxxxxxxxxxx </div> <br/>
-							<div class="float-left ml-4">xxxxxxxxxxxxxx </div> <br/>
-							<div class="float-left ml-4">xxxxxxxxxxxxxx </div> <br/>
+							<div class="float-left font-bold">Additional Notes: </div> <br />
+							<div class="float-left ml-4"><span th:text="${savedOrder.building}"></span></div> <br />
+							<div class="float-left ml-4"><span th:text="${savedOrder.street}"></span></div> <br />
+							<div class="float-left ml-4"><span th:text="${savedOrder.postalCode}"></span><span>,
+								</span><span th:text="${order1.city}"></span></div> <br />
+							<div class="float-left ml-4"><span th:text="${savedOrder.state}"></span></div> <br />
 						</div>
 					</div>
 				</div>
 			</div>
 			<div
 				class="w-[300px] h-[60px] rounded-xl shadow-md  border-2 border-black text-center self-center mt-[200px] mx-[500PX]">
-				<div class="my-4 text-lg text-black font-bold"><a href="home">RETURN TO HOME</a></div>
+				<div class="my-4 text-lg text-black font-bold">
+					<form action="@{/home}" method="GET"><button type="submit">RETURN TO HOME</button></form>
+				</div>
 			</div>
 		</div>
 	</div>
-	
+
 	<!-- CustFooter.html -->
 	<div w3-include-html="CustFooter.html"></div>
 
@@ -130,8 +133,8 @@
 					xhttp = new XMLHttpRequest();
 					xhttp.onreadystatechange = function () {
 						if (this.readyState == 4) {
-							if (this.status == 200) { elmnt.innerHTML = this.responseText; }
-							if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+							if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+							if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
 							/* Remove the attribute, and call this function once more: */
 							elmnt.removeAttribute("w3-include-html");
 							includeHTML();

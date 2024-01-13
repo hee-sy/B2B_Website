@@ -7,5 +7,7 @@ import com.example.demo.entity.Order;
 public interface OrderService {
 	List<Order> getAllOrders();
 
+	Order getOrderById(Long id);
+
 	Order saveOrder(Order order);
 }
