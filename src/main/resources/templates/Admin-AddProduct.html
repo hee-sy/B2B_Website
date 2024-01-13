@@ -10,61 +10,22 @@
 </head>
 
 <body>
-
+	<div w3-include-html="../AdminHeader.html"></div>
 	<span class="bg-neutral-100 flex flex-col items-start min-h-screen">
-		<span
-			class="justify-between items-stretch shadow-sm bg-neutral-100 self-stretch flex w-full gap-5 pl-16 pr-14 py-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-			<img loading="lazy"
-				srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/9a637a7c73029e4f9169778e1cc96034e00e05379bf3b1fa6fbb96c1cd5bdd1a?apiKey=639542810f92410bad046bb845f67816&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a637a7c73029e4f9169778e1cc96034e00e05379bf3b1fa6fbb96c1cd5bdd1a?apiKey=639542810f92410bad046bb845f67816&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a637a7c73029e4f9169778e1cc96034e00e05379bf3b1fa6fbb96c1cd5bdd1a?apiKey=639542810f92410bad046bb845f67816&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a637a7c73029e4f9169778e1cc96034e00e05379bf3b1fa6fbb96c1cd5bdd1a?apiKey=639542810f92410bad046bb845f67816&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a637a7c73029e4f9169778e1cc96034e00e05379bf3b1fa6fbb96c1cd5bdd1a?apiKey=639542810f92410bad046bb845f67816&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a637a7c73029e4f9169778e1cc96034e00e05379bf3b1fa6fbb96c1cd5bdd1a?apiKey=639542810f92410bad046bb845f67816&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a637a7c73029e4f9169778e1cc96034e00e05379bf3b1fa6fbb96c1cd5bdd1a?apiKey=639542810f92410bad046bb845f67816&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a637a7c73029e4f9169778e1cc96034e00e05379bf3b1fa6fbb96c1cd5bdd1a?apiKey=639542810f92410bad046bb845f67816&"
-				class="aspect-[2.9] object-contain object-center w-[183px] overflow-hidden shrink-0 max-w-full" />
-			<div class="text-black text-xl font-light self-center my-auto">Logout</div>
-		</span>
-		<div
-			class="text-black text-center text-4xl font-bold leading-[54.071999999999996px] whitespace-nowrap ml-80 mt-10 max-md:ml-2.5">
-			Add Products
-		</div>
+
 		<div class="self-stretch w-full mt-7 max-md:max-w-full">
 			<div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
-				<!--<div class="flex flex-col items-stretch w-[22%] max-md:w-full max-md:ml-0">
-					<span
-						class="items-center bg-white flex w-full grow flex-col mt-1 mx-auto pt-4 pb-12 px-5 max-md:mt-8">
-						<span
-							class="items-stretch bg-sky-100 self-stretch flex justify-between gap-4 px-10 py-5 rounded-[45px] max-md:px-5">
-							<img loading="lazy"
-								srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&"
-								class="aspect-[1.06] object-contain object-center w-[35px] overflow-hidden shrink-0 max-w-full" />
-							<div
-								class="text-black text-center text-2xl font-semibold leading-9 self-center grow whitespace-nowrap my-auto">
-								Products
-							</div>
-						</span>
-						<div
-							class="text-black text-center text-2xl font-semibold leading-9 whitespace-nowrap mt-14 max-md:mt-10">
-							Manage Products
-						</div>
-						<span
-							class="text-black text-center text-2xl font-semibold leading-9 whitespace-nowrap justify-center items-stretch bg-stone-300 bg-opacity-50 self-stretch mt-12 px-16 py-7 max-md:mt-10 max-md:pl-6 max-md:pr-7">
-							Add Products
-						</span>
-						<span
-							class="items-stretch bg-sky-100 self-stretch flex justify-between gap-1.5 mt-6 px-9 py-3.5 rounded-[45px] max-md:px-5">
-							<img loading="lazy"
-								srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&"
-								class="aspect-square object-contain object-center w-[50px] overflow-hidden shrink-0 max-w-full" />
-							<div
-								class="text-black text-center text-2xl font-semibold leading-9 self-center grow whitespace-nowrap my-auto">
-								Orders
-							</div>
-						</span>
-						<div
-							class="text-black text-center text-2xl font-semibold leading-9 whitespace-nowrap mt-14 mb-[613px] max-md:my-10">
-							Orders
-						</div>
-					</span>
-				</div>-->
-				<div w3-include-html="CustHeader.html"></div>
-				
-				<form th:action="@{/admin/addproduct}" th:object="${product}" method="POST" enctype="multipart/form-data" class="flex flex-col items-stretch w-[78%] ml-5 max-md:w-full max-md:ml-0">
+				<div class="flex flex-col items-stretch w-[20%] max-md:w-full max-md:ml-0">
+					<div w3-include-html="../Admin-SideBar.html"></div>
+				</div>
+
+				<form th:action="@{/admin/addproduct}" th:object="${product}" method="POST"
+					enctype="multipart/form-data"
+					class="flex flex-col items-stretch w-full ml-5 max-md:w-full max-md:ml-0">
+				<div
+					class="text-black text-left text-3xl font-bold whitespace-nowrap ml-5 mt-20 mb-5 max-md:ml-2.5">
+					Add Products
+				</div>
 					<span class="flex flex-col items-stretch px-5 max-md:max-w-full max-md:mt-7">
 						<div
 							class="bg-white bg-opacity-80 pl-7 pr-9 pt-7 pb-5 rounded-[30px] max-md:max-w-full max-md:px-5">
@@ -76,17 +37,14 @@
 											Product Details
 										</div>
 										<div class="text-black text-xl leading-8 mt-10 max-md:max-w-full">
-											<span class="text-red-600">*</span><span class="text-black"> Product Name</span>
+											<span class="text-red-600">*</span><span class="text-black"> Product
+												Name</span>
 										</div>
-										<input 
-											type="text"
-											name="prodName"
-											th:field="*{prodName}"
+										<input type="text" name="prodName" th:field="*{prodName}"
 											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
-											placeholder="Example: KitKat Green Tea Matcha"
-										/>
-										
-										
+											placeholder="Example: KitKat Green Tea Matcha" />
+
+
 										<div class="text-black text-xl leading-8 mt-8 max-md:max-w-full">
 											<span class="text-red-600">*</span><span class="text-black"> Category</span>
 										</div>
@@ -99,38 +57,32 @@
 												srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&"
 												class="aspect-square object-contain object-center w-[25px] justify-center items-center overflow-hidden self-stretch shrink-0 max-w-full" />
 										</span>-->
-										<select 
-											type="text"
-											name="prodCategory"
-											th:field="*{prodCategory}"
-											class="cursor-pointer form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
-										>
+										<select type="text" name="prodCategory" th:field="*{prodCategory}"
+											class="cursor-pointer form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full">
 											<option value="" class="hidden">Select Category</option>
 											<option value="Ice Cream">Ice Cream</option>
 											<option value="Cereals">Cereals</option>
 											<option value="Drinks">Drinks</option>
-											<option value="Chocolate and Confectionery">Chocolate and Confectionery</option>
+											<option value="Chocolate and Confectionery">Chocolate and Confectionery
+											</option>
 											<option value="Dairy">Dairy</option>
 										</select>
-										
-										
+
+
 										<div class="text-black text-xl leading-8 mt-8 max-md:max-w-full">
-											<span class="text-red-600">*</span><span class="text-black"> Stock Quantity</span>
+											<span class="text-red-600">*</span><span class="text-black"> Stock
+												Quantity</span>
 										</div>
 										<!--<div
 											class="border flex shrink-0 h-8 flex-col mt-3.5 rounded-md border-solid border-black max-md:max-w-full">
 										</div>-->
-										<input 
-											type="number"
-											min="0"
-											name="prodQuantity"
-											th:field="*{prodQuantity}"
-											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
-										/>
-										
-										
+										<input type="number" min="0" name="prodQuantity" th:field="*{prodQuantity}"
+											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full" />
+
+
 										<div class="text-black text-xl leading-8 mt-8 max-md:max-w-full">
-											<span class="text-red-600">*</span><span class="text-black"> Product Unit</span>
+											<span class="text-red-600">*</span><span class="text-black"> Product
+												Unit</span>
 										</div>
 										<!--<div
 											class="justify-center border flex flex-col mt-5 pl-16 py-1 rounded-md border-solid border-black items-end max-md:max-w-full max-md:pl-5">
@@ -138,73 +90,60 @@
 												srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&"
 												class="aspect-square object-contain object-center w-[25px] justify-center items-center overflow-hidden max-w-full" />
 										</div>-->
-										<input 
-											type="number"
-											min="0"
-											name="ProductUnit"
-											th:field="*{prodUnit}"
-											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
-										/>
-										
-										
+										<input type="number" min="0" name="ProductUnit" th:field="*{prodUnit}"
+											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full" />
+
+
 										<div class="text-black text-xl leading-8 mt-9 max-md:max-w-full">
-											<span class="text-red-600">*</span><span class="text-black"> Price Per Unit (RM)</span>
+											<span class="text-red-600">*</span><span class="text-black"> Price Per Unit
+												(RM)</span>
 										</div>
 										<!--<span
 											class="text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-3.5 py-2 rounded-md border-solid border-black max-md:max-w-full">
 											Example: 9000.00
 										</span>-->
-										<input 
-											type="number"
-											min="0"
-											step=".01"
-											name="prodUnitPrice"
+										<input type="number" min="0" step=".01" name="prodUnitPrice"
 											th:field="*{prodUnitPrice}"
-											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
-										/>
-										
-										
+											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full" />
+
+
 										<div class="text-black text-xl leading-8 mt-9 max-md:max-w-full">
 											Product Description
 										</div>
 										<!--<div
 											class="border flex shrink-0 h-[280px] flex-col mt-3.5 rounded-md border-solid border-black max-md:max-w-full">
 										</div>-->
-										<textarea 
-											type="text"
-											name="prodDesc"
-											th:field="*{prodDesc}"
-											class="resize-none px-1 border flex shrink-0 h-[280px] flex-col mt-3.5 rounded-md border-solid border-black max-md:max-w-full"
-										></textarea>
+										<textarea type="text" name="prodDesc" th:field="*{prodDesc}"
+											class="resize-none px-1 border flex shrink-0 h-[280px] flex-col mt-3.5 rounded-md border-solid border-black max-md:max-w-full"></textarea>
 									</span>
-									
-									
+
+
 								</div>
 								<div class="flex flex-col items-stretch w-[34%] ml-5 max-md:w-full max-md:ml-0">
 									<span class="flex grow flex-col items-center mt-28 max-md:mt-10">
 										<label for="input-file"
 											class="cursor-pointer justify-center items-center border flex w-[207px] flex-col aspect-square pr-2 rounded-md border-solid border-black border-opacity-50">
-											<img loading="lazy" id="defaultPic"
-												src="/Images/UploadPlaceholder.png"
+											<img loading="lazy" id="defaultPic" src="/Images/UploadPlaceholder.png"
 												class="aspect-square object-contain object-center w-full overflow-hidden" />
 										</label>
-										<input name="prodImage" type="file" field="*{prodImage}" accept="image/png, image/jpeg" id="input-file" class="hidden"/>
-										
+										<input name="prodImage" type="file" field="*{prodImage}"
+											accept="image/png, image/jpeg" id="input-file" class="hidden" />
+
 										<script>
 											let pic = document.getElementById("defaultPic");
 											let inputpic = document.getElementById("input-file");
-											
-											inputpic.onchange = function(){
-												if(this.files[0].size > 5242880){
-											       alert("File is too big!");
-											       this.value = "";
-											       pic.src = "https://cdn.builder.io/api/v1/image/assets/TEMP/0bc566467f2298fff228e7c44fe1359c8381ac041b960fb74fe79066b54a9cad?apiKey=639542810f92410bad046bb845f67816&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/0bc566467f2298fff228e7c44fe1359c8381ac041b960fb74fe79066b54a9cad?apiKey=639542810f92410bad046bb845f67816&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/0bc566467f2298fff228e7c44fe1359c8381ac041b960fb74fe79066b54a9cad?apiKey=639542810f92410bad046bb845f67816&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/0bc566467f2298fff228e7c44fe1359c8381ac041b960fb74fe79066b54a9cad?apiKey=639542810f92410bad046bb845f67816&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/0bc566467f2298fff228e7c44fe1359c8381ac041b960fb74fe79066b54a9cad?apiKey=639542810f92410bad046bb845f67816&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/0bc566467f2298fff228e7c44fe1359c8381ac041b960fb74fe79066b54a9cad?apiKey=639542810f92410bad046bb845f67816&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/0bc566467f2298fff228e7c44fe1359c8381ac041b960fb74fe79066b54a9cad?apiKey=639542810f92410bad046bb845f67816&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/0bc566467f2298fff228e7c44fe1359c8381ac041b960fb74fe79066b54a9cad?apiKey=639542810f92410bad046bb845f67816&";
-											    }
-											    else
+
+											inputpic.onchange = function () {
+												if (this.files[0].size > 5242880) {
+													alert("File is too big!");
+													this.value = "";
+													pic.src = "https://cdn.builder.io/api/v1/image/assets/TEMP/0bc566467f2298fff228e7c44fe1359c8381ac041b960fb74fe79066b54a9cad?apiKey=639542810f92410bad046bb845f67816&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/0bc566467f2298fff228e7c44fe1359c8381ac041b960fb74fe79066b54a9cad?apiKey=639542810f92410bad046bb845f67816&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/0bc566467f2298fff228e7c44fe1359c8381ac041b960fb74fe79066b54a9cad?apiKey=639542810f92410bad046bb845f67816&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/0bc566467f2298fff228e7c44fe1359c8381ac041b960fb74fe79066b54a9cad?apiKey=639542810f92410bad046bb845f67816&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/0bc566467f2298fff228e7c44fe1359c8381ac041b960fb74fe79066b54a9cad?apiKey=639542810f92410bad046bb845f67816&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/0bc566467f2298fff228e7c44fe1359c8381ac041b960fb74fe79066b54a9cad?apiKey=639542810f92410bad046bb845f67816&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/0bc566467f2298fff228e7c44fe1359c8381ac041b960fb74fe79066b54a9cad?apiKey=639542810f92410bad046bb845f67816&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/0bc566467f2298fff228e7c44fe1359c8381ac041b960fb74fe79066b54a9cad?apiKey=639542810f92410bad046bb845f67816&";
+												}
+												else
 													pic.src = URL.createObjectURL(inputpic.files[0]);
 											}
 										</script>
-										
+
 										<div
 											class="text-black text-opacity-50 text-center text-sm leading-5 self-stretch mt-4">
 											(Accepts jpg, .png up to 5MB. Recommended dimensions: 200px
@@ -220,7 +159,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="text-black text-2xl font-medium self-center mt-32 max-md:max-w-full max-md:mt-10">
+						<div class="text-black text-2xl font-medium self-center mt-32 mb-10 max-md:max-w-full max-md:mt-10">
 							<span class="text-black">Copyright@2024</span>
 							<span class="font-semibold text-black">Nestlé</span>
 							<span class="text-black">- All rights reserved</span>
