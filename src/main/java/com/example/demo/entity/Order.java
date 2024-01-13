@@ -12,186 +12,213 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "order")
+@Table(name = "orderList")
 public class Order {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long orderId;
 
 	@Column(name = "cust_name", nullable = false, columnDefinition = "VARCHAR(50)")
-	private String name;
+	private String custName;
 
 	@Column(name = "cust_contactNo", nullable = false, columnDefinition = "VARCHAR(20)")
-	private String contactNo;
+	private String custContactNo;
 
 	@Column(name = "cust_email", nullable = false, columnDefinition = "VARCHAR(50)")
-	private String email;
+	private String custEmail;
 
 	@Column(name = "cust_state", nullable = false, columnDefinition = "VARCHAR(50)")
-	private String state;
+	private String custState;
 
 	@Column(name = "cust_city", nullable = false, columnDefinition = "VARCHAR(50)")
-	private String city;
+	private String custCity;
 
 	@Column(name = "cust_postalCode", nullable = false, columnDefinition = "VARCHAR(50)")
-	private String postalCode;
+	private String custPostalCode;
 
 	@Column(name = "cust_street", nullable = false, columnDefinition = "VARCHAR(50)")
-	private String street;
+	private String custStreet;
 
 	@Column(name = "cust_building", nullable = false, columnDefinition = "VARCHAR(50)")
-	private String building;
+	private String custBuilding;
 
 	@Column(name = "cust_note", nullable = false, columnDefinition = "TEXT")
-	private String note;
+	private String custNote;
+	
+	@Column(name = "order_product", nullable = false, columnDefinition = "VARCHAR(50)")
+	private String orderProduct;
 
 	@CreationTimestamp
 	@Column(name = "order_time", nullable = false)
-	private Date createdAt;
+	private Date orderCreatedAt;
 
 	@Column(name = "order_quantity", nullable = false)
-	private int quantity;
+	private int orderQuantity;
 
 	@Column(name = "order_totalCost", nullable = false)
-	private double cost;
+	private double orderCost;
 
 	@Column(name = "order_paymentMethod", nullable = false)
-	private String paymentMethod;
+	private String orderPaymentMethod;
+	
+	@Column(name = "order_status", nullable = false)
+	private boolean orderStatus;
 
 	public Order() {
 	}
 
-	public Order(Long id, String name, String contactNo, String email, String state, String city, String postalCode,
-			String street, String building, String note, Date createdAt, int quantity, double cost,
-			String paymentMethod) {
+	public Order(Long orderId, String custName, String custContactNo, String custEmail, String custState,
+			String custCity, String custPostalCode, String custStreet, String custBuilding, String custNote,
+			String orderProduct, Date orderCreatedAt, int orderQuantity, double orderCost, String orderPaymentMethod,
+			boolean orderStatus) {
 		super();
-		this.id = id;
-		this.name = name;
-		this.contactNo = contactNo;
-		this.email = email;
-		this.state = state;
-		this.city = city;
-		this.postalCode = postalCode;
-		this.street = street;
-		this.building = building;
-		this.note = note;
-		this.createdAt = createdAt;
-		this.quantity = quantity;
-		this.cost = cost;
-		this.paymentMethod = paymentMethod;
+		this.orderId = orderId;
+		this.custName = custName;
+		this.custContactNo = custContactNo;
+		this.custEmail = custEmail;
+		this.custState = custState;
+		this.custCity = custCity;
+		this.custPostalCode = custPostalCode;
+		this.custStreet = custStreet;
+		this.custBuilding = custBuilding;
+		this.custNote = custNote;
+		this.orderProduct = orderProduct;
+		this.orderCreatedAt = orderCreatedAt;
+		this.orderQuantity = orderQuantity;
+		this.orderCost = orderCost;
+		this.orderPaymentMethod = orderPaymentMethod;
+		this.orderStatus = orderStatus;
 	}
 
-	public Long getId() {
-		return id;
+	public Long getOrderId() {
+		return orderId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
 	}
 
-	public String getName() {
-		return name;
+	public String getCustName() {
+		return custName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setCustName(String custName) {
+		this.custName = custName;
 	}
 
-	public String getContactNo() {
-		return contactNo;
+	public String getCustContactNo() {
+		return custContactNo;
 	}
 
-	public void setContactNo(String contactNo) {
-		this.contactNo = contactNo;
+	public void setCustContactNo(String custContactNo) {
+		this.custContactNo = custContactNo;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getCustEmail() {
+		return custEmail;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setCustEmail(String custEmail) {
+		this.custEmail = custEmail;
 	}
 
-	public String getState() {
-		return state;
+	public String getCustState() {
+		return custState;
 	}
 
-	public void setState(String state) {
-		this.state = state;
+	public void setCustState(String custState) {
+		this.custState = custState;
 	}
 
-	public String getCity() {
-		return city;
+	public String getCustCity() {
+		return custCity;
 	}
 
-	public void setCity(String city) {
-		this.city = city;
+	public void setCustCity(String custCity) {
+		this.custCity = custCity;
 	}
 
-	public String getPostalCode() {
-		return postalCode;
+	public String getCustPostalCode() {
+		return custPostalCode;
 	}
 
-	public void setPostalCode(String postalCode) {
-		this.postalCode = postalCode;
+	public void setCustPostalCode(String custPostalCode) {
+		this.custPostalCode = custPostalCode;
 	}
 
-	public String getStreet() {
-		return street;
+	public String getCustStreet() {
+		return custStreet;
 	}
 
-	public void setStreet(String street) {
-		this.street = street;
+	public void setCustStreet(String custStreet) {
+		this.custStreet = custStreet;
 	}
 
-	public String getBuilding() {
-		return building;
+	public String getCustBuilding() {
+		return custBuilding;
 	}
 
-	public void setBuilding(String building) {
-		this.building = building;
+	public void setCustBuilding(String custBuilding) {
+		this.custBuilding = custBuilding;
 	}
 
-	public String getNote() {
-		return note;
+	public String getCustNote() {
+		return custNote;
 	}
 
-	public void setNote(String note) {
-		this.note = note;
+	public void setCustNote(String custNote) {
+		this.custNote = custNote;
 	}
 
-	public Date getCreatedAt() {
-		return createdAt;
+	public String getOrderProduct() {
+		return orderProduct;
 	}
 
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
+	public void setOrderProduct(String orderProduct) {
+		this.orderProduct = orderProduct;
 	}
 
-	public int getQuantity() {
-		return quantity;
+	public Date getOrderCreatedAt() {
+		return orderCreatedAt;
 	}
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public void setOrderCreatedAt(Date orderCreatedAt) {
+		this.orderCreatedAt = orderCreatedAt;
 	}
 
-	public double getCost() {
-		return cost;
+	public int getOrderQuantity() {
+		return orderQuantity;
 	}
 
-	public void setCost(double cost) {
-		this.cost = cost;
+	public void setOrderQuantity(int orderQuantity) {
+		this.orderQuantity = orderQuantity;
 	}
 
-	public String getPaymentMethod() {
-		return paymentMethod;
+	public double getOrderCost() {
+		return orderCost;
 	}
 
-	public void setPaymentMethod(String paymentMethod) {
-		this.paymentMethod = paymentMethod;
+	public void setOrderCost(double orderCost) {
+		this.orderCost = orderCost;
 	}
+
+	public String getOrderPaymentMethod() {
+		return orderPaymentMethod;
+	}
+
+	public void setOrderPaymentMethod(String orderPaymentMethod) {
+		this.orderPaymentMethod = orderPaymentMethod;
+	}
+
+	public boolean isOrderStatus() {
+		return orderStatus;
+	}
+
+	public void setOrderStatus(boolean orderStatus) {
+		this.orderStatus = orderStatus;
+	}
+
+	
 
 }

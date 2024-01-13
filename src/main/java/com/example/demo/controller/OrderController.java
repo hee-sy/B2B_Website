@@ -34,7 +34,7 @@ public class OrderController {
 	@PostMapping("/order/saveOrder")
 	public String saveOrder(@ModelAttribute("order1") Order order, Model model) {
 		orderService.saveOrder(order);
-		model.addAttribute("savedOrder", orderService.getOrderById(order.getId()));
+		model.addAttribute("savedOrder", orderService.getOrderById(order.getOrderId()));
 		return "OrderRequest3";
 	}
 

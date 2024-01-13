@@ -5,10 +5,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.example.demo.entity.Order;
+import com.example.demo.service.OrderService;
+import com.example.demo.service.ProductService;
 
 @Controller
 public class PageNavController {
 
+	private ProductService productService;
+	private OrderService orderService;
+	
+	public PageNavController (ProductService productService, OrderService orderService) {
+		super();
+		this.productService = productService;
+		this.orderService = orderService;
+	}
+	
 	@GetMapping("/home")
 	public String homePage(Model model) {
 		return "Home";
@@ -16,6 +27,7 @@ public class PageNavController {
 
 	@GetMapping("/home/product")
 	public String productPage(Model model) {
+		model.addAttribute("products", productService.getAllProducts());
 		return "Product";
 	}
 
