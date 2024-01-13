@@ -14,7 +14,7 @@
 	<div w3-include-html="CustHeader.html"></div>
 	
 	<div class="bg-neutral-100 h-[1800px] flex flex-col max-md:ml-2.5">
-		<header class="text-neutral-400 text-lg font-medium leading-9 mt-10 ml-48 max-md:max-w-full">
+		<header class="text-neutral-400 text-lg font-medium leading-9 mt-10 pl-[60px] max-md:max-w-full">
 			Home &gt; Product &gt; Chocolate &amp; Confectionery &gt; <span class=""> Feastables MrBeast Bar Original
 				Chocolate 60g &gt; Order Request </span>
 		</header>
@@ -38,7 +38,7 @@
 					</div>
 					<div
 						class="w-[280px] h-[60px] rounded-md shadow-md  border-2 border-black text-center self-center mt-[1000px] mb-16 mx-48">
-						<div class="my-4 text-lg text-black font-bold"><a href="orderreq3">PAY</a></div>
+						<div class="my-4 text-lg text-black font-bold"><button action="@{/order/saveOrder}"></button><a href="">PAY</a></div>
 					</div>
 				</div>
 				<div class="w-2/5 justify-center items-center max-md:ml-0  float-left mx-8">
@@ -63,20 +63,17 @@
 						<br />
 						<div class="text-lg text-black my-5 ml-12 mr-24">
 							<div class="float-left font-bold">Destination: </div> <br />
-							<div class="float-left ml-4">State </div> <br />
-							<div class="float-left ml-4">City </div> <br />
-							<div class="float-left ml-4">Building </div> <br />
-							<div class="float-left ml-4">Postal Code </div> <br />
+							<div class="float-left ml-4"><span th:text="${order1.building}"></span></div> <br />
+							<div class="float-left ml-4"><span th:text="${order1.street}"></span></div> <br />
+							<div class="float-left ml-4"><span th:text="${order1.postalCode}"></span><span>, </span><span th:text="${order1.city}"></span></div> <br />
+							<div class="float-left ml-4"><span th:text="${order1.state}"></span></div> <br />
 						</div>
 						<div class="text-lg text-black my-5 ml-12 mr-24">
 							<div class="float-left font-bold">Additional Notes: </div> <br />
-							<div class="float-left ml-4">xxxxxxxxxxxxxx </div> <br />
-							<div class="float-left ml-4">xxxxxxxxxxxxxx </div> <br />
-							<div class="float-left ml-4">xxxxxxxxxxxxxx </div> <br />
-							<div class="float-left ml-4">xxxxxxxxxxxxxx </div> <br />
+							<div class="float-left ml-4"><p th:text="${order1.note}"></p></div> <br />
 						</div>
 					</div>
-					<div class="h-[200px] w-2/5 justify-center items-center">
+					<div class="h-[200px] w-2/5 justify-center items-center mb-20">
 						<img loading="lazy" src="Images/FeastablesMrBeastBar.png" alt="Product Picture"
 							class="object-cover object-center inset-0 mb-0 mx-28" />
 					</div>

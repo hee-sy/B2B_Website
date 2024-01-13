@@ -14,7 +14,7 @@
 	<div w3-include-html="CustHeader.html"></div>
 
 	<div class="bg-neutral-100 h-[1500px] flex flex-col max-md:ml-2.5">
-		<header class="text-neutral-400 text-lg font-medium leading-9 mt-10 ml-48 max-md:max-w-full">
+		<header class="text-neutral-400 text-lg font-medium leading-9 mt-10 pl-[60px] max-md:max-w-full">
 			Home &gt; Product &gt; Chocolate &amp; Confectionery &gt; <span class=""> Feastables MrBeast Bar Original
 				Chocolate 60g &gt; Order Request </span>
 		</header>
@@ -78,8 +78,8 @@
 							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
 					</div>
 					<div class="mt-8">
-						<label for="additional_notes" class="text-lg font-bold">Additional Notes:</label> <br />
-						<textarea id="additional_notes" name="additional_notes" placeholder="Enter your message to the supplier."
+						<label for="note" class="text-lg font-bold">Additional Notes:</label> <br />
+						<textarea id="note" name="note" th:field="*{note}" placeholder="Enter your message to the supplier."
 							class="px-2 border-2 h-[200px] w-[650px] rounded-md mt-2 text-neutral-400"></textarea>
 					</div>
 					<div
