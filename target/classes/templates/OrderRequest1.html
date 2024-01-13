@@ -9,10 +9,10 @@
 	<title>Order Request 1</title>
 </head>
 
-<body>
+<body class="font-montserrat">
 	<!-- CustHeader.html -->
 	<div w3-include-html="CustHeader.html"></div>
-	
+
 	<div class="bg-neutral-100 h-[1500px] flex flex-col max-md:ml-2.5">
 		<header class="text-neutral-400 text-lg font-medium leading-9 mt-10 ml-48 max-md:max-w-full">
 			Home &gt; Product &gt; Chocolate &amp; Confectionery &gt; <span class=""> Feastables MrBeast Bar Original
@@ -25,63 +25,74 @@
 		<div class="bg-white h-[1200px] flex flex-col mt-0 max-md:ml-2.5 rounded shadow-md mx-40">
 			<div class="w-full flex h-[1000px] mt-5">
 				<!--left container for picture-->
-				<div class="w-3/6 justify-center items-center max-md:ml-0  float-left mx-16">
+
+
+				<form class="w-3/6 justify-center items-center max-md:ml-0  float-left mx-16"
+					th:action="@{/order}" th:object="${order1}" method="POST">
 					<div class="mt-10">
 						<label for="name" class="text-lg font-bold">Name:*</label> <br />
-						<input type="text" id="name" name="name" required value="    customer_name"
-							class="border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
+						<input type="text" id="name" name="name" required th:field="*{name}"
+							placeholder="Enter your name."
+							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
 					</div>
 					<div class="mt-8">
 						<label for="contact" class="text-lg font-bold">Contact Number:*</label> <br />
-						<input type="text" id="contact" name="contact" required value="    contact_number"
-							class="border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
+						<input type="text" id="contact" name="contactNo" required th:field="*{contactNo}"
+							placeholder="Enter your contact number."
+							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
 					</div>
 					<div class="mt-8">
 						<label for="email" class="text-lg font-bold">Email:*</label> <br />
-						<input type="text" id="email" name="email" required value="    customer_email"
-							class="border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
+						<input type="text" id="email" name="email" required th:field="*{email}"
+							placeholder="Enter your email."
+							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
 					</div>
 					<div class="mt-8">
 						<label for="address" class="text-lg font-bold">Destination Address:*</label> <br />
-						<select value="Select State" name="state" id="state"
+						<select name="state" id="address" th:field="*{state}" placeholder="Select State"
 							class="border-2 border-black h-[45px] w-[650px] rounded-md mt-2 text-black text-center my-2">
-							<option value="none" class="text-base">Select State</option>
+					<!--		<option value="none" class="text-base">Select State</option>-->
 							<option value="Selangor" class="text-base">Selangor</option>
-							<option value="Sabah" class="text-base">Sabah</option>
-							<option value="Sarawak" class="text-base">Sarawak</option>
 						</select>
-						<select value="Select State" name="state" id="state"
+						<select name="city" id="address" th:field="*{city}" placeholder="Select City"
 							class="border-2 border-black h-[45px] w-[650px] rounded-md mt-2 text-black text-center my-2">
-							<option value="none" class="text-base">Select City</option>
-							<option value="Selangor" class="text-base">Kuala Lumpur</option>
-							<option value="Sabah" class="text-base">Sepang</option>
-							<option value="Sarawak" class="text-base">Cheras</option>
+							<!--<option value="none" class="text-base">Select City</option>-->
+							<option value="Kuala Lumpur" class="text-base">Kuala Lumpur</option>
+							<option value="Sepang" class="text-base">Sepang</option>
+							<option value="Cheras" class="text-base">Cheras</option>
 						</select>
 					</div>
 					<div class="my-2">
-						<input type="text" id="code" name="code" required value="    Portal Code"
-							class="border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
+						<input type="text" id="address" name="postalCode" required th:field="*{postalCode}"
+							placeholder="Enter postal code."
+							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
 					</div>
 					<div class="my-2">
-						<input type="text" id="street" name="street" required value="    Street"
-							class="border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
+						<input type="text" id="address" name="street" required th:field="*{street}"
+							placeholder="Enter street."
+							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
 					</div>
 					<div class="my-2">
-						<input type="text" id="building" name="building" required value="    Building"
-							class="border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
+						<input type="text" id="address" name="building" required th:field="*{building}"
+							placeholder="Enter building."
+							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
 					</div>
 					<div class="mt-8">
-						<label for="email" class="text-lg font-bold">Additional Notes:</label> <br />
-						<input type="text" id="email" name="email" value=""
-							class="border-2 h-[200px] w-[650px] rounded-md mt-2 text-neutral-400" />
+						<label for="additional_notes" class="text-lg font-bold">Additional Notes:</label> <br />
+						<textarea id="additional_notes" name="additional_notes" placeholder="Enter your message to the supplier."
+							class="px-2 border-2 h-[200px] w-[650px] rounded-md mt-2 text-neutral-400"></textarea>
 					</div>
 					<div
 						class="w-[280px] h-[60px] rounded-md shadow-md  border-2 border-black text-center self-center mt-8 mb-16 mx-48">
-						<div class="my-3 text-lg text-black font-bold"><a href="orderreq2">PLACE ORDER</a></div>
+						<div class="my-3 text-lg text-black font-bold">
+							<button type="submit">PLACE ORDER</button>
+						</div>
 					</div>
-				</div>
+				</form>
+
+
 				<div class="w-2/5 justify-center items-center max-md:ml-0  float-left mx-10">
-					<div class="h-[200px] w-2/5 justify-center items-center">
+					<div class="h-[200px] w-2/5 justify-center items-center mb-20">
 						<img loading="lazy" src="Images/FeastablesMrBeastBar.png" alt="Product Picture"
 							class="object-cover object-center inset-0 mb-0 mx-28" />
 					</div>
@@ -105,40 +116,40 @@
 		</div>
 	</div>
 
-		<!-- CustFooter.html -->
-		<div w3-include-html="CustFooter.html"></div>
+	<!-- CustFooter.html -->
+	<div w3-include-html="CustFooter.html"></div>
 
-		<!-- To include other HTML files -->
-		<script>
-			function includeHTML() {
-				var z, i, elmnt, file, xhttp;
-				/* Loop through a collection of all HTML elements: */
-				z = document.getElementsByTagName("*");
-				for (i = 0; i < z.length; i++) {
-					elmnt = z[i];
-					/*search for elements with a certain atrribute:*/
-					file = elmnt.getAttribute("w3-include-html");
-					if (file) {
-						/* Make an HTTP request using the attribute value as the file name: */
-						xhttp = new XMLHttpRequest();
-						xhttp.onreadystatechange = function () {
-							if (this.readyState == 4) {
-								if (this.status == 200) { elmnt.innerHTML = this.responseText; }
-								if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
-								/* Remove the attribute, and call this function once more: */
-								elmnt.removeAttribute("w3-include-html");
-								includeHTML();
-							}
+	<!-- To include other HTML files -->
+	<script>
+		function includeHTML() {
+			var z, i, elmnt, file, xhttp;
+			/* Loop through a collection of all HTML elements: */
+			z = document.getElementsByTagName("*");
+			for (i = 0; i < z.length; i++) {
+				elmnt = z[i];
+				/*search for elements with a certain atrribute:*/
+				file = elmnt.getAttribute("w3-include-html");
+				if (file) {
+					/* Make an HTTP request using the attribute value as the file name: */
+					xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function () {
+						if (this.readyState == 4) {
+							if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+							if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+							/* Remove the attribute, and call this function once more: */
+							elmnt.removeAttribute("w3-include-html");
+							includeHTML();
 						}
-						xhttp.open("GET", file, true);
-						xhttp.send();
-						/* Exit the function: */
-						return;
 					}
+					xhttp.open("GET", file, true);
+					xhttp.send();
+					/* Exit the function: */
+					return;
 				}
 			}
-			includeHTML();
-		</script>
+		}
+		includeHTML();
+	</script>
 
 </body>
 

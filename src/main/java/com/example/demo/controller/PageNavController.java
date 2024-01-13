@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.example.demo.entity.Order;
+
 @Controller
 public class PageNavController {
 
@@ -55,6 +57,8 @@ public class PageNavController {
 
 	@GetMapping("/orderreq1")
 	public String orderReq1(Model model) {
+		Order order1 = new Order();
+		model.addAttribute("order1", order1);
 		return "OrderRequest1";
 	}
 
@@ -67,7 +71,7 @@ public class PageNavController {
 	public String orderReq3(Model model) {
 		return "OrderRequest3";
 	}
-	
+
 	@GetMapping("/login")
 	public String login() {
 		return "LoginPage";

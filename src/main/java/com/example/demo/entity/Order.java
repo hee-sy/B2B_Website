@@ -35,7 +35,7 @@ public class Order {
 	private String city;
 
 	@Column(name = "cust_postalCode", nullable = false, columnDefinition = "VARCHAR(50)")
-	private int postalCode;
+	private String postalCode;
 
 	@Column(name = "cust_street", nullable = false, columnDefinition = "VARCHAR(50)")
 	private String street;
@@ -62,7 +62,7 @@ public class Order {
 	public Order() {
 	}
 
-	public Order(Long id, String name, String contactNo, String email, String state, String city, int postalCode,
+	public Order(Long id, String name, String contactNo, String email, String state, String city, String postalCode,
 			String street, String building, String note, Date createdAt, int quantity, double cost,
 			String paymentMethod) {
 		super();
@@ -81,8 +81,6 @@ public class Order {
 		this.cost = cost;
 		this.paymentMethod = paymentMethod;
 	}
-
-
 
 	public Long getId() {
 		return id;
@@ -132,11 +130,11 @@ public class Order {
 		this.city = city;
 	}
 
-	public int getPostalCode() {
+	public String getPostalCode() {
 		return postalCode;
 	}
 
-	public void setPostalCode(int postalCode) {
+	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
 	}
 
@@ -195,6 +193,5 @@ public class Order {
 	public void setPaymentMethod(String paymentMethod) {
 		this.paymentMethod = paymentMethod;
 	}
-	
-	
+
 }

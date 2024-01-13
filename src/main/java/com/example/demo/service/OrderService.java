@@ -6,4 +6,6 @@ import com.example.demo.entity.Order;
 
 public interface OrderService {
 	List<Order> getAllOrders();
+
+	Order saveOrder(Order order);
 }

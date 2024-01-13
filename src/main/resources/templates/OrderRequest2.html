@@ -48,17 +48,17 @@
 						</div>
 						<div class="text-lg text-black my-5 ml-12 mr-24">
 							<span class="float-left font-bold">Name: </span>
-							<span class="float-right">customer_name </span>
+							<span class="float-right" th:text="${order1.name}"></span>
 						</div>
 						<br />
 						<div class="text-lg text-black my-5 ml-12 mr-24">
 							<span class="float-left font-bold">Contact No: </span>
-							<span class="float-right">contact_no </span>
+							<span class="float-right" th:text="${order1.contactNo}"></span>
 						</div>
 						<br />
 						<div class="text-lg text-black my-5 ml-12 mr-24">
 							<span class="float-left font-bold">Email: </span>
-							<span class="float-right">customer_email </span>
+							<span class="float-right" th:text="${order1.email}"></span>
 						</div>
 						<br />
 						<div class="text-lg text-black my-5 ml-12 mr-24">
@@ -93,6 +93,11 @@
 						<div class="text-lg text-black mt-3 mb-5 ml-12 mr-24">
 							<span class="float-left">Quantity: </span>
 							<span class="float-right">x 100 </span>
+						</div>
+						<br />
+						<div class="text-lg text-black mt-3 mb-5 ml-12 mr-24">
+							<span class="float-left">Units Per Quantity: </span>
+							<span class="float-right">x 40 </span>
 						</div>
 						<br />
 						<div class="text-lg text-black mt-3 mb-5 ml-12 mr-24">
