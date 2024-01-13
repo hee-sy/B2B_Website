@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html class="scroll-smooth" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 	<meta charset="UTF-8">
@@ -10,14 +10,11 @@
 </head>
 
 <body>
-	<span class="bg-neutral-100 flex flex-col items-start">
-		<span
-			class="justify-between items-stretch shadow-sm bg-neutral-100 self-stretch flex w-full gap-5 pl-16 pr-14 py-2.5 max-md:max-w-full max-md:flex-wrap max-md:px-5">
-			<img loading="lazy"
-				srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/9a637a7c73029e4f9169778e1cc96034e00e05379bf3b1fa6fbb96c1cd5bdd1a?apiKey=639542810f92410bad046bb845f67816&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a637a7c73029e4f9169778e1cc96034e00e05379bf3b1fa6fbb96c1cd5bdd1a?apiKey=639542810f92410bad046bb845f67816&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a637a7c73029e4f9169778e1cc96034e00e05379bf3b1fa6fbb96c1cd5bdd1a?apiKey=639542810f92410bad046bb845f67816&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a637a7c73029e4f9169778e1cc96034e00e05379bf3b1fa6fbb96c1cd5bdd1a?apiKey=639542810f92410bad046bb845f67816&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a637a7c73029e4f9169778e1cc96034e00e05379bf3b1fa6fbb96c1cd5bdd1a?apiKey=639542810f92410bad046bb845f67816&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a637a7c73029e4f9169778e1cc96034e00e05379bf3b1fa6fbb96c1cd5bdd1a?apiKey=639542810f92410bad046bb845f67816&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a637a7c73029e4f9169778e1cc96034e00e05379bf3b1fa6fbb96c1cd5bdd1a?apiKey=639542810f92410bad046bb845f67816&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/9a637a7c73029e4f9169778e1cc96034e00e05379bf3b1fa6fbb96c1cd5bdd1a?apiKey=639542810f92410bad046bb845f67816&"
-				class="aspect-[2.9] object-contain object-center w-[183px] overflow-hidden shrink-0 max-w-full" />
-			<div class="text-black text-xl font-light self-center my-auto">Logout</div>
-		</span>
+	<div w3-include-html="CustHeader.html"></div>
+	
+	
+	<span class="bg-neutral-100 h-full flex flex-col items-start h-screen">
+
 		<div
 			class="text-black text-center text-3xl font-bold leading-[48.06399999999999px] whitespace-nowrap ml-80 mt-9 max-md:ml-2.5">
 			Manage Products
@@ -25,41 +22,7 @@
 		<div class="self-stretch w-full mt-7 max-md:max-w-full">
 			<div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
 				<div class="flex flex-col items-stretch w-[22%] max-md:w-full max-md:ml-0">
-					<span
-						class="items-center bg-white flex w-full grow flex-col mt-1 mx-auto pt-4 pb-12 px-5 max-md:mt-8">
-						<span
-							class="items-stretch bg-sky-100 self-center flex justify-between gap-4 px-10 py-5 rounded-[45px] max-md:px-5">
-							<img loading="lazy"
-								srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/6a7e9a1d44b23682d8bbc7ee1c67888705d2e3b225cff444c403f74c09e16275?apiKey=639542810f92410bad046bb845f67816&"
-								class="aspect-[1.06] object-contain object-center w-[35px] overflow-hidden shrink-0 max-w-full" />
-							<div
-								class="text-black text-center text-2xl font-semibold leading-9 self-center grow whitespace-nowrap my-auto">
-								Products
-							</div>
-						</span>
-						<span
-							class="text-black text-center text-2xl font-semibold leading-9 whitespace-nowrap justify-center items-stretch bg-stone-300 bg-opacity-50 self-center mt-6 pl-10 pr-11 py-7 max-md:px-5">
-							Manage Products
-						</span>
-						<div
-							class="text-black text-center text-2xl font-semibold leading-9 whitespace-nowrap mt-14 max-md:mt-10">
-							Add Products
-						</div>
-						<span
-							class="items-stretch bg-sky-100 self-stretch flex justify-between gap-1.5 mt-12 px-9 py-3.5 rounded-[45px] max-md:mt-10 max-md:px-5">
-							<img loading="lazy"
-								srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/c3f8a8d636cd9a28174fb5647dcf04b25421e1de7c23cafefa85b8c90a0c81cf?apiKey=639542810f92410bad046bb845f67816&"
-								class="aspect-square object-contain object-center w-[50px] overflow-hidden shrink-0 max-w-full" />
-							<div
-								class="text-black text-center text-2xl font-semibold leading-9 self-center grow whitespace-nowrap my-auto">
-								Orders
-							</div>
-						</span>
-						<div
-							class="text-black text-center text-2xl font-semibold leading-9 whitespace-nowrap mt-14 mb-[613px] max-md:my-10">
-							Orders
-						</div>
-					</span>
+					<div w3-include-html="Admin-SideBar.html"></div>
 				</div>
 				<div class="flex flex-col items-stretch w-[78%] ml-5 max-md:w-full max-md:ml-0">
 					<span class="flex flex-col items-stretch px-5 max-md:max-w-full max-md:mt-7">
@@ -93,54 +56,88 @@
 									</div>
 								</span>
 							</div>
-							
-							
-							
+
+
+
 							<div th:each="product: ${products}"
 								class="flex items-center gap-5 mt-2.5 ml-6 max-md:max-w-full max-md:flex-wrap max-md:mr-2.5">
 								<span class="flex justify-between gap-5 my-auto items-start">
 									<div class="text-black text-2xl leading-9 whitespace-nowrap w-16 text-center">
-										<div th:text="${product.id}"/>
+										<div th:text="${product.id}" />
 									</div>
-									<div class="text-black text-2xl leading-9 self-stretch grow whitespace-nowrap w-[29rem]">
-										<div th:text="${product.prodName}"/>
+									<div
+										class="text-black text-2xl leading-9 self-stretch grow whitespace-nowrap w-[29rem]">
+										<div th:text="${product.prodName}" />
 									</div>
 								</span>
-								<span
-									class="flex justify-between gap-5 my-auto items-start">
+								<span class="flex justify-between gap-5 my-auto items-start">
 									<div class="text-black text-center  text-2xl leading-9 my-auto w-[6rem]">
-										<div th:text="${product.prodCategory}"/>
+										<div th:text="${product.prodCategory}" />
 									</div>
-									<div class="text-black text-center  text-2xl leading-9 self-center my-auto w-[7rem] mr-2">
-										<div th:text="${product.prodQuantity}"/>
+									<div
+										class="text-black text-center  text-2xl leading-9 self-center my-auto w-[7rem] mr-2">
+										<div th:text="${product.prodQuantity}" />
 									</div>
-									<div class="text-black text-center  text-2xl leading-9 self-center my-auto w-[9rem]">
-										<div th:text="${product.prodUnitPrice}"/>
+									<div
+										class="text-black text-center  text-2xl leading-9 self-center my-auto w-[9rem]">
+										<div th:text="${product.prodUnitPrice}" />
 									</div>
 								</span>
 								<div class="self-stretch flex grow basis-[0%] flex-col items-stretch pr-4">
-									<a th:href = "@{/admin/editproduct/{id}(id=${product.id})}"
+									<a th:href="@{/admin/editproduct/{id}(id=${product.id})}"
 										class="text-white text-center text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-blue-500 px-7 rounded-xl max-md:px-5">
 										Edit
 									</a>
-									<a th:href = "@{/admin/manageproduct/{id}(id=${product.id})}"
+									<a th:href="@{/admin/manageproduct/{id}(id=${product.id})}"
 										class="text-white text-center text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-red-600 mt-2 px-3.5  rounded-xl">
 										Delete
 									</a>
 								</div>
 							</div>
-							
-						<div class="text-black text-2xl font-medium self-center mt-32 max-md:max-w-full max-md:mt-10">
-							<span class="text-black">Copyright@2024</span>
-							<span class="font-semibold text-black">Nestlé</span>
-							<span class="text-black">- All rights reserved</span>
-						</div>
+
+							<div
+								class="text-black text-2xl font-medium self-center mt-32 max-md:max-w-full max-md:mt-10">
+								<span class="text-black">Copyright@2024</span>
+								<span class="font-semibold text-black">Nestlé</span>
+								<span class="text-black">- All rights reserved</span>
+							</div>
 					</span>
 				</div>
 			</div>
 		</div>
 	</span>
 
+	<!-- To include other HTML files -->
+	<script>
+		function includeHTML() {
+			var z, i, elmnt, file, xhttp;
+			/* Loop through a collection of all HTML elements: */
+			z = document.getElementsByTagName("*");
+			for (i = 0; i < z.length; i++) {
+				elmnt = z[i];
+				/*search for elements with a certain atrribute:*/
+				file = elmnt.getAttribute("w3-include-html");
+				if (file) {
+					/* Make an HTTP request using the attribute value as the file name: */
+					xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function () {
+						if (this.readyState == 4) {
+							if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+							if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+							/* Remove the attribute, and call this function once more: */
+							elmnt.removeAttribute("w3-include-html");
+							includeHTML();
+						}
+					}
+					xhttp.open("GET", file, true);
+					xhttp.send();
+					/* Exit the function: */
+					return;
+				}
+			}
+		}
+		includeHTML();
+	</script>
 </body>
 
 </html>
