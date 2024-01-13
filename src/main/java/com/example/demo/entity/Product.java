@@ -1,6 +1,5 @@
 package com.example.demo.entity;
 
-
 import org.apache.tomcat.util.codec.binary.Base64;
 
 import jakarta.persistence.Column;
@@ -10,6 +9,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
+
+import jakarta.validation.constraints.*;
 
 @Entity
 @Table(name = "product")
@@ -23,22 +24,31 @@ public class Product {
 //	@Lob
 //	@Column(name = "prod_image", nullable = true, updatable = true, columnDefinition = "MEDIUMBLOB")
 //	private byte[] prodImage;
-
+	
+	@NotNull(message = "Name cannot be null")
 	@Column(name = "prod_name", nullable = false, updatable = true, columnDefinition = "VARCHAR(255)")
 	private String prodName;
 
+	@NotNull(message = "Category cannot be null")
 	@Column(name = "prod_category", nullable = false, updatable = true, columnDefinition = "VARCHAR(255)")
 	private String prodCategory;
 
+	@NotNull(message = "Quantity cannot be null")
+	@Positive(message = "Quantity must be a positive number")
 	@Column(name = "prod_quantity", nullable = false, updatable = true, columnDefinition = "int(10)")
 	private int prodQuantity;
 	
+	@NotNull(message = "Unit cannot be null")
+	@Positive(message = "Unit must be a positive number")
 	@Column(name = "prod_unit", nullable = true, updatable = true, columnDefinition = "VARCHAR(255)")
 	private String prodUnit;
 
+	@NotNull(message = "Unit price cannot be null")
+	@Positive(message = "Unit price must be a positive number")
 	@Column(name = "prod_unitPrice", nullable = false, updatable = true, columnDefinition = "DECIMAL(20,2)")
 	private double prodUnitPrice;
 
+	@NotNull(message = "Description cannot be null")
 	@Column(name = "prod_desc", nullable = false, updatable = true, columnDefinition = "TEXT")
 	private String prodDesc;
 

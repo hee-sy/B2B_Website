@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +15,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.example.demo.entity.Product;
 import com.example.demo.service.OrderService;
 import com.example.demo.service.ProductService;
+
+import jakarta.validation.Valid;
 
 @Controller
 public class AdminController {
@@ -40,7 +43,11 @@ public class AdminController {
 	}
 	
 	@PostMapping("/admin/addproduct")
-	public String adminAddProduct(@ModelAttribute("product") Product product){
+	public String adminAddProduct(@ModelAttribute("product") @Valid Product product, BindingResult bindingResult) {
+
+		if (bindingResult.hasErrors()) {
+			return "Admin-AddProduct";
+		}
 		productService.saveProduct(product);
 		return "redirect:/admin/manageproduct";
 	}
@@ -53,8 +60,12 @@ public class AdminController {
 	
 	@PostMapping("/admin/editproduct/{id}")
 	public String adminEditProduct(@PathVariable Long id,
-			@ModelAttribute("product") Product product,
+			@ModelAttribute("product") @Valid Product product, 
+			BindingResult bindingResult,
 			Model model) {
+		if (bindingResult.hasErrors()) {
+			return "Admin-EditProduct";
+		}
 		Product existingProduct = productService.getProductById(id);
 		existingProduct.setId(id);
 		existingProduct.setProdName(product.getProdName());

@@ -33,16 +33,17 @@
 								<div class="flex flex-col items-stretch w-[66%] max-md:w-full max-md:ml-0">
 									<span class="flex flex-col items-stretch max-md:max-w-full max-md:mt-10">
 										<div
-											class="text-black text-3xl font-semibold leading-[48.06399999999999px] max-md:max-w-full">
+											class="text-black text-3xl font-semibold leading-[48px] max-md:max-w-full">
 											Product Details
 										</div>
 										<div class="text-black text-xl leading-8 mt-10 max-md:max-w-full">
 											<span class="text-red-600">*</span><span class="text-black"> Product
 												Name</span>
 										</div>
-										<input type="text" name="prodName" th:field="*{prodName}"
+										<input type="text" name="prodName" th:field="*{prodName}" id="prodName"
 											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
 											placeholder="Example: KitKat Green Tea Matcha" />
+											<div th:if="${#fields.hasErrors('prodName')}" th:errors="*{prodName}">Name Error</div>
 
 
 										<div class="text-black text-xl leading-8 mt-8 max-md:max-w-full">
@@ -67,6 +68,7 @@
 											</option>
 											<option value="Dairy">Dairy</option>
 										</select>
+										<div th:if="${#fields.hasErrors('prodCategory')}" th:errors="*{prodCategory}">Category Error</div>
 
 
 										<div class="text-black text-xl leading-8 mt-8 max-md:max-w-full">
@@ -76,9 +78,9 @@
 										<!--<div
 											class="border flex shrink-0 h-8 flex-col mt-3.5 rounded-md border-solid border-black max-md:max-w-full">
 										</div>-->
-										<input type="number" min="0" name="prodQuantity" th:field="*{prodQuantity}"
+										<input type="number" min="0" name="prodQuantity" th:field="*{prodQuantity}" id="prodQuantity"
 											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full" />
-
+										<div th:if="${#fields.hasErrors('prodQuantity')}" th:errors="*{prodQuantity}">Quantity Error</div>
 
 										<div class="text-black text-xl leading-8 mt-8 max-md:max-w-full">
 											<span class="text-red-600">*</span><span class="text-black"> Units per box</span>
@@ -89,9 +91,9 @@
 												srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/741eb6f4b3ce588008e253c896c4ebda4356b9af543c860c0197c194a539c5a6?apiKey=639542810f92410bad046bb845f67816&"
 												class="aspect-square object-contain object-center w-[25px] justify-center items-center overflow-hidden max-w-full" />
 										</div>-->
-										<input type="number" min="0" name="ProductUnit" th:field="*{prodUnit}"
+										<input type="number" min="0" name="ProductUnit" th:field="*{prodUnit}" id="prodUnit"
 											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full" />
-
+										<div th:if="${#fields.hasErrors('prodUnit')}" th:errors="*{prodUnit}">Unit Error</div>
 
 										<div class="text-black text-xl leading-8 mt-9 max-md:max-w-full">
 											<span class="text-red-600">*</span><span class="text-black"> Price Per Unit
@@ -101,10 +103,10 @@
 											class="text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-3.5 py-2 rounded-md border-solid border-black max-md:max-w-full">
 											Example: 9000.00
 										</span>-->
-										<input type="number" min="0" step=".01" name="prodUnitPrice"
+										<input type="number" min="0" step=".01" name="prodUnitPrice" id="prodUnitPrice"
 											th:field="*{prodUnitPrice}"
 											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full" />
-
+										<div th:if="${#fields.hasErrors('prodUnitPrice')}" th:errors="*{prodUnitPrice}">Unit price Error</div>
 
 										<div class="text-black text-xl leading-8 mt-9 max-md:max-w-full">
 											Product Description
@@ -112,8 +114,9 @@
 										<!--<div
 											class="border flex shrink-0 h-[280px] flex-col mt-3.5 rounded-md border-solid border-black max-md:max-w-full">
 										</div>-->
-										<textarea type="text" name="prodDesc" th:field="*{prodDesc}"
+										<textarea type="text" name="prodDesc" th:field="*{prodDesc}" id="prodDesc"
 											class="resize-none px-1 border flex shrink-0 h-[280px] flex-col mt-3.5 rounded-md border-solid border-black max-md:max-w-full"></textarea>
+										<div th:if="${#fields.hasErrors('prodDesc')}" th:errors="*{prodDesc}">Desc Error</div>
 									</span>
 
 
@@ -166,6 +169,7 @@
 						</div>
 					</span>
 				</form>
+<!--				<script src="../static/ValidateAddProduct.js"></script>-->
 			</div>
 		</div>
 	</span>

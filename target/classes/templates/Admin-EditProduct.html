@@ -43,6 +43,7 @@
 										<input type="text" name="prodName" th:field="*{prodName}"
 											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
 											placeholder="Example: KitKat Green Tea Matcha" />
+											<div th:if="${#fields.hasErrors('prodName')}" th:errors="*{prodName}">Name Error</div>
 
 
 										<div class="text-black text-xl leading-8 mt-8 max-md:max-w-full">
@@ -67,6 +68,7 @@
 											</option>
 											<option value="Dairy">Dairy</option>
 										</select>
+										<div th:if="${#fields.hasErrors('prodCategory')}" th:errors="*{prodCategory}">Category Error</div>
 
 
 										<div class="text-black text-xl leading-8 mt-8 max-md:max-w-full">
@@ -78,7 +80,7 @@
 										</div>-->
 										<input type="number" min="0" name="prodQuantity" th:field="*{prodQuantity}"
 											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full" />
-
+										<div th:if="${#fields.hasErrors('prodQuantity')}" th:errors="*{prodQuantity}">Quantity Error</div>
 
 										<div class="text-black text-xl leading-8 mt-8 max-md:max-w-full">
 											<span class="text-red-600">*</span><span class="text-black"> Units per box</span>
@@ -91,7 +93,7 @@
 										</div>-->
 										<input type="number" min="0" name="ProductUnit" th:field="*{prodUnit}"
 											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full" />
-
+										<div th:if="${#fields.hasErrors('prodUnit')}" th:errors="*{prodUnit}">Unit Error</div>
 
 										<div class="text-black text-xl leading-8 mt-9 max-md:max-w-full">
 											<span class="text-red-600">*</span><span class="text-black"> Price Per Unit
@@ -104,7 +106,7 @@
 										<input type="number" min="0" step=".01" name="prodUnitPrice"
 											th:field="*{prodUnitPrice}"
 											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full" />
-
+										<div th:if="${#fields.hasErrors('prodUnitPrice')}" th:errors="*{prodUnitPrice}">Unit Prce Error</div>
 
 										<div class="text-black text-xl leading-8 mt-9 max-md:max-w-full">
 											Product Description
@@ -114,6 +116,7 @@
 										</div>-->
 										<textarea type="text" name="prodDesc" th:field="*{prodDesc}"
 											class="resize-none px-1 border flex shrink-0 h-[280px] flex-col mt-3.5 rounded-md border-solid border-black max-md:max-w-full"></textarea>
+										<div th:if="${#fields.hasErrors('prodDesc')}" th:errors="*{prodDesc}">Desc Error</div>
 									</span>
 
 
