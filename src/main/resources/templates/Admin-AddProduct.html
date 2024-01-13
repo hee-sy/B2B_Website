@@ -81,8 +81,8 @@
 										<input 
 											type="text"
 											name="prodName"
-											field="*{prodName}"
-											th:class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
+											th:field="*{prodName}"
+											class="pl-1 form-control text-neutral-400 text-xl leading-8 items-stretch border justify-center mt-5 py-2 rounded-md border-solid border-black max-md:max-w-full"
 											placeholder="Example: KitKat Green Tea Matcha"
 										/>
 										
@@ -188,7 +188,7 @@
 												src="/Images/UploadPlaceholder.png"
 												class="aspect-square object-contain object-center w-full overflow-hidden" />
 										</label>
-										<input name="Photo" type="file" field="*{prodImage}" accept="image/png, image/jpeg" id="input-file" class="hidden"/>
+										<input name="prodImage" type="file" field="*{prodImage}" accept="image/png, image/jpeg" id="input-file" class="hidden"/>
 										
 										<script>
 											let pic = document.getElementById("defaultPic");

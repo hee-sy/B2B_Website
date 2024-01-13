@@ -119,14 +119,14 @@
 									</div>
 								</span>
 								<div class="self-stretch flex grow basis-[0%] flex-col items-stretch pr-4">
-									<button th:href = "@{/product/edit/{id}(id=${product.id})}"
+									<a th:href = "@{/admin/editproduct/{id}(id=${product.id})}"
 										class="text-white text-center text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-blue-500 px-7 rounded-xl max-md:px-5">
 										Edit
-									</button>
-									<button th:href = "@{/product/{id}(id=${product.id})}"
+									</a>
+									<a th:href = "@{/admin/manageproduct/{id}(id=${product.id})}"
 										class="text-white text-center text-xl leading-8 whitespace-nowrap justify-center items-stretch bg-red-600 mt-2 px-3.5  rounded-xl">
 										Delete
-									</button>
+									</a>
 								</div>
 							</div>
 							

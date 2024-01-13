@@ -37,8 +37,8 @@ public class ProductController {
 	}
 	
 	@PostMapping("/product")
-	public String saveProduct(@ModelAttribute("product") Product product, @RequestParam("prodImage") MultipartFile prodImage) {
-		productService.saveProduct(product, prodImage);
+	public String saveProduct(@ModelAttribute("product") Product product) {
+		productService.saveProduct(product);
 		return "redirect:/product";
 	}
 	
