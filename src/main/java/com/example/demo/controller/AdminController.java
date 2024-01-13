@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.example.demo.entity.Product;
@@ -35,8 +36,8 @@ public class AdminController {
 	}
 	
 	@PostMapping("/admin/addproduct")
-	public String adminAddProduct(@ModelAttribute("product") Product product) {
-		productService.saveProduct(product);
+	public String adminAddProduct(@ModelAttribute("product") Product product, @RequestParam("prodImage") MultipartFile prodImage) {
+		productService.saveProduct(product, prodImage);
 		return "redirect:/admin/manageproduct";
 	}
 	

@@ -1,16 +1,22 @@
 <!DOCTYPE html>
+<html class="scroll-smooth" xmlns:th="http://www.thymeleaf.org">
+	
 <html>
 
 <head>
-	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="font-import.css" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="tailwind-config.js"></script>
+	<title>Thank You!</title>
 </head>
 
 <body>
 
-	<span class="flex w-full max-w-[1183px] flex-col items-stretch mt-10 max-md:max-w-full">
-		<header class="text-neutral-400 text-2xl font-medium leading-9 max-md:max-w-full"> Home &gt; Contact Us
-		</header>
+	<form th:action="@{/home}" class="text-neutral-400 text-2xl font-medium leading-9 pt-5 self-stretch max-md:max-w-full">
+		<button type="submit">Home</button> > Contact Us
+	</form>
+	<span class="flex w-full flex-col items-center mt-5 max-md:max-w-full">
 		<div class="self-center w-full max-w-[1045px] mt-28 max-md:max-w-full max-md:mt-10">
 			<div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
 				<div class="flex flex-col items-stretch w-[27%] max-md:w-full max-md:ml-0">
@@ -19,17 +25,19 @@
 						class="aspect-square object-contain object-center w-full overflow-hidden max-md:mt-9" />
 				</div>
 				<div class="flex flex-col items-stretch w-[73%] ml-5 max-md:w-full max-md:ml-0">
-					<span class="flex grow flex-col items-stretch mt-3 max-md:max-w-full max-md:mt-10">
+					<span class="flex grow flex-col items-stretch max-md:max-w-full max-md:mt-10">
 						<header class="text-black text-2xl font-semibold leading-9 max-md:max-w-full">
-							<p>Message Sent!</p>
+							<p class="text-6xl">Message Sent!</p>
 							<p><br /></p>
 							<p>We will get back to you within 24 hours.</p>
 							<p> Please be advised that weekends and public holidays might delay response time. </p>
 							<p><br /></p>
 						</header>
-						<a href="#"
-							class="text-black text-base font-semibold leading-6 uppercase whitespace-nowrap justify-center items-stretch border shadow-sm bg-white mt-10 px-6 py-1.5 rounded-md border-solid border-black self-start max-md:mt-10 max-md:px-5">
-							Return to Home </a>
+						<form th:action="@{/home}">
+						<button type="submit" 
+							class="text-black text-base font-semibold leading-6 uppercase whitespace-nowrap justify-center items-stretch border shadow-sm bg-white px-6 py-1.5 rounded-md border-solid border-black self-start max-md:mt-10 max-md:px-5">
+							Return to Home </button>							
+						</form>
 					</span>
 				</div>
 			</div>

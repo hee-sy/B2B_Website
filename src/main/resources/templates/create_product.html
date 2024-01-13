@@ -7,14 +7,14 @@
 	
 	<body>
 		<form th:action="@{/product}" th:object="${product}" method="POST" enctype="multipart/form-data">
-<!--			<div>-->
-<!--				<label>Product Image</label>-->
-<!--				<input -->
-<!--					type="file"-->
-<!--					name="prodImage"-->
-<!--					th:field="*{prodImage}"-->
-<!--				/>			-->
-<!--			</div>-->
+			<div>
+				<label>Product Image</label>
+				<input 
+					type="file"
+					name="prodImage"
+					field="*{prodImage}"
+				/>			
+			</div>
 			
 			<br>
 			

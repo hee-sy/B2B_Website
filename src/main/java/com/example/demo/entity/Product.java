@@ -1,5 +1,8 @@
 package com.example.demo.entity;
 
+
+import org.apache.tomcat.util.codec.binary.Base64;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,7 +22,7 @@ public class Product {
 	// image
 	@Lob
 	@Column(name = "prod_image", nullable = true, updatable = true, columnDefinition = "MEDIUMBLOB")
-	private String prodImage;
+	private byte[] prodImage;
 
 	@Column(name = "prod_name", nullable = false, updatable = true, columnDefinition = "VARCHAR(255)")
 	private String prodName;
@@ -29,6 +32,9 @@ public class Product {
 
 	@Column(name = "prod_quantity", nullable = false, updatable = true, columnDefinition = "int(10)")
 	private int prodQuantity;
+	
+	@Column(name = "prod_unit", nullable = false, updatable = true, columnDefinition = "VARCHAR(255)")
+	private String prodUnit;
 
 	@Column(name = "prod_unitPrice", nullable = false, updatable = true, columnDefinition = "DECIMAL(20,2)")
 	private double prodUnitPrice;
@@ -39,8 +45,8 @@ public class Product {
 	public Product() {
 	}
 	
-	public Product(Long id, String prodImage, String prodName, String prodCategory, int prodQuantity, double prodUnitPrice,
-			String prodDesc) {
+	public Product(Long id, byte[] prodImage, String prodName, String prodCategory, int prodQuantity, double prodUnitPrice,
+			String prodDesc, String prodUnit) {
 		super();
 		this.id = id;
 		this.prodImage = prodImage;
@@ -49,6 +55,7 @@ public class Product {
 		this.prodQuantity = prodQuantity;
 		this.prodUnitPrice = prodUnitPrice;
 		this.prodDesc = prodDesc;
+		this.prodUnit = prodUnit;
 	}
 
 
@@ -101,12 +108,21 @@ public class Product {
 		this.prodDesc = prodDesc;
 	}
 
-	public String getImage() {
-		return prodImage;
+	public String getProdImage() {
+		String base64EncodedImage = Base64.encodeBase64String(prodImage);
+		return base64EncodedImage;
 	}
 
-	public void setImage(String prodImage) {
+	public void setProdImage(byte[] prodImage) {
 		this.prodImage = prodImage;
+	}
+
+	public String getProdUnit() {
+		return prodUnit;
+	}
+
+	public void setProdUnit(String prodUnit) {
+		this.prodUnit = prodUnit;
 	}
 	
 }
