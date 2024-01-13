@@ -10,15 +10,15 @@
 	<script type="text/javascript" src="./tailwind-config.js"></script>
 </head>
 
-<body>
-	<header class="text-neutral-400 text-2xl font-medium leading-9 self-center whitespace-nowrap mt-10"> Home &gt;
-		Product &gt; All Snacks
+<body class="bg-neutral-100">
+	<header class="text-neutral-400 text-2xl font-medium leading-9 self-center whitespace-nowrap mt-10"> 
+		<a href="/home">Home</a> &gt; Product
 	</header>
 
-	<header class="self-stretch w-full flex-col flex mt-20 px-12 max-md:max-w-full max-md:mt-10 max-md:px-5">
+	<header class="self-stretch w-full flex-col flex mt-20 px-10 max-md:max-w-full max-md:mt-10 max-md:px-5">
 		<div class="flex flex-col relative shrink-0 box-border mt-5">
 			<div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
-				<div class="flex flex-col items-stretch w-[33%] max-md:w-full max-md:ml-0">
+				<div class="flex flex-col items-stretch w-[25%] max-md:w-full max-md:ml-0">
 					<span class="flex flex-col items-stretch max-w-[347px] mt-1 max-md:mt-10">
 						<div class="text-black text-2xl font-semibold leading-9 uppercase"> ALL snacks </div>
 						<div class="text-neutral-400 text-2xl font-semibold leading-9 uppercase mt-9"> ICE CREAM </div>
@@ -29,82 +29,27 @@
 						<div class="text-neutral-400 text-2xl font-semibold leading-9 uppercase mt-8"> DAIRY </div>
 					</span>
 				</div>
-				<div class="flex flex-col items-stretch w-[67%] ml-5 max-md:w-full max-md:ml-0">
+				<div class="flex flex-col items-stretch w-[75%] max-md:w-full max-md:ml-0">
 					<div
 						class="text-black text-3xl font-semibold leading-[48px] uppercase max-md:max-w-full">
-						ALL snacks </div>
-					<div class="w-full mt-8 max-md:max-w-full">
-						<div class="flex max-md:flex-col max-md:items-stretch max-md:gap-0 flex-wrap">
-							<div th:each="product: ${products}" class="flex flex-col items-stretch w-[33%] max-md:w-full max-md:ml-0">
-								<img loading="lazy"
-									src="/Images/KokoKrunch.png"
-									class="aspect-[0.7] object-contain object-center w-full shadow-sm overflow-hidden grow max-md:mt-7" />
-								<div th:text="${product.prodName}"></div>
-								<div th:text="${product.prodCategory}"></div>
-								<div th:text="${product.prodUnitPrice}"></div>
-								<div th:text="${product.prodQuantity}"></div>
-								<div th:text="${product.prodDesc}"></div>							
-							</div>	
-						</div>
+						ALL snacks 
 					</div>
-					
-<!--					<div class="self-center w-full max-w-[1013px] mt-8 max-md:max-w-full">-->
-<!--						<div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">-->
-<!--							<div class="flex flex-col items-stretch w-[33%] max-md:w-full max-md:ml-0">-->
-<!--								<img loading="lazy"-->
-<!--									srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&"-->
-<!--									class="aspect-[0.7] object-contain object-center w-full shadow-sm overflow-hidden grow max-md:mt-7" />-->
-<!--							</div>-->
-<!--							<div class="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0">-->
-<!--								<img loading="lazy"-->
-<!--									srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&"-->
-<!--									class="aspect-[0.7] object-contain object-center w-full shadow-sm overflow-hidden grow max-md:mt-7" />-->
-<!--							</div>-->
-<!--							<div class="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0">-->
-<!--								<img loading="lazy"-->
-<!--									srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&"-->
-<!--									class="aspect-[0.7] object-contain object-center w-full shadow-sm overflow-hidden grow max-md:mt-7" />-->
-<!--							</div>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--					<div class="mt-11 max-md:max-w-full max-md:mt-10">-->
-<!--						<div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">-->
-<!--							<div class="flex flex-col items-stretch w-[33%] max-md:w-full max-md:ml-0">-->
-<!--								<img loading="lazy"-->
-<!--									srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&"-->
-<!--									class="aspect-[0.7] object-contain object-center w-full shadow-sm overflow-hidden grow max-md:mt-7" />-->
-<!--							</div>-->
-<!--							<div class="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0">-->
-<!--								<img loading="lazy"-->
-<!--									srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&"-->
-<!--									class="aspect-[0.7] object-contain object-center w-full shadow-sm overflow-hidden grow max-md:mt-7" />-->
-<!--							</div>-->
-<!--							<div class="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0">-->
-<!--								<img loading="lazy"-->
-<!--									srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&"-->
-<!--									class="aspect-[0.7] object-contain object-center w-full shadow-sm overflow-hidden grow max-md:mt-7" />-->
-<!--							</div>-->
-<!--						</div>-->
-<!--					</div>-->
-<!--					<div class="self-center w-full max-w-[1013px] mt-8 max-md:max-w-full">-->
-<!--						<div class="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">-->
-<!--							<div class="flex flex-col items-stretch w-[33%] max-md:w-full max-md:ml-0">-->
-<!--								<img loading="lazy"-->
-<!--									srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&"-->
-<!--									class="aspect-[0.7] object-contain object-center w-full shadow-sm overflow-hidden grow max-md:mt-7" />-->
-<!--							</div>-->
-<!--							<div class="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0">-->
-<!--								<img loading="lazy"-->
-<!--									srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&"-->
-<!--									class="aspect-[0.7] object-contain object-center w-full shadow-sm overflow-hidden grow max-md:mt-7" />-->
-<!--							</div>-->
-<!--							<div class="flex flex-col items-stretch w-[33%] ml-5 max-md:w-full max-md:ml-0">-->
-<!--								<img loading="lazy"-->
-<!--									srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/b4355f0714715343d064d85d815722900c71e297dacd647e2271b527908e109e?apiKey=b1f15f42c7c047779ec060c0ef717c1c&"-->
-<!--									class="aspect-[0.7] object-contain object-center w-full shadow-sm overflow-hidden grow max-md:mt-7" />-->
-<!--							</div>-->
-<!--						</div>-->
-<!--					</div>-->
+					<div class="w-full max-md:grid-cols-1 gap-5 grid grid-cols-3 mt-8 max-md:max-w-full flex max-md:flex-col max-md:items-stretch max-md:gap-0 flex-wrap">
+						
+						<button th:each="product: ${products}" class="flex flex-col overflow-hidden items-stretch bg-white active:bg-neutral-50 max-md:mb-5">
+							<img loading="lazy"
+								src="/Images/KokoKrunch.png"
+								class="aspect-[0.9] object-contain object-center w-full shadow-sm overflow-hidden grow max-md:mt-7" />
+							<div class="text-left text-wrap pl-5 leading-[20px]">								
+								<div class="text-wrap text-2xl capitalize" th:text="${product.prodName}"></div>
+								<div class="text-wrap text-1xl py-2 text-neutral-400" th:text="${product.prodCategory}"></div>
+								<div class="text-2xl" th:text="'RM' + ${product.prodUnitPrice}"></div>
+								<div class="text-wrap text-1xl pt-2" th:text="'stock: ' + ${product.prodQuantity}"></div>
+								<div class="text-wrap text-1xl pb-5" th:text="${product.prodDesc}"></div>							
+							</div>
+						</button>
+						
+					</div>
 				</div>
 			</div>
 		</div>
