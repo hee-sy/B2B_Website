@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="scroll-smooth" xmlns:th="http://www.thymeleaf.org">
-	
+
 <html>
 
 <head>
@@ -11,12 +11,14 @@
 	<title>Contact Us</title>
 </head>
 
-<body>
+<body class="font-montserrat">
+	
+	<div w3-include-html="CustHeader.html"></div>
 
 	<form th:action="@{/home}" class="text-neutral-400 text-2xl font-medium leading-9 pt-5 self-stretch max-md:max-w-full">
 		<button type="submit" class="ml-20">Home</button> > Contact Us
 	</form>
-	<form th:action="@{/contactUsResponse}" class="flex w-full flex-col mt-5 max-md:max-w-full">
+	<form th:action="@{/contactUsResponse}" style="margin-bottom: 300px;" class="flex w-full flex-col mt-5 max-md:max-w-full">
 		<header
 			class="text-black text-3xl font-semibold leading-[48.06399999999999px] self-center whitespace-nowrap mt-12 max-md:mt-10">
 			General Inquiries</header>
@@ -27,7 +29,8 @@
 						srcset="https://cdn.builder.io/api/v1/image/assets/TEMP/e1867050d0812fee364cca170c59562a07cb5878f2a3ca01e550b6a89a2b2636?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/e1867050d0812fee364cca170c59562a07cb5878f2a3ca01e550b6a89a2b2636?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/e1867050d0812fee364cca170c59562a07cb5878f2a3ca01e550b6a89a2b2636?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/e1867050d0812fee364cca170c59562a07cb5878f2a3ca01e550b6a89a2b2636?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/e1867050d0812fee364cca170c59562a07cb5878f2a3ca01e550b6a89a2b2636?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/e1867050d0812fee364cca170c59562a07cb5878f2a3ca01e550b6a89a2b2636?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/e1867050d0812fee364cca170c59562a07cb5878f2a3ca01e550b6a89a2b2636?apiKey=b1f15f42c7c047779ec060c0ef717c1c&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/e1867050d0812fee364cca170c59562a07cb5878f2a3ca01e550b6a89a2b2636?apiKey=b1f15f42c7c047779ec060c0ef717c1c&"
 						class="aspect-square object-contain object-center w-[150px] overflow-hidden shrink-0 max-w-full max-md:mt-10" />
 				</div>
-				<div class="flex flex-col items-stretch w-3/5 ml-5 max-md:w-full max-md:ml-0 max-md:w-max max-md:self-center">
+				<div
+					class="flex flex-col items-stretch w-3/5 ml-5 max-md:w-full max-md:ml-0 max-md:w-max max-md:self-center">
 					<span class="flex grow flex-col items-stretch max-md:mt-10">
 						<div class="text-black text-sm font-semibold leading-5">Dial our hotline:</div>
 						<div
@@ -40,14 +43,18 @@
 				</div>
 			</div>
 		</div>
-		<header
+		<header id="SendMsg"
 			class="text-black text-3xl font-semibold leading-[48.06399999999999px] whitespace-nowrap mt-16 self-center max-md:mt-10">
 			Send Us A Message!</header>
-		<div class="flex-shrink text-black text-xl font-medium w-[780px] mt-10 self-center max-[800px]:w-max max-[800px]:self-start">Email: *
+		<div
+			class="flex-shrink text-black text-xl font-medium w-[780px] mt-10 self-center max-[800px]:w-max max-[800px]:self-start">
+			Email: *
 		</div>
 		<input type="email" name="email" placeholder="example@gmail.com"
 			class="text-black text-lg leading-7 whitespace-nowrap border w-[780px] max-w-full mt-3.5 pl-6 pr-6 pt-4 pb-4 border-solid border-zinc-400 self-center items-start"></input>
-		<header class="text-black text-xl font-medium w-[780px] mt-9 self-center max-[800px]:w-max max-[800px]:self-start">Message: *</header>
+		<header
+			class="text-black text-xl font-medium w-[780px] mt-9 self-center max-[800px]:w-max max-[800px]:self-start">
+			Message: *</header>
 		<textarea type="text" name="message" placeholder="Give us some feedback here!"
 			class="resize-none text-black text-lg leading-7 border w-[780px] h-[400px] max-w-full mt-2.5 pl-6 pr-6 pt-4 pb-4 border-solid border-zinc-400 self-center items-start"></textarea>
 		<button type="submit"
