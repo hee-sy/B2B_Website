@@ -37,5 +37,4 @@ public class OrderController {
 		model.addAttribute("savedOrder", orderService.getOrderById(order.getOrderId()));
 		return "OrderRequest3";
 	}
-
 }

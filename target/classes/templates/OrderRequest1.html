@@ -31,30 +31,30 @@
 					th:action="@{/order}" th:object="${order1}" method="POST">
 					<div class="mt-10">
 						<label for="name" class="text-lg font-bold">Name:*</label> <br />
-						<input type="text" id="name" name="name" required th:field="*{name}"
+						<input type="text" id="name" name="name" required th:field="*{custName}"
 							placeholder="Enter your name."
 							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
 					</div>
 					<div class="mt-8">
 						<label for="contact" class="text-lg font-bold">Contact Number:*</label> <br />
-						<input type="text" id="contact" name="contactNo" required th:field="*{contactNo}"
+						<input type="text" id="contact" name="contactNo" required th:field="*{custContactNo}"
 							placeholder="Enter your contact number."
 							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
 					</div>
 					<div class="mt-8">
 						<label for="email" class="text-lg font-bold">Email:*</label> <br />
-						<input type="text" id="email" name="email" required th:field="*{email}"
+						<input type="text" id="email" name="email" required th:field="*{custEmail}"
 							placeholder="Enter your email."
 							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
 					</div>
 					<div class="mt-8">
 						<label for="address" class="text-lg font-bold">Destination Address:*</label> <br />
-						<select name="state" id="address" required th:field="*{state}" placeholder="Select State"
+						<select name="state" id="address" required th:field="*{custState}" placeholder="Select State"
 							class="border-2 border-black h-[45px] w-[650px] rounded-md mt-2 text-black text-center my-2">
 							<option value="none" class="text-base">Select State</option>
 							<option value="Selangor" class="text-base">Selangor</option>
 						</select>
-						<select name="city" id="address" required th:field="*{city}" placeholder="Select City"
+						<select name="city" id="address" required th:field="*{custCity}" placeholder="Select City"
 							class="border-2 border-black h-[45px] w-[650px] rounded-md mt-2 text-black text-center my-2">
 							<option value="none" class="text-base">Select City</option>
 							<option value="Kuala Lumpur" class="text-base">Kuala Lumpur</option>
@@ -63,23 +63,23 @@
 						</select>
 					</div>
 					<div class="my-2">
-						<input type="text" id="address" name="postalCode" required th:field="*{postalCode}"
+						<input type="text" id="address" name="postalCode" required th:field="*{custPostalCode}"
 							placeholder="Enter postal code."
 							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
 					</div>
 					<div class="my-2">
-						<input type="text" id="address" name="street" required th:field="*{street}"
+						<input type="text" id="address" name="street" required th:field="*{custStreet}"
 							placeholder="Enter street."
 							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
 					</div>
 					<div class="my-2">
-						<input type="text" id="address" name="building" required th:field="*{building}"
+						<input type="text" id="address" name="building" required th:field="*{custBuilding}"
 							placeholder="Enter building."
 							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
 					</div>
 					<div class="mt-8">
 						<label for="note" class="text-lg font-bold">Additional Notes:</label> <br />
-						<textarea id="note" name="note" th:field="*{note}" placeholder="Enter your message to the supplier."
+						<textarea id="note" name="note" th:field="*{custNote}" placeholder="Enter your message to the supplier."
 							class="px-2 border-2 h-[200px] w-[650px] rounded-md mt-2 text-neutral-400"></textarea>
 					</div>
 					<div
