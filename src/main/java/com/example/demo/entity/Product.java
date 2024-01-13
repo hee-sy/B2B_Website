@@ -19,10 +19,10 @@ public class Product {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	// image
-	@Lob
-	@Column(name = "prod_image", nullable = true, updatable = true, columnDefinition = "MEDIUMBLOB")
-	private byte[] prodImage;
+//	// image
+//	@Lob
+//	@Column(name = "prod_image", nullable = true, updatable = true, columnDefinition = "MEDIUMBLOB")
+//	private byte[] prodImage;
 
 	@Column(name = "prod_name", nullable = false, updatable = true, columnDefinition = "VARCHAR(255)")
 	private String prodName;
@@ -33,7 +33,7 @@ public class Product {
 	@Column(name = "prod_quantity", nullable = false, updatable = true, columnDefinition = "int(10)")
 	private int prodQuantity;
 	
-	@Column(name = "prod_unit", nullable = false, updatable = true, columnDefinition = "VARCHAR(255)")
+	@Column(name = "prod_unit", nullable = true, updatable = true, columnDefinition = "VARCHAR(255)")
 	private String prodUnit;
 
 	@Column(name = "prod_unitPrice", nullable = false, updatable = true, columnDefinition = "DECIMAL(20,2)")
@@ -45,11 +45,11 @@ public class Product {
 	public Product() {
 	}
 	
-	public Product(Long id, byte[] prodImage, String prodName, String prodCategory, int prodQuantity, double prodUnitPrice,
+	public Product(Long id, String prodName, String prodCategory, int prodQuantity, double prodUnitPrice,
 			String prodDesc, String prodUnit) {
 		super();
 		this.id = id;
-		this.prodImage = prodImage;
+//		this.prodImage = prodImage;
 		this.prodName = prodName;
 		this.prodCategory = prodCategory;
 		this.prodQuantity = prodQuantity;
@@ -108,14 +108,14 @@ public class Product {
 		this.prodDesc = prodDesc;
 	}
 
-	public String getProdImage() {
-		String base64EncodedImage = Base64.encodeBase64String(prodImage);
-		return base64EncodedImage;
-	}
-
-	public void setProdImage(byte[] prodImage) {
-		this.prodImage = prodImage;
-	}
+//	public String getProdImage() {
+//		String base64EncodedImage = Base64.encodeBase64String(prodImage);
+//		return base64EncodedImage;
+//	}
+//
+//	public void setProdImage(byte[] prodImage) {
+//		this.prodImage = prodImage;
+//	}
 
 	public String getProdUnit() {
 		return prodUnit;

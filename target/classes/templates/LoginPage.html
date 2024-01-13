@@ -17,7 +17,7 @@
 			<div class="relative inline-block  h-[200px]">
 				<div class="flex items-center justify-center w-full overflow-hidden max-md:max-w-full">
 					<button type="button" id="login-button" aria-expanded="false" aria-haspopup="true"
-						class="flex items-center justify-center text-gray-400 text-xs font-semibold leading-4 tracking-wider uppercase whitespace-nowrap rounded border border-[color:var(--Stroke-light,#DEE2E6)] bg-white self-center w-[125px] max-w-full mt-16 pl-4 pr-16 pt-4 pb-2 border-solid items-start max-md:mt-10 max-md:pr-5 inline-flex shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-100"
+						class="flex items-center justify-center text-gray-400 text-xs font-semibold leading-4 tracking-wider uppercase whitespace-nowrap rounded border border-[color:var(--Stroke-light,#DEE2E6)] bg-white self-center w-[125px] max-w-full mt-16 pl-4 pr-16 pt-4 pb-2 border-solid items-start max-md:mt-10 max-md:pr-5 inline-flex shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-neutral-300"
 						onclick="toggleDropdown()">
 						Login
 					</button>
@@ -28,12 +28,12 @@
 						role="menu" aria-orientation="vertical" aria-labelledby="login-button" tabindex="-1">
 						<form method="GET"  th:action="@{/home}" role="none">
 							<button type="submit"
-								class="text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-gray-100"
+								class="text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-neutral-300"
 								role="menuitem" tabindex="-1" id="menu-item-3">as Customer</button>
 						</form>
 						<form method="GET" th:action="@{/admin/manageproduct}" role="none">
 							<button type="submit"
-								class="text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-gray-100"
+								class="text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-neutral-300"
 								role="menuitem" tabindex="-1" id="menu-item-3">as Admin</button>
 						</form>
 					</div>

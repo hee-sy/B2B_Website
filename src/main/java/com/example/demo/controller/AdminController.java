@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.io.IOException;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,44 +33,45 @@ public class AdminController {
 	}
 	
 	@GetMapping("/admin/addproduct")
-	public String adminAddProduct() {
+	public String adminAddProduct(Model model) {
+		Product product = new Product();
+		model.addAttribute("product", product);
 		return "Admin-AddProduct";
 	}
 	
 	@PostMapping("/admin/addproduct")
-	public String adminAddProduct(@ModelAttribute("product") Product product, @RequestParam("prodImage") MultipartFile prodImage) {
-		productService.saveProduct(product, prodImage);
+	public String adminAddProduct(@ModelAttribute("product") Product product){
+		productService.saveProduct(product);
 		return "redirect:/admin/manageproduct";
 	}
 	
 	@GetMapping("/admin/editproduct/{id}")
 	public String adminEditProduct(@PathVariable Long id, Model model) {
-		//model.addAttribute("product", productService.getProductById(id));
+		model.addAttribute("product", productService.getProductById(id));
 		return "Admin-EditProduct";
 	}
 	
 	@PostMapping("/admin/editproduct/{id}")
 	public String adminEditProduct(@PathVariable Long id,
 			@ModelAttribute("product") Product product,
-			Model model){
-		//Product existingproduct = productService.getProductById(id);
-//		existingproduct.setId(id);
-//		existingproduct.setProdName(product.getProdName());
-//		existingproduct.setProdCategory(product.getProdCategory());
-//		existingproduct.setProdQuantity(product.getProdQuantity());
-//		existingproduct.setProdUnitPrice(product.getProdUnitPrice());
-//		existingproduct.setProdDesc(product.getProdDesc());
-//		existingproduct.setImage(product.getImage());
+			Model model) {
+		Product existingProduct = productService.getProductById(id);
+		existingProduct.setId(id);
+		existingProduct.setProdName(product.getProdName());
+		existingProduct.setProdCategory(product.getProdCategory());
+		existingProduct.setProdQuantity(product.getProdQuantity());
+		existingProduct.setProdUnit(product.getProdUnit());
+		existingProduct.setProdUnitPrice(product.getProdUnitPrice());
+		existingProduct.setProdDesc(product.getProdDesc());
 		
-		
-		//productService.updateProduct(existingproduct);
+		productService.updateProduct(existingProduct);
 		return "redirect:/admin/manageproduct";
 	}
 	
 	@GetMapping("/admin/manageproduct/{id}")
-	public String deleteBook(@PathVariable Long id) {
-		//ProductService.deleteProductById(id);
-		return "redirect:/home";
+	public String deleteProduct(@PathVariable Long id) {
+		productService.deleteProductById(id);
+		return "redirect:/admin/manageproduct";
 	}
 	
 	@GetMapping("/admin/ordermanage")
