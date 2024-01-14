@@ -40,6 +40,11 @@ public class OrderController {
 		order.setOrderQuantity(Integer.parseInt(quantity_frm_orderreq1));
 		order.setOrderCost(Double.parseDouble(total_frm_orderreq1));
 
+		// update stock
+		int remaining_stock = prod2.getProdQuantity() - order.getOrderQuantity();
+		prod2.setProdQuantity(remaining_stock);
+		productService.updateProduct(prod2);
+
 		order.setOrderProduct(prod2.getProdName());
 		long mil = System.currentTimeMillis();
 		java.sql.Date date = new java.sql.Date(mil);
