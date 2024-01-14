@@ -3,11 +3,13 @@ package com.example.demo.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.Order;
+import com.example.demo.entity.Product;
 import com.example.demo.service.OrderService;
 import com.example.demo.service.ProductService;
 
@@ -33,7 +35,7 @@ public class PageNavController {
 		model.addAttribute("products", productService.getAllProducts());
 		return "Product";
 	}
-
+	
 	@GetMapping("/home/product/{id}")
 	public String productPage(@PathVariable Long id, Model model) {
 		model.addAttribute("product", productService.getProductById(id));
@@ -55,7 +57,7 @@ public class PageNavController {
 		return "ContactUs";
 	}
 
-	@GetMapping("/contactUsResponse")
+	@PostMapping("/contactUsResponse")
 	public String contactUsResponsePage(Model model) {
 		return "ContactUsResponse";
 	}
