@@ -35,29 +35,28 @@
 							<div class="w-full md:w-[200px] my-8">Action</div>
 						</div>
 
-						<div th:each="order: ${order}"
+						<div th:each="orderList: ${orders}"
 							class="bg-white rounded-[30px] text-2xl text-center flex items-center gap-5 mt-2.5 ml-2 mr-1 max-md:max-w-full max-md:flex-wrap max-md:mr-2.5">
 
 							<table border="0" cellspacing="0" cellpadding="0">
 								<tr>
-									<td width="250" height="100">
-										<th:text=${order.id}>
+									<td width="250" height="100" th:text=${orderList.orderProduct}>
 									</td>
 									<td width="200" height="100">CID0001</td>
-									<td width="150" height="100">
-										<th:text=${order.quantity}>
+									<td width="150" height="100" th:text=${orderList.orderQuantity}>
 									</td>
-									<td width="250" height="100">
-										<th:text=${order.cost}>
+									<td width="250" height="100" th:text=${orderList.orderCost}>
 									</td>
 									<td width="150" height="100">Pending</td>
 									<td width="200" height="100">
+								
 										<button
-											class="w-[130px] h-[40px] text-white bg-green-500 rounded-xl">Complete</button>
+											th:href="@{/admin/updateorder/{id}(id=${orderList.orderId})}"
+											class="w-[130px] h-[40px] text-white bg-green-500 rounded-xl">
+											Complete</button>
+										
 									</td>
 								</tr>
-
-
 							</table>
 						</div>
 

@@ -15,10 +15,12 @@
 	
 	<div w3-include-html="CustHeader.html"></div>
 
-	<form th:action="@{/home}" class="text-neutral-400 text-2xl font-medium leading-9 pt-5 self-stretch max-md:max-w-full">
-		<button type="submit" class="ml-20">Home</button> > Contact Us
-
-	</form>
+	<div id="breadcrumb"
+		class="text-neutral-400 text-2xl font-medium leading-9 whitespace-nowrap ml-16 mt-10 self-start max-md:ml-2.5">
+		<a href="/home">Home</a>
+		&gt;
+		<a href="/contactUs">Contact Us</a>
+	</div>
 	<form th:action="@{/contactUsResponse}" style="margin-bottom: 300px;" class="flex w-full flex-col mt-5 max-md:max-w-full" method="POST">
 		<header
 			class="text-black text-3xl font-semibold leading-[48.06399999999999px] self-center whitespace-nowrap mt-12 max-md:mt-10">
