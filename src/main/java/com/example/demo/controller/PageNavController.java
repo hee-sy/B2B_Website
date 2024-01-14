@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.Order;
@@ -75,10 +76,10 @@ public class PageNavController {
 		return "ProductDetails";
 	}
 
-	@GetMapping("/orderreq1/{id}")
-	public String orderReq1(@RequestParam int num, @PathVariable Long id, Model model) {
+	@PostMapping("/orderreq1/{id}")
+	public String orderReq1(@RequestParam String num, @PathVariable Long id, Model model) {
 		Order order1 = new Order();
-		order1.setOrderQuantity(num);
+		order1.setOrderQuantity(Integer.parseInt(num));
 
 		model.addAttribute("prod", productService.getProductById(id));
 

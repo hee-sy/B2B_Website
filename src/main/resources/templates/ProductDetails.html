@@ -51,7 +51,7 @@
 	
 	
 	
-	<form th:action="@{/home/product/{id} (id=${product.id})}" th:object="${product}" method="POST">
+	<form th:object="${product}">
 		<div class="bg-neutral-100 h-[2200px] flex flex-col max-md:ml-2.5">
 			<div
 				class="font-montserrat my-5 mx-48 flex flex-col h-[40px] text-neutral-400 text-lg text-left  max-md:ml-2.5">
@@ -92,12 +92,12 @@
 								<span class="font-bold">100 boxes </span>
 							</div>
 
-							<form id="RequestOrderForm" method="GET" th:action="@{/orderreq1/{id} (id=${product.id})}">
+							<form id="RequestOrderForm" method="POST" th:action="@{/orderreq1/{id} (id=${product.id})}">
 
 								<div class="text-xl text-black font-bold mt-3 mb-3 text-left w-full">
 									<input type="button" value="-" onclick="minus()"
 										class="w-[30px] h-[30px] border border-black float-left bg-black text-white text-xl" />
-									<input id="num" name="num" type="number" value="100" onfocus="this.blur()"
+									<input id="num" name="num" type="text" value="100" onfocus="this.blur()"
 										class="w-[50px] h-[30px] text-center text-lg border border-black float-left" />
 									<input type="button" value="+" onclick="add()"
 										class="w-[30px] h-[30px] border border-black float-left bg-black text-white text-xl" />
@@ -122,9 +122,9 @@
 						</div>
 						<div class="my-5 text-black flex-start">
 							<label class="text-base font-bold">Payment Options: </label>
-								<p>Credit Card</p><br>
-								<p>Debit Card</p><br>
-								<p>TNG</p><br>
+								<p>Credit Card</p>
+								<p>Debit Card</p>
+								<p>TNG</p>
 						</div>
 					</div>
 				</div>
@@ -217,7 +217,6 @@
 	<!-- CustFooter.html -->
 	<div w3-include-html="../../CustFooter.html"></div>
 
-	<!-- To include other HTML files -->
 	<script>
 		var num = document.getElementById("num");
 		quantity = toString(num.value);
@@ -241,6 +240,7 @@
 			}
 		}
 	</script>
+	<!-- To include other HTML files -->
 	<script>
 		function includeHTML() {
 			var z, i, elmnt, file, xhttp;
