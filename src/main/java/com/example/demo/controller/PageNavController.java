@@ -87,7 +87,7 @@ public class PageNavController {
 
 		int remaining_stock = prod1.getProdQuantity() - Integer.parseInt(num);
 		if (remaining_stock < 0) {
-			return "redirect:/orderreq1/{id}";
+			return "redirect:/home/product/{id}";
 		} else {
 			// continue
 
