@@ -14,10 +14,24 @@
 	<div w3-include-html="../CustHeader.html"></div>
 
 	<div class="bg-neutral-100 h-[1200px] flex flex-col max-md:ml-2.5 ">
-		<header class="text-neutral-400 text-lg font-medium leading-9 mt-10 pl-[60px] max-md:max-w-full">
+		<!--<header class="text-neutral-400 text-lg font-medium leading-9 mt-10 pl-[60px] max-md:max-w-full">
 			Home &gt; Product &gt; Chocolate &amp; Confectionery &gt; <span class=""> Feastables MrBeast Bar Original
 				Chocolate 60g &gt; Order Request </span>
-		</header>
+		</header>-->
+		
+		<div id="breadcrumb"
+			class="text-neutral-400 text-2xl font-medium leading-9 whitespace-nowrap ml-16 mt-10 self-start max-md:ml-2.5">
+			<a href="/home">Home</a>
+			&gt;
+			<a href="/home/product">Product</a>
+			&gt;
+			<a href="/home/product" th:text="${refprod1.prodCategory}"></a>
+			&gt;
+			<a th:href="@{/home/product/{id}(id=${refprod1.id})}" th:text="${refprod1.prodName}"></a>
+			&gt;
+			<a href="#">Order Request</a>
+		</div>
+		
 		<div class="mx-[600px] my-5">
 			<!--steps progress bar-->
 			<img loading="lazy" src="../Images/OrderProcess2.png" alt="Product Picture"

@@ -22,10 +22,26 @@
 	<div w3-include-html="CustHeader.html"></div>
 
 	<div class="bg-neutral-100 h-[1500px] flex flex-col max-md:ml-2.5">
-		<header class="text-neutral-400 text-lg font-medium leading-9 mt-10 pl-[60px] max-md:max-w-full">
+		<!--<header class="text-neutral-400 text-lg font-medium leading-9 mt-10 pl-[60px] max-md:max-w-full">
 			Home &gt; Product &gt; Chocolate &amp; Confectionery &gt; <span class=""> Feastables MrBeast Bar Original
 				Chocolate 60g &gt; Order Request </span>
-		</header>
+		</header>-->
+		
+		<div id="breadcrumb"
+			class="text-neutral-400 text-2xl font-medium leading-9 whitespace-nowrap ml-16 mt-10 self-start max-md:ml-2.5">
+			<a href="/home">Home</a>
+			&gt;
+			<a href="/home/product">Product</a>
+			&gt;
+			<a href="/home/product" th:text="${prod.prodCategory}"></a>
+			&gt;
+			<a th:href="@{/home/product/{id}(id=${prod.id})}" th:text="${prod.prodName}"></a>
+			&gt;
+			<a href="#">Order Request</a>
+		</div>
+		
+		
+		
 		<div class="mx-[600px] my-5">
 			<!--step progress bar-->
 			<img loading="lazy" src="/Images/OrderProcess1.png" alt="Product Picture"
@@ -51,119 +67,129 @@
 				<!--left container for picture-->
 
 
-				<form id="PayForm" class="w-3/6 justify-center items-center max-md:ml-0  float-left mx-16" 
+				<form id="PayForm" class="w-full max-md:ml-0 float-left mx-16 flex flex-nowrap" 
 				th:action="@{/order/{id} (id=${prod.id})}"
 					th:object="${order1}" method="POST">
-					<div class="mt-10">
-						<label for="name" class="text-lg font-bold">Name:*</label> <br />
-						<input type="text" id="name" name="name" required th:field="*{custName}"
-							placeholder="Enter your name."
-							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
-					</div>
-					<div class="mt-8">
-						<label for="contact" class="text-lg font-bold">Contact Number:*</label> <br />
-						<input type="text" id="contact" name="contactNo" required th:field="*{custContactNo}"
-							placeholder="Enter your contact number."
-							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
-					</div>
-					<div class="mt-8">
-						<label for="email" class="text-lg font-bold">Email:*</label> <br />
-						<input type="text" id="email" name="email" required th:field="*{custEmail}"
-							placeholder="Enter your email."
-							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
-					</div>
-					<div class="mt-8">
-						<label for="address" class="text-lg font-bold">Destination Address:*</label> <br />
-						<select name="state" id="address" required th:field="*{custState}" placeholder="Select State"
-							class="border-2 border-black h-[45px] w-[650px] rounded-md mt-2 text-black text-center my-2">
-							<option value="none" class="text-base">Select State</option>
-							<option value="Selangor" class="text-base">Selangor</option>
-						</select>
-						<select name="city" id="address" required th:field="*{custCity}" placeholder="Select City"
-							class="border-2 border-black h-[45px] w-[650px] rounded-md mt-2 text-black text-center my-2">
-							<option value="none" class="text-base">Select City</option>
-							<option value="Kuala Lumpur" class="text-base">Kuala Lumpur</option>
-							<option value="Sepang" class="text-base">Sepang</option>
-							<option value="Cheras" class="text-base">Cheras</option>
-						</select>
-					</div>
-					<div class="my-2">
-						<input type="text" id="address" name="postalCode" required th:field="*{custPostalCode}"
-							placeholder="Enter postal code."
-							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
-					</div>
-					<div class="my-2">
-						<input type="text" id="address" name="street" required th:field="*{custStreet}"
-							placeholder="Enter street."
-							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
-					</div>
-					<div class="my-2">
-						<input type="text" id="address" name="building" required th:field="*{custBuilding}"
-							placeholder="Enter building."
-							class="px-2 border-2 h-[45px] w-[650px] rounded-md mt-2 text-neutral-400" />
-					</div>
-					<div class="mt-8">
-						<label for="note" class="text-lg font-bold">Additional Notes:</label> <br />
-						<textarea id="note" name="note" th:field="*{custNote}"
-							placeholder="Enter your message to the supplier."
-							class="px-2 border-2 h-[200px] w-[650px] rounded-md mt-2 text-neutral-400"></textarea>
-					</div>
-					<div class="mt-10">
-						<label for="Select Payment Method" class="text-lg font-bold">Payment Method:*</label> <br />
-						<select placeholder="Select Payment Method" name="state" id="state" required
-							th:field="*{orderPaymentMethod}"
-							class="border-2 border-black h-[45px] w-[650px] rounded-md mt-2 text-black text-center my-2">
-							<option value="none" class="text-base">Select Payment Method</option>
-							<option value="Credit" class="text-base">Credit Card</option>
-							<option value="Debit" class="text-base">Debit Card</option>
-							<option value="TNG" class="text-base">TNG</option>
-						</select>
-					</div>
-					<div
-						class="w-[280px] h-[60px] rounded-md shadow-md  border-2 border-black text-center self-center mt-8 mb-16 mx-48">
-						<div class="my-3 text-lg text-black font-bold">
-							<button type="submit">PLACE ORDER & PAY</button>
+					
+					<div class="w-3/5">
+						<div class="mt-10">
+							<label for="name" class="text-lg font-bold">Name:*</label> <br />
+							<input type="text" id="name" name="name" required th:field="*{custName}"
+								placeholder="Enter your name."
+								class="px-2 border-2 h-[45px] w-full rounded-md mt-2 text-neutral-400" />
+						</div>
+						<div class="mt-8">
+							<label for="contact" class="text-lg font-bold">Contact Number:*</label> <br />
+							<input type="text" id="contact" name="contactNo" required th:field="*{custContactNo}"
+								placeholder="Enter your contact number."
+								class="px-2 border-2 h-[45px] w-full rounded-md mt-2 text-neutral-400" />
+						</div>
+						<div class="mt-8">
+							<label for="email" class="text-lg font-bold">Email:*</label> <br />
+							<input type="text" id="email" name="email" required th:field="*{custEmail}"
+								placeholder="Enter your email."
+								class="px-2 border-2 h-[45px] w-full rounded-md mt-2 text-neutral-400" />
+						</div>
+						<div class="mt-8">
+							<label for="address" class="text-lg font-bold">Destination Address:*</label> <br />
+							<select name="state" id="address" required th:field="*{custState}" placeholder="Select State"
+								class="border-2 border-black h-[45px] w-full rounded-md mt-2 text-black text-center my-2">
+								<option value="none" class="text-base">Select State</option>
+								<option value="Selangor" class="text-base">Selangor</option>
+							</select>
+							<select name="city" id="address" required th:field="*{custCity}" placeholder="Select City"
+								class="border-2 border-black h-[45px] w-full rounded-md mt-2 text-black text-center my-2">
+								<option value="none" class="text-base">Select City</option>
+								<option value="Kuala Lumpur" class="text-base">Kuala Lumpur</option>
+								<option value="Sepang" class="text-base">Sepang</option>
+								<option value="Cheras" class="text-base">Cheras</option>
+							</select>
+						</div>
+						<div class="my-2">
+							<input type="text" id="address" name="postalCode" required th:field="*{custPostalCode}"
+								placeholder="Enter postal code."
+								class="px-2 border-2 h-[45px] w-full rounded-md mt-2 text-neutral-400" />
+						</div>
+						<div class="my-2">
+							<input type="text" id="address" name="street" required th:field="*{custStreet}"
+								placeholder="Enter street."
+								class="px-2 border-2 h-[45px] w-full rounded-md mt-2 text-neutral-400" />
+						</div>
+						<div class="my-2">
+							<input type="text" id="address" name="building" required th:field="*{custBuilding}"
+								placeholder="Enter building."
+								class="px-2 border-2 h-[45px] w-full rounded-md mt-2 text-neutral-400" />
+						</div>
+						<div class="mt-8">
+							<label for="note" class="text-lg font-bold">Additional Notes:</label> <br />
+							<textarea id="note" name="note" th:field="*{custNote}"
+								placeholder="Enter your message to the supplier."
+								class="px-2 border-2 h-[200px] w-full rounded-md mt-2 text-neutral-400"></textarea>
+						</div>
+						<div class="mt-10">
+							<label for="Select Payment Method" class="text-lg font-bold">Payment Method:*</label> <br />
+							<select placeholder="Select Payment Method" name="state" id="state" required
+								th:field="*{orderPaymentMethod}"
+								class="border-2 border-black h-[45px] w-full rounded-md mt-2 text-black text-center my-2">
+								<option value="none" class="text-base">Select Payment Method</option>
+								<option value="Credit" class="text-base">Credit Card</option>
+								<option value="Debit" class="text-base">Debit Card</option>
+								<option value="TNG" class="text-base">TNG</option>
+							</select>
+						</div>
+						<div
+							class="w-[280px] h-[60px] rounded-md shadow-md  border-2 border-black text-center self-center mt-8 mb-16 mx-48">
+							<div class="my-3 text-lg text-black font-bold">
+								<button type="submit">PLACE ORDER & PAY</button>
+							</div>
 						</div>
 					</div>
 
 
-				<div class="w-2/5 justify-center items-center max-md:ml-0  float-left mx-10">
-					<div class="h-[200px] w-2/5 justify-center items-center mb-20">
-						<img loading="lazy" src="../Images/FeastablesMrBeastBar.png" alt="Product Picture"
-							class="object-cover object-center inset-0 mb-0 mx-28" />
+					<div class="w-2/5 justify-center items-center max-md:ml-0 float-left mx-10">
+						<!--<div class="h-[200px] w-2/5 justify-center items-center mb-20">
+							<img loading="lazy" src="../Images/FeastablesMrBeastBar.png" alt="Product Picture"
+								class="object-cover object-center inset-0 mb-0 mx-28" />
+						</div>-->
+						<img loading="lazy"
+								src="../Images/FeastablesMrBeastBar.png"
+								class="object-contain object-center h-[200px] w-full shadow-sm overflow-hidden grow max-md:mt-7" />
+						<div class="mt-2">
+							<div th:text="${prod.prodName}" class="text-xl self-center stext-black font-bold my-1 mx-12">
+							</div>
+							<div th:text="${prod.prodCategory}" class="text-lg text-neutral-400 my-1 mx-12">
+							</div>
+							<div class="text-lg text-black my-1 mx-12">
+								stock: <span th:text="${prod.prodQuantity}" ></span> boxes (<span th:text="${prod.prodUnit}" ></span> pieces per box)
+							</div>
+							<div class="text-lg text-black mt-3 mb-32 ml-12 mr-12 flex">
+								<div class="float-left">Quantity: </div><div class="flex justify-end w-full" th:text="'x ' + ${order1.orderQuantity}"></div>
+								<input name="quantity_frm_orderreq1" type="text" th:value="${order1.orderQuantity}" class="hidden"></input>
+							</div>
+							<br>
+							
+							
+							
+							
+							<div class="text-lg text-black mt-2 mb-5 ml-12 mr-12">
+								<span class="float-left">Units Per Quantity: </span>
+								<span class="float-right">x <span th:text="${prod.prodUnit}"></span> </span>
+							</div>
+							<br />
+							<div class="text-lg text-black mt-2 mb-5 ml-12 mr-12">
+								<span class="float-left">Unit Price: </span>
+								<span class="float-right">RM <span th:text="${prod.prodUnitPrice}"></span> </span>
+							</div>
+							<br />
+							<hr style="width: 90%; margin: auto; border: 2px solid #BBB;" />
+							<div class="text-lg text-black mt-3 mb-5 ml-12 mr-12 flex">
+								<div class="float-left">Total: </div>
+								<div class="float-right flex justify-end w-full" th:text="'RM' + ${total}"></div>
+								<input name="total_frm_orderreq1" type="text" th:value="${total}" class="hidden"></input>
+							</div>
+						</div>
 					</div>
-					<div class="h-[800px] mt-2">
-						<span th:text="${prod.prodName}" class="text-xl self-center stext-black font-bold mt-0 mb-3 mx-12">
-						</span>
-						<span th:text="${prod.prodCategory}" class="text-lg text-neutral-400 mt-2 mb-3 mx-12">
-						</span>
-						<div class="text-lg text-black mt-3 mb-5 mx-12">
-							stock: <span th:text="${prod.prodQuantity}" ></span> boxes (<span th:text="${prod.prodUnit}" ></span> pieces per box)
-						</div>
-						<div class="text-lg text-black mt-3 mb-32 ml-12 mr-24">
-							<span class="float-left">Quantity: </span><span class="float-right">x <input name="quantity_frm_orderreq1" type="text" th:value="${order1.orderQuantity}"></input></span>
-						</div>
-						<br>
-						
-						
-						
-						
-						<div class="text-lg text-black mt-2 mb-5 ml-12 mr-24">
-							<span class="float-left">Units Per Quantity: </span>
-							<span class="float-right">x <span th:text="${prod.prodUnit}"></span> </span>
-						</div>
-						<br />
-						<div class="text-lg text-black mt-2 mb-5 ml-12 mr-24">
-							<span class="float-left">Unit Price: </span>
-							<span class="float-right">RM <span th:text="${prod.prodUnitPrice}"></span> </span>
-						</div>
-						<br />
-						<hr style="width: 90%; margin: auto; border: 2px solid #BBB;" />
-						<div class="text-lg text-black mt-3 mb-5 ml-12 mr-24">
-							<span class="float-left">Total: </span>
-							<span class="float-right">RM <input name="total_frm_orderreq1" type="text" th:value="${total}"></input></span>
-						</div>
-					</form>
+				</form>
 
 						
 						
