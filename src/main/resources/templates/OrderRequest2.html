@@ -43,7 +43,7 @@
 				<!--left container for picture-->
 				<div class="w-1/4 justify-center items-center max-md:ml-0  float-left">
 					<div class="w-[1000px] ml-[50px] text-2xl font-bold">
-						<span class="text-green-600">Payment Successfully!!! </span>
+						<span class="text-green-600">Payment Successful! </span>
 						<span class="text-black">Below are the details of your order.</span>
 					</div>
 					<div class="h-[300px] justify-center items-center mt-10">
@@ -52,35 +52,33 @@
 					</div>
 				</div>
 				<div class="w-3/6 h-[600px] justify-center items-center max-md:ml-0  float-left">
-					<div class="h-[800px] mt-2">
-						<div class="text-xl self-center stext-black font-bold mt-24 mx-12">
-							Feastables MrBeast Bar Original Chocolate 60g
-						</div>
-						<div class="text-lg text-neutral-400 mx-12">
-							Candies & Sweets
-						</div>
+					<span class="h-[800px] mt-2">
+						<span th:text="${refprod1.prodName}" class="text-xl self-center stext-black font-bold mt-24 mx-12">
+						</span>
+						<span th:text="${refprod1.prodCategory}" class="text-lg text-neutral-400 mx-12">
+						</span>
 						<div class="text-lg text-black mx-12">
-							stock: 100,000 boxes (40 pieces per box) <br />
+							stock: <span th:text="${refprod1.prodQuantity}"></span> boxes (<span th:text="${refprod1.prodUnit}"></span> pieces per box) <br />
 						</div>
 						<div class="text-lg text-black mt-3 mb-2 ml-12 mr-24">
 							<span class="float-left">Quantity: </span>
-							<span class="float-right">x 100 </span>
+							<span class="float-right">x <span th:text="${savedOrder.orderQuantity}"></span> </span>
 						</div>
 						<br />
 						<div class="text-lg text-black mt-2 mb-5 ml-12 mr-24">
 							<span class="float-left">Units Per Quantity: </span>
-							<span class="float-right">x 40</span>
+							<span class="float-right">x <span th:text="${refprod1.prodUnit}"></span> </span>
 						</div>
 						<br />
 						<div class="text-lg text-black mt-2 mb-5 ml-12 mr-24">
 							<span class="float-left">Unit Price: </span>
-							<span class="float-right">RM 8.00 </span>
+							<span class="float-right">RM <span th:text="${refprod1.prodUnitPrice}"></span> </span>
 						</div>
 						<br />
 						<hr style="width: 90%; margin: auto; border: 2px solid #BBB;" />
 						<div class="text-lg text-black mt-3 mb-5 ml-12 mr-24">
 							<span class="float-left">Total: </span>
-							<span class="float-right">RM 800.00 </span>
+							<span class="float-right">RM <span th:text="${total}"></span> </span>
 						</div>
 					</div>
 				</div>
@@ -106,18 +104,15 @@
 						<br />
 						<div class="text-sm text-black my-2 ml-12 mr-24">
 							<div class="float-left font-bold">Destination: </div> <br />
-							<div class="float-left ml-4">State </div> <br />
-							<div class="float-left ml-4">City </div> <br />
-							<div class="float-left ml-4">Building </div> <br />
-							<div class="float-left ml-4">Postal Code </div> <br />
-						</div>
-						<div class="text-sm text-black my-2 ml-12 mr-24">
-							<div class="float-left font-bold">Additional Notes: </div> <br />
 							<div class="float-left ml-4"><span th:text="${savedOrder.custBuilding}"></span></div> <br />
 							<div class="float-left ml-4"><span th:text="${savedOrder.custStreet}"></span></div> <br />
 							<div class="float-left ml-4"><span th:text="${savedOrder.custPostalCode}"></span><span>,
 								</span><span th:text="${savedOrder.custCity}"></span></div> <br />
 							<div class="float-left ml-4"><span th:text="${savedOrder.custState}"></span></div> <br />
+						</div>
+						<div class="text-sm text-black my-2 ml-12 mr-24">
+							<div class="float-left font-bold">Additional Notes: </div> <br />
+							<div class="float-left ml-4"><p th:text="${savedOrder.custNote}"></p></div> <br />
 						</div>
 					</div>
 				</div>

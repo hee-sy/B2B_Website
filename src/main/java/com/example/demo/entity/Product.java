@@ -1,16 +1,13 @@
 package com.example.demo.entity;
 
-import org.apache.tomcat.util.codec.binary.Base64;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
-
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 
 @Entity
 @Table(name = "product")
@@ -24,7 +21,7 @@ public class Product {
 //	@Lob
 //	@Column(name = "prod_image", nullable = true, updatable = true, columnDefinition = "MEDIUMBLOB")
 //	private byte[] prodImage;
-	
+
 	@NotNull(message = "Name cannot be null")
 	@Column(name = "prod_name", nullable = false, updatable = true, columnDefinition = "VARCHAR(255)")
 	private String prodName;
@@ -37,7 +34,7 @@ public class Product {
 	@Positive(message = "Quantity must be a positive number")
 	@Column(name = "prod_quantity", nullable = false, updatable = true, columnDefinition = "int(10)")
 	private int prodQuantity;
-	
+
 	@NotNull(message = "Unit cannot be null")
 	@Positive(message = "Unit must be a positive number")
 	@Column(name = "prod_unit", nullable = true, updatable = true, columnDefinition = "VARCHAR(255)")
@@ -54,7 +51,7 @@ public class Product {
 
 	public Product() {
 	}
-	
+
 	public Product(Long id, String prodName, String prodCategory, int prodQuantity, double prodUnitPrice,
 			String prodDesc, String prodUnit) {
 		super();
@@ -67,8 +64,6 @@ public class Product {
 		this.prodDesc = prodDesc;
 		this.prodUnit = prodUnit;
 	}
-
-
 
 	public Long getId() {
 		return id;
@@ -134,5 +129,5 @@ public class Product {
 	public void setProdUnit(String prodUnit) {
 		this.prodUnit = prodUnit;
 	}
-	
+
 }
