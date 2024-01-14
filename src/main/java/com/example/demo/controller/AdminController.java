@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.example.demo.entity.Order;
 import com.example.demo.entity.Product;
 import com.example.demo.service.OrderService;
 import com.example.demo.service.ProductService;
@@ -87,8 +88,38 @@ public class AdminController {
 	
 	@GetMapping("/admin/ordermanage")
 	public String adminOrderManagement(Model model) {
-		//model.addAttribute("orders", orderService.getAllOrders());
+		model.addAttribute("orders", orderService.getAllOrders());
 		return "Admin-OrderManagement";
+	}
+	
+	@GetMapping("/admin/updateorder/{id}")
+	public String adminUpdateOrder(@PathVariable Long id,
+			@ModelAttribute("orderList") @Valid Order order, 
+			BindingResult bindingResult,
+			Model model) {
+		if (bindingResult.hasErrors()) {
+			return "Admin-OrderManagement";
+		}
+		Order existingOrder = orderService.getOrderById(id);
+		existingOrder.setOrderId(id);
+		existingOrder.setCustName(order.getCustName());
+		existingOrder.setCustContactNo(order.getCustContactNo());
+		existingOrder.setCustEmail(order.getCustEmail());
+		existingOrder.setCustState(order.getCustState());
+		existingOrder.setCustCity(order.getCustCity());
+		existingOrder.setCustPostalCode(order.getCustPostalCode());
+		
+		existingOrder.setCustStreet(order.getCustStreet());
+		existingOrder.setCustBuilding(order.getCustBuilding());
+		existingOrder.setCustNote(order.getCustNote());
+		existingOrder.setOrderProduct(order.getOrderProduct());
+		existingOrder.setOrderCreatedAt(order.getOrderCreatedAt());
+		existingOrder.setOrderQuantity(order.getOrderQuantity());
+		existingOrder.setOrderPaymentMethod(order.getOrderPaymentMethod());
+		existingOrder.setOrderStatus(true);
+		
+		orderService.saveOrder(existingOrder);
+		return "redirect:/admin/ordermanage";
 	}
 	
 	@GetMapping("/admin/sidebar")
