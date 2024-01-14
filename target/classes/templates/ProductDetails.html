@@ -51,7 +51,7 @@
 	
 	
 	
-	<form th:object="${product}">
+	<div th:object="${product}">
 		<div class="bg-neutral-100 h-[2200px] flex flex-col max-md:ml-2.5">
 			<div
 				class="font-montserrat my-5 mx-48 flex flex-col h-[40px] text-neutral-400 text-lg text-left  max-md:ml-2.5">
@@ -136,7 +136,7 @@
 					<div class="text-lg text-black text-center">
 						<span th:text="${product.prodDesc}"></span>
 					</div>
-	</form>
+	</div>
 	<div class="w-full h-[50px] mt-10 mb-2 text-lg text-black font-bold text-center">
 		Nutrition Facts
 	</div>
