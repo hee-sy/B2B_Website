@@ -53,16 +53,23 @@
 	
 	<div th:object="${product}">
 		<div class="bg-neutral-100 h-[2200px] flex flex-col max-md:ml-2.5">
-			<div
-				class="font-montserrat my-5 mx-48 flex flex-col h-[40px] text-neutral-400 text-lg text-left  max-md:ml-2.5">
-				<p> Home > Product > <span th:text="${product.prodCategory}"></span> > <span
-						th:text="${product.prodName}"></span></p>
+			
+			<div id="breadcrumb"
+				class="text-neutral-400 text-2xl font-medium leading-9 whitespace-nowrap ml-16 mt-10 self-start max-md:ml-2.5">
+				<a href="/home">Home</a>
+				&gt;
+				<a href="/home/product">Product</a>
+				&gt;
+				<a href="/home/product" th:text="${product.prodCategory}"></a>
+				&gt;
+				<a href="" th:text="${product.prodName}"></a>
 			</div>
+			
 			<br />
 			<!--Specific Product Box-->
 			<div
 				class="font-montserrat mb-[200px] mt-2 mx-40 flex flex-col h-full text-neutral-400 text-base text-left  max-md:ml-2.5">
-				<div class="mb-2 text-black text-2xl font-semibold ">
+				<div class="mb-2 text-black text-3xl font-bold ">
 					<span th:text="${product.prodName}"></span>
 				</div>
 				<br />
@@ -101,14 +108,15 @@
 										class="w-[50px] h-[30px] text-center text-lg border border-black float-left" />
 									<input type="button" value="+" onclick="add()"
 										class="w-[30px] h-[30px] border border-black float-left bg-black text-white text-xl" />
-								</div>
+								</div><br>
 
 
 								<div
-									class="w-[280px] h-[60px] rounded-md shadow-md  border-2 border-black text-center self-center mt-16 mb-8">
+									class="w-[280px] h-[60px] rounded-md shadow-md  border-2 border-black text-center self-center mt-8 mb-8">
 									<div class="my-3 text-lg text-black font-bold">
 										<button for="RequestOrderForm" type="submit">REQUEST ORDER</button>
 									</div>
+								
 							</form>
 						</div>
 						<div
