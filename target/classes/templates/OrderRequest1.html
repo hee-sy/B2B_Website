@@ -10,7 +10,6 @@
 	<script>
 		const objectString2 = localStorage.getItem('quantityObject');
 		const object2 = JSON.parse(objectString2);
-		alert(object2);
 		
 		quantity = object2.getItem('quant');
 		var quantityInt = parseInt(quantity);
@@ -129,7 +128,7 @@
 
 				<div class="w-2/5 justify-center items-center max-md:ml-0  float-left mx-10">
 					<div class="h-[200px] w-2/5 justify-center items-center mb-20">
-						<img loading="lazy" src="Images/FeastablesMrBeastBar.png" alt="Product Picture"
+						<img loading="lazy" src="../Images/FeastablesMrBeastBar.png" alt="Product Picture"
 							class="object-cover object-center inset-0 mb-0 mx-28" />
 					</div>
 					<div class="h-[800px] mt-2">
@@ -144,6 +143,30 @@
 							<span class="float-left">Quantity: </span>
 							<span class="float-right">x <span th:text="${order1.orderQuantity}" ></span> </span>
 						</div>
+						<br>
+						
+						
+						
+						
+						<div class="text-lg text-black mt-2 mb-5 ml-12 mr-24">
+							<span class="float-left">Units Per Quantity: </span>
+							<span class="float-right">x <span th:text="${prod.prodUnit}"></span> </span>
+						</div>
+						<br />
+						<div class="text-lg text-black mt-2 mb-5 ml-12 mr-24">
+							<span class="float-left">Unit Price: </span>
+							<span class="float-right">RM <span th:text="${prod.prodUnitPrice}"></span> </span>
+						</div>
+						<br />
+						<hr style="width: 90%; margin: auto; border: 2px solid #BBB;" />
+						<div class="text-lg text-black mt-3 mb-5 ml-12 mr-24">
+							<span class="float-left">Total: </span>
+							<span class="float-right">RM <span th:text="${total}"></span> </span>
+						</div>
+						
+						
+						
+						
 					</div>
 				</div>
 			</div>
