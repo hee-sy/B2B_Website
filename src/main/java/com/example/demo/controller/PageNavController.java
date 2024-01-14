@@ -85,15 +85,23 @@ public class PageNavController {
 		Product prod1 = new Product();
 		prod1 = productService.getProductById(id);
 
-		double cost = order1.getOrderQuantity() * Integer.parseInt(prod1.getProdUnit()) * prod1.getProdUnitPrice();
-		order1.setOrderCost(cost);
+		int remaining_stock = prod1.getProdQuantity() - Integer.parseInt(num);
+		if (remaining_stock < 0) {
+			return "redirect:/orderreq1/{id}";
+		} else {
+			// continue
 
-		model.addAttribute("total", cost);
+			double cost = order1.getOrderQuantity() * Integer.parseInt(prod1.getProdUnit()) * prod1.getProdUnitPrice();
+			order1.setOrderCost(cost);
 
-		model.addAttribute("prod", prod1);
+			model.addAttribute("total", cost);
 
-		model.addAttribute("order1", order1);
-		return "OrderRequest1";
+			model.addAttribute("prod", prod1);
+
+			model.addAttribute("order1", order1);
+			return "OrderRequest1";
+		}
+
 	}
 
 	@GetMapping("/orderreq2")
